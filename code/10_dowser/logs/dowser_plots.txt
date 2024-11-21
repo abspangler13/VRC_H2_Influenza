@@ -1,0 +1,80 @@
+**** Job starts ****
+Mon Mar 18 12:42:28 EDT 2024
+**** LOCUS info ****
+User: spanglerab
+Job id: 24649797
+Job name: dowser_plots
+Hostname: ai-hpcn100.cm.cluster
+/hpcdata/vrc_vip/Abby/Experiment_316
+To run IMMCANTATION Singularity container executables use, for example: singularity exec $IMMCAN_SING ls /usr/local/bin; singularity exec $IMMCAN_SING /usr/local/bin/fastq2fasta.py. Read more here: https://immcantation.readthedocs.io/en/latest/docker/intro.html.
+WARNING: While bind mounting '/hpcdata:/hpcdata': destination is already in the mount point list
+WARNING: While bind mounting '/sysapps:/sysapps': destination is already in the mount point list
+
+R version 4.2.2 (2022-10-31) -- "Innocent and Trusting"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-redhat-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> # module load immcantation/4.4.0
+> # singularity shell $IMMCAN_SING
+> # R
+> 
+> ### Make plots of trees we just built
+> 
+> # Load required packages
+> # library(alakazam)
+> library(dowser)
+Loading required package: ggplot2
+If you are using dowser in published research please cite Hoehn K, Pybus O, Kleinstein S (2022). Phylogenetic analysis of migration, differentiation, and class switching in B cells. PLoS Computational Biology. https://doi.org/10.1371/journal.pcbi.1009885.
+> library(dplyr)
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+> library(ggtree)
+ggtree v3.6.2 For help: https://yulab-smu.top/treedata-book/
+
+If you use the ggtree package suite in published research, please cite
+the appropriate paper(s):
+
+Guangchuang Yu, David Smith, Huachen Zhu, Yi Guan, Tommy Tsan-Yuk Lam.
+ggtree: an R package for visualization and annotation of phylogenetic
+trees with their covariates and other associated data. Methods in
+Ecology and Evolution. 2017, 8(1):28-36. doi:10.1111/2041-210X.12628
+
+Shuangbin Xu, Lin Li, Xiao Luo, Meijun Chen, Wenli Tang, Li Zhan, Zehan
+Dai, Tommy T. Lam, Yi Guan, Guangchuang Yu. Ggtree: A serialized data
+object for visualization of a phylogenetic tree and annotation data.
+iMeta 2022, 4(1):e56. doi:10.1002/imt2.56
+
+G Yu. Data Integration, Manipulation and Visualization of Phylogenetic
+Trees (1st ed.). Chapman and Hall/CRC. 2022. ISBN: 9781032233574
+> # library(readr)
+> # library(ggplot2)
+> # library(RColorBrewer)
+> 
+> # load trees with added meta data
+> trees <- readRDS(file = "analysis/data_objects/10_dowser/trash/Trees_igphyml_All_meta.rds")
+> Trees_igphyml_c_call_meta
+Error: object 'Trees_igphyml_c_call_meta' not found
+Execution halted

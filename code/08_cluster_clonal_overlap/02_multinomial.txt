@@ -1,0 +1,927 @@
+**** Job starts ****
+Mon Nov 20 12:14:34 EST 2023
+**** LOCUS info ****
+User: spanglerab
+Job id: 23338394
+Job name: multinomial
+Hostname: ai-hpcn088.cm.cluster
+/hpcdata/vrc_vip/Abby/Experiment_316
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+The legacy packages maptools, rgdal, and rgeos, underpinning the sp package,
+which was just loaded, will retire in October 2023.
+Please refer to R-spatial evolution reports for details, especially
+https://r-spatial.org/r/2023/05/15/evolution4.html.
+It may be desirable to make the sf package available;
+package maintainers should consider adding sf to Suggests:.
+The sp package is now running under evolution status 2
+     (status 2 uses the sf package in place of rgdal)
+rgeos version: 0.6-4, (SVN revision 699)
+ GEOS runtime version: 3.12.0-CAPI-1.18.0 
+ Please note that rgeos will be retired during October 2023,
+plan transition to sf or terra functions using GEOS at your earliest convenience.
+See https://r-spatial.org/r/2023/05/15/evolution4.html for details.
+ GEOS using OverlayNG
+ Linking to sp version: 2.0-0 
+ Polygon checking: TRUE 
+
+Warning message:
+In load_stuff() : rgeos: versions of GEOS runtime 3.12.0-CAPI-1.18.0
+and GEOS at installation 3.9.1-CAPI-1.14.2differ
+[1] 2.517669
+[1] 1
+[1]   1 446
+  [1] 446 358 260 149 141 139 138 132 131 128 127 117 106 103  96  95  92  91
+ [19]  88  85  84  83  80  79  69  68  67  66  63  62  59  59  58  57  56  56
+ [37]  55  55  54  54  54  53  53  53  53  52  52  52  51  50  50  50  50  49
+ [55]  48  48  47  47  46  44  44  44  44  43  42  42  42  42  41  41  40  40
+ [73]  40  40  40  40  39  39  39  39  38  38  38  38  37  37  37  37  37  36
+ [91]  36  36  36  36  35  35  35  35  35  34
+null device 
+          1 
+null device 
+          1 
+[1] 433
+Finished clone 68 !
+Finished clone 203 !
+Finished clone 355 !
+Finished clone 1366 !
+Finished clone 1367 !
+Finished clone 1387 !
+Finished clone 1410 !
+Finished clone 1430 !
+Finished clone 1434 !
+Finished clone 1435 !
+Finished clone 1450 !
+Finished clone 1451 !
+Finished clone 1467 !
+Finished clone 1468 !
+Finished clone 1469 !
+Finished clone 1471 !
+Finished clone 1478 !
+Finished clone 1480 !
+Finished clone 1498 !
+Finished clone 1506 !
+Finished clone 1509 !
+Finished clone 1528 !
+Finished clone 1546 !
+Finished clone 1553 !
+Finished clone 1587 !
+Finished clone 1596 !
+Finished clone 1610 !
+Finished clone 1626 !
+Finished clone 1635 !
+Finished clone 1642 !
+Finished clone 1653 !
+Finished clone 1659 !
+Finished clone 1731 !
+Finished clone 1739 !
+Finished clone 1777 !
+Finished clone 1857 !
+Finished clone 1877 !
+Finished clone 2000 !
+Finished clone 2004 !
+Finished clone 2022 !
+Finished clone 2049 !
+Finished clone 2062 !
+Finished clone 2065 !
+Finished clone 2073 !
+Finished clone 2085 !
+Finished clone 2103 !
+Finished clone 2113 !
+Finished clone 2133 !
+Finished clone 2162 !
+Finished clone 2182 !
+Finished clone 2195 !
+Finished clone 2210 !
+Finished clone 2243 !
+Finished clone 2248 !
+Finished clone 2254 !
+Finished clone 2262 !
+Finished clone 2265 !
+Finished clone 2266 !
+Finished clone 2268 !
+Finished clone 2282 !
+Finished clone 2298 !
+Finished clone 2339 !
+Finished clone 2357 !
+Finished clone 2363 !
+Finished clone 2384 !
+Finished clone 2398 !
+Finished clone 2416 !
+Finished clone 2417 !
+Finished clone 2418 !
+Finished clone 2427 !
+Finished clone 2443 !
+Finished clone 2444 !
+Finished clone 2463 !
+Finished clone 2465 !
+Finished clone 2467 !
+Finished clone 2468 !
+Finished clone 2470 !
+Finished clone 2476 !
+Finished clone 2498 !
+Finished clone 2509 !
+Finished clone 2513 !
+Finished clone 2542 !
+Finished clone 2549 !
+Finished clone 2696 !
+Finished clone 2707 !
+Finished clone 2712 !
+Finished clone 2754 !
+Finished clone 2756 !
+Finished clone 2790 !
+Finished clone 2791 !
+Finished clone 2795 !
+Finished clone 2813 !
+Finished clone 2814 !
+Finished clone 2926 !
+Finished clone 2993 !
+Finished clone 3037 !
+Finished clone 3081 !
+Finished clone 3084 !
+Finished clone 3085 !
+Finished clone 3173 !
+Finished clone 3206 !
+Finished clone 3235 !
+Finished clone 3242 !
+Finished clone 3256 !
+Finished clone 3350 !
+Finished clone 3363 !
+Finished clone 3390 !
+Finished clone 3398 !
+Finished clone 3405 !
+Finished clone 3411 !
+Finished clone 3414 !
+Finished clone 3428 !
+Finished clone 3429 !
+Finished clone 3430 !
+Finished clone 3435 !
+Finished clone 3456 !
+Finished clone 3458 !
+Finished clone 3461 !
+Finished clone 3490 !
+Finished clone 3497 !
+Finished clone 3498 !
+Finished clone 3507 !
+Finished clone 3513 !
+Finished clone 3519 !
+Finished clone 3537 !
+Finished clone 3543 !
+Finished clone 3548 !
+Finished clone 3558 !
+Finished clone 3559 !
+Finished clone 3585 !
+Finished clone 3587 !
+Finished clone 3621 !
+Finished clone 3623 !
+Finished clone 3637 !
+Finished clone 3641 !
+Finished clone 3654 !
+Finished clone 3659 !
+Finished clone 3678 !
+Finished clone 3705 !
+Finished clone 3707 !
+Finished clone 3741 !
+Finished clone 3758 !
+Finished clone 3759 !
+Finished clone 3780 !
+Finished clone 3788 !
+Finished clone 3808 !
+Finished clone 3815 !
+Finished clone 3821 !
+Finished clone 3825 !
+Finished clone 3827 !
+Finished clone 3839 !
+Finished clone 3847 !
+Finished clone 3887 !
+Finished clone 3892 !
+Finished clone 3959 !
+Finished clone 3969 !
+Finished clone 4005 !
+Finished clone 4017 !
+Finished clone 4052 !
+Finished clone 4066 !
+Finished clone 4067 !
+Finished clone 4073 !
+Finished clone 4082 !
+Finished clone 4095 !
+Finished clone 4121 !
+Finished clone 4123 !
+Finished clone 4146 !
+Finished clone 4178 !
+Finished clone 4205 !
+Finished clone 4216 !
+Finished clone 4224 !
+Finished clone 4248 !
+Finished clone 4254 !
+Finished clone 4271 !
+Finished clone 4324 !
+Finished clone 4354 !
+Finished clone 4395 !
+Finished clone 4398 !
+Finished clone 4445 !
+Finished clone 4446 !
+Finished clone 4491 !
+Finished clone 4501 !
+Finished clone 4503 !
+Finished clone 4507 !
+Finished clone 4509 !
+Finished clone 4512 !
+Finished clone 4520 !
+Finished clone 4529 !
+Finished clone 4532 !
+Finished clone 4535 !
+Finished clone 4540 !
+Finished clone 4543 !
+Finished clone 4573 !
+Finished clone 4590 !
+Finished clone 4593 !
+Finished clone 4619 !
+Finished clone 4651 !
+Finished clone 4657 !
+Finished clone 4663 !
+Finished clone 4676 !
+Finished clone 4769 !
+Finished clone 4786 !
+Finished clone 4800 !
+Finished clone 4849 !
+Finished clone 4865 !
+Finished clone 4911 !
+Finished clone 4915 !
+Finished clone 4931 !
+Finished clone 4939 !
+Finished clone 4940 !
+Finished clone 4988 !
+Finished clone 4992 !
+Finished clone 4995 !
+Finished clone 4997 !
+Finished clone 5022 !
+Finished clone 5028 !
+Finished clone 5037 !
+Finished clone 5040 !
+Finished clone 5063 !
+Finished clone 5086 !
+Finished clone 5103 !
+Finished clone 5119 !
+Finished clone 5138 !
+Finished clone 5143 !
+Finished clone 5146 !
+Finished clone 5161 !
+Finished clone 5162 !
+Finished clone 5166 !
+Finished clone 5174 !
+Finished clone 5175 !
+Finished clone 5176 !
+Finished clone 5179 !
+Finished clone 5185 !
+Finished clone 5230 !
+Finished clone 5256 !
+Finished clone 5257 !
+Finished clone 5258 !
+Finished clone 5336 !
+Finished clone 5393 !
+Finished clone 5397 !
+Finished clone 5401 !
+Finished clone 5402 !
+Finished clone 5411 !
+Finished clone 5413 !
+Finished clone 5415 !
+Finished clone 5416 !
+Finished clone 5417 !
+Finished clone 5418 !
+Finished clone 5419 !
+Finished clone 5421 !
+Finished clone 5423 !
+Finished clone 5425 !
+Finished clone 5448 !
+Finished clone 5452 !
+Finished clone 5460 !
+Finished clone 5469 !
+Finished clone 5470 !
+Finished clone 5471 !
+Finished clone 5477 !
+Finished clone 5488 !
+Finished clone 5502 !
+Finished clone 5522 !
+Finished clone 5538 !
+Finished clone 5570 !
+Finished clone 5585 !
+Finished clone 5600 !
+Finished clone 5614 !
+Finished clone 5655 !
+Finished clone 5694 !
+Finished clone 5703 !
+Finished clone 5706 !
+Finished clone 5712 !
+Finished clone 5732 !
+Finished clone 5746 !
+Finished clone 5748 !
+Finished clone 5749 !
+Finished clone 5768 !
+Finished clone 5770 !
+Finished clone 5783 !
+Finished clone 5798 !
+Finished clone 5804 !
+Finished clone 5836 !
+Finished clone 5868 !
+Finished clone 5875 !
+Finished clone 5900 !
+Finished clone 5901 !
+Finished clone 5907 !
+Finished clone 5933 !
+Finished clone 5936 !
+Finished clone 5937 !
+Finished clone 5988 !
+Finished clone 5992 !
+Finished clone 5996 !
+Finished clone 5997 !
+Finished clone 6004 !
+Finished clone 6019 !
+Finished clone 6024 !
+Finished clone 6040 !
+Finished clone 6062 !
+Finished clone 6083 !
+Finished clone 6087 !
+Finished clone 6096 !
+Finished clone 6111 !
+Finished clone 6136 !
+Finished clone 6137 !
+Finished clone 6149 !
+Finished clone 6157 !
+Finished clone 6183 !
+Finished clone 6206 !
+Finished clone 6212 !
+Finished clone 6219 !
+Finished clone 6220 !
+Finished clone 6221 !
+Finished clone 6228 !
+Finished clone 6241 !
+Finished clone 6359 !
+Finished clone 6456 !
+Finished clone 6518 !
+Finished clone 6570 !
+Finished clone 6630 !
+Finished clone 6719 !
+Finished clone 6805 !
+Finished clone 6806 !
+Finished clone 6847 !
+Finished clone 6848 !
+Finished clone 6875 !
+Finished clone 6881 !
+Finished clone 6936 !
+Finished clone 6987 !
+Finished clone 7047 !
+Finished clone 7084 !
+Finished clone 7085 !
+Finished clone 7147 !
+Finished clone 7317 !
+Finished clone 7442 !
+Finished clone 7448 !
+Finished clone 7549 !
+Finished clone 7908 !
+Finished clone 8278 !
+Finished clone 8360 !
+Finished clone 8499 !
+Finished clone 8614 !
+Finished clone 8705 !
+Finished clone 8732 !
+Finished clone 8997 !
+Finished clone 8998 !
+Finished clone 9058 !
+Finished clone 9225 !
+Finished clone 9284 !
+Finished clone 9345 !
+Finished clone 9438 !
+Finished clone 9498 !
+Finished clone 9812 !
+Finished clone 9837 !
+Finished clone 10069 !
+Finished clone 10183 !
+Finished clone 10240 !
+Finished clone 10461 !
+Finished clone 10498 !
+Finished clone 10621 !
+Finished clone 10739 !
+Finished clone 11069 !
+Finished clone 11204 !
+Finished clone 11355 !
+Finished clone 11382 !
+Finished clone 11623 !
+Finished clone 11761 !
+Finished clone 11809 !
+Finished clone 11855 !
+Finished clone 11881 !
+Finished clone 11900 !
+Finished clone 11954 !
+Finished clone 11965 !
+Finished clone 11971 !
+Finished clone 11978 !
+Finished clone 11979 !
+Finished clone 11987 !
+Finished clone 11992 !
+Finished clone 11993 !
+Finished clone 11994 !
+Finished clone 11996 !
+Finished clone 12008 !
+Finished clone 12009 !
+Finished clone 12012 !
+Finished clone 12030 !
+Finished clone 12043 !
+Finished clone 12051 !
+Finished clone 12077 !
+Finished clone 12124 !
+Finished clone 12140 !
+Finished clone 12166 !
+Finished clone 12216 !
+Finished clone 12224 !
+Finished clone 12232 !
+Finished clone 12259 !
+Finished clone 12260 !
+Finished clone 12268 !
+Finished clone 12327 !
+Finished clone 12328 !
+Finished clone 12331 !
+Finished clone 12342 !
+Finished clone 12344 !
+Finished clone 12354 !
+Finished clone 12355 !
+Finished clone 12367 !
+Finished clone 12372 !
+Finished clone 12388 !
+Finished clone 12408 !
+Finished clone 12409 !
+Finished clone 12432 !
+Finished clone 12450 !
+Finished clone 12454 !
+Finished clone 12478 !
+Finished clone 12482 !
+Finished clone 12494 !
+Finished clone 12509 !
+Finished clone 12510 !
+Finished clone 12511 !
+Finished clone 12519 !
+Finished clone 12539 !
+Finished clone 12541 !
+Finished clone 12549 !
+Finished clone 12550 !
+Finished clone 12555 !
+Finished clone 12560 !
+Finished clone 12570 !
+Finished clone 12572 !
+Finished clone 12583 !
+Finished clone 12615 !
+Finished clone 12616 !
+Finished clone 12634 !
+Finished clone 12637 !
+Finished clone 12641 !
+null device 
+          1 
+
+
+=========================
+Starting Perm 1 !
+
+
+=========================
+Starting Perm 2 !
+
+
+=========================
+Starting Perm 3 !
+
+
+=========================
+Starting Perm 4 !
+
+
+=========================
+Starting Perm 5 !
+
+
+=========================
+Starting Perm 6 !
+
+
+=========================
+Starting Perm 7 !
+
+
+=========================
+Starting Perm 8 !
+
+
+=========================
+Starting Perm 9 !
+
+
+=========================
+Starting Perm 10 !
+
+
+=========================
+Starting Perm 11 !
+
+
+=========================
+Starting Perm 12 !
+
+
+=========================
+Starting Perm 13 !
+
+
+=========================
+Starting Perm 14 !
+
+
+=========================
+Starting Perm 15 !
+
+
+=========================
+Starting Perm 16 !
+
+
+=========================
+Starting Perm 17 !
+
+
+=========================
+Starting Perm 18 !
+
+
+=========================
+Starting Perm 19 !
+
+
+=========================
+Starting Perm 20 !
+
+
+=========================
+Starting Perm 21 !
+
+
+=========================
+Starting Perm 22 !
+
+
+=========================
+Starting Perm 23 !
+
+
+=========================
+Starting Perm 24 !
+
+
+=========================
+Starting Perm 25 !
+
+
+=========================
+Starting Perm 26 !
+
+
+=========================
+Starting Perm 27 !
+
+
+=========================
+Starting Perm 28 !
+
+
+=========================
+Starting Perm 29 !
+
+
+=========================
+Starting Perm 30 !
+
+
+=========================
+Starting Perm 31 !
+
+
+=========================
+Starting Perm 32 !
+
+
+=========================
+Starting Perm 33 !
+
+
+=========================
+Starting Perm 34 !
+
+
+=========================
+Starting Perm 35 !
+
+
+=========================
+Starting Perm 36 !
+
+
+=========================
+Starting Perm 37 !
+
+
+=========================
+Starting Perm 38 !
+
+
+=========================
+Starting Perm 39 !
+
+
+=========================
+Starting Perm 40 !
+
+
+=========================
+Starting Perm 41 !
+
+
+=========================
+Starting Perm 42 !
+
+
+=========================
+Starting Perm 43 !
+
+
+=========================
+Starting Perm 44 !
+
+
+=========================
+Starting Perm 45 !
+
+
+=========================
+Starting Perm 46 !
+
+
+=========================
+Starting Perm 47 !
+
+
+=========================
+Starting Perm 48 !
+
+
+=========================
+Starting Perm 49 !
+
+
+=========================
+Starting Perm 50 !
+
+
+=========================
+Starting Perm 51 !
+
+
+=========================
+Starting Perm 52 !
+
+
+=========================
+Starting Perm 53 !
+
+
+=========================
+Starting Perm 54 !
+
+
+=========================
+Starting Perm 55 !
+
+
+=========================
+Starting Perm 56 !
+
+
+=========================
+Starting Perm 57 !
+
+
+=========================
+Starting Perm 58 !
+
+
+=========================
+Starting Perm 59 !
+
+
+=========================
+Starting Perm 60 !
+
+
+=========================
+Starting Perm 61 !
+
+
+=========================
+Starting Perm 62 !
+
+
+=========================
+Starting Perm 63 !
+
+
+=========================
+Starting Perm 64 !
+
+
+=========================
+Starting Perm 65 !
+
+
+=========================
+Starting Perm 66 !
+
+
+=========================
+Starting Perm 67 !
+
+
+=========================
+Starting Perm 68 !
+
+
+=========================
+Starting Perm 69 !
+
+
+=========================
+Starting Perm 70 !
+
+
+=========================
+Starting Perm 71 !
+
+
+=========================
+Starting Perm 72 !
+
+
+=========================
+Starting Perm 73 !
+
+
+=========================
+Starting Perm 74 !
+
+
+=========================
+Starting Perm 75 !
+
+
+=========================
+Starting Perm 76 !
+
+
+=========================
+Starting Perm 77 !
+
+
+=========================
+Starting Perm 78 !
+
+
+=========================
+Starting Perm 79 !
+
+
+=========================
+Starting Perm 80 !
+
+
+=========================
+Starting Perm 81 !
+
+
+=========================
+Starting Perm 82 !
+
+
+=========================
+Starting Perm 83 !
+
+
+=========================
+Starting Perm 84 !
+
+
+=========================
+Starting Perm 85 !
+
+
+=========================
+Starting Perm 86 !
+
+
+=========================
+Starting Perm 87 !
+
+
+=========================
+Starting Perm 88 !
+
+
+=========================
+Starting Perm 89 !
+
+
+=========================
+Starting Perm 90 !
+
+
+=========================
+Starting Perm 91 !
+
+
+=========================
+Starting Perm 92 !
+
+
+=========================
+Starting Perm 93 !
+
+
+=========================
+Starting Perm 94 !
+
+
+=========================
+Starting Perm 95 !
+
+
+=========================
+Starting Perm 96 !
+
+
+=========================
+Starting Perm 97 !
+
+
+=========================
+Starting Perm 98 !
+
+
+=========================
+Starting Perm 99 !
+
+
+=========================
+Starting Perm 100 !
+null device 
+          1 
+[1] 0
+[1] 0
+[1] 0
+[1] 0
+
+  416_1654_22    405_338_83 402_1340_1994   415_3127_95    310_708_27 
+           23            12            13            16            11 
+402_1028_1996  316_1070_407  415_1091_235   314_1437_95   302_100_438 
+           13            11            41            11            16 
+  402_1254_18   311_1657_84   402_2055_17   418_137_842   318_837_251 
+           20            11            11            19            13 
+ 416_1444_134   405_1156_27     410_988_1   416_1639_32    416_189_42 
+           15            17            11            27            11 
+   410_388_60   314_722_389  418_1242_197   416_895_241  311_1575_410 
+           11            15            18            26            13 
+ 416_1653_107    307_757_10  302_1552_397    403_203_34   416_1653_24 
+           13            12            20            24            12 
+ 402_2365_727  402_2369_528   416_1671_12   403_2232_66   311_805_739 
+           11            14            11            12            11 
+  318_235_202     402_500_1    313_934_85   416_1640_25    311_708_35 
+           15            16            15            33            13 
+  316_818_377     313_464_3  302_1459_238   316_368_301    318_237_65 
+           12            14            22            12            14 
+ 402_1492_454     314_476_2   418_538_214   402_494_202    416_862_90 
+           13            16            13            11            22 
+  403_1029_98   316_814_237  311_1644_367  302_1637_116    309_560_67 
+           23            17            16            19            16 
+  402_250_828  201_1382_621  402_1937_388   405_1144_36  402_1908_242 
+           14            11            19            13            13 
+null device 
+          1 
+[1] "Reproducibility information:"
+[1] "2023-11-21 00:50:54 EST"
+     user    system   elapsed 
+45134.499    14.902 45379.678 
+Error in session_info() : could not find function "session_info"
+Execution halted

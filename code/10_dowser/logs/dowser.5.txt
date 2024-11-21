@@ -1,0 +1,314 @@
+**** Job starts ****
+Tue Dec 19 01:00:40 EST 2023
+**** LOCUS info ****
+User: spanglerab
+Job id: 23810525
+Job name: dowser
+Hostname: ai-hpcn094.cm.cluster
+/hpcdata/vrc_vip/Abby/Experiment_316
+To run IMMCANTATION Singularity container executables use, for example: singularity exec $IMMCAN_SING ls /usr/local/bin; singularity exec $IMMCAN_SING /usr/local/bin/fastq2fasta.py. Read more here: https://immcantation.readthedocs.io/en/latest/docker/intro.html.
+WARNING: While bind mounting '/hpcdata:/hpcdata': destination is already in the mount point list
+WARNING: While bind mounting '/sysapps:/sysapps': destination is already in the mount point list
+
+R version 4.2.2 (2022-10-31) -- "Innocent and Trusting"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-redhat-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> # module load immcantation/4.4.0
+> # singularity shell $IMMCAN_SING
+> # R
+> 
+> # Load required packages
+> library(alakazam)
+Loading required package: ggplot2
+As of v1.0.0 the AIRR Rearrangement schema is now the default file format.
+A description of the standard is available at https://docs.airr-community.org.
+The legacy Change-O format is supported through arguments to each function
+that allow the input column names to be explicitly defined.
+> library(dowser)
+If you are using dowser in published research please cite Hoehn K, Pybus O, Kleinstein S (2022). Phylogenetic analysis of migration, differentiation, and class switching in B cells. PLoS Computational Biology. https://doi.org/10.1371/journal.pcbi.1009885.
+
+Attaching package: ‘dowser’
+
+The following object is masked from ‘package:alakazam’:
+
+    ExampleDbChangeo
+
+> library(dplyr)
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+> library(ggtree)
+ggtree v3.6.2 For help: https://yulab-smu.top/treedata-book/
+
+If you use the ggtree package suite in published research, please cite
+the appropriate paper(s):
+
+Guangchuang Yu, David Smith, Huachen Zhu, Yi Guan, Tommy Tsan-Yuk Lam.
+ggtree: an R package for visualization and annotation of phylogenetic
+trees with their covariates and other associated data. Methods in
+Ecology and Evolution. 2017, 8(1):28-36. doi:10.1111/2041-210X.12628
+
+LG Wang, TTY Lam, S Xu, Z Dai, L Zhou, T Feng, P Guo, CW Dunn, BR
+Jones, T Bradley, H Zhu, Y Guan, Y Jiang, G Yu. treeio: an R package
+for phylogenetic tree input and output with richly annotated and
+associated data. Molecular Biology and Evolution. 2020, 37(2):599-603.
+doi: 10.1093/molbev/msz240
+
+Guangchuang Yu.  Data Integration, Manipulation and Visualization of
+Phylogenetic Trees (1st edition). Chapman and Hall/CRC. 2022,
+doi:10.1201/9781003279242
+> library(readr)
+> 
+> # load example AIRR tsv data
+> my.data <- readRDS(file = here::here("analysis","data_objects","10_dowser","seurat_germline.rds"))
+> my.data <- my.data@meta.data
+> 
+> #"B007" "B014" "B028" "B090" "B000" "B180" "A000" "A028" "A007"
+> my.data <- my.data %>% mutate(Timepoint.num = case_when(Timepoint == "A000" ~ 1,
++                                                         Timepoint == "A007" ~ 2,
++                                                         Timepoint == "A028" ~ 3,
++                                                         Timepoint == "B000" ~ 4,
++                                                         Timepoint == "B007" ~ 5,
++                                                         Timepoint == "B014" ~ 6,
++                                                         Timepoint == "B028" ~ 7,
++                                                         Timepoint == "B090" ~ 8,
++                                                         Timepoint == "B180" ~ 9))
+> 
+> 
+> ######
+> B180 <- my.data %>% filter(Timepoint == "B180")
+> B180 <- unique(B180$clone_subject_id)
+> 
+> # B180 <- read.csv(file = here::here("analysis","data_objects","10_dowser","clones.for.dowser.csv"))
+> 
+> ## subset data to only include these clones
+> # my.data <- my.data %>% filter(clone_subject_id %in% B180$clone_id)
+> my.data <- my.data %>% filter(clone_subject_id %in% B180)
+> ######
+> 
+> x <- as.data.frame(table(my.data$clone_subject_id))
+> x <- x[order(x$Freq),]
+> 
+> x.clones <- x %>% filter(Freq > 50) %>% select(Var1)
+> # x.clones <- x %>% select(Var1)
+> 
+> # subset data for this example
+> #ExampleAirr = ExampleAirr[ExampleAirr$clone_id %in% c("3170", "3184"),]
+> my.data <- my.data[my.data$clone_subject_id %in% x.clones$Var1,]
+> #my.data <- my.data %>% filter(clone_subject_id %in% x.clones)
+> 
+> ##resolve light chains. do this before running CreateGermlines. 
+> # test.data <- read_tsv(file = "./analysis/VDJ_run1_by_subject/M313_heavy_light_clone-pass_germ-pass.tsv")
+> # test.data <- resolveLightChains(test.data)
+> 
+> # Process example data into proper format, store isotype (optional)
+> t1 = c("Timepoint.num")
+> t2 = c("Cluster.res0.4")
+> t3 = c("c_call") 
+> t4 = c("Timepoint.num","Cluster.res0.4")
+> t5 = c("Timepoint.num",'c_call')
+> t6 = c("Timepoint")
+> traits <- list(t1,t2,t3,t4,t5,t6)
+> names <- c("Time","Cluster","c_call","Time_Cluster","Time_ccall","Time_char")
+> k <- as.numeric(Sys.getenv("SGE_TASK_ID"))
+> 
+> my.clones = formatClones(my.data, clone = "clone_subject_id",traits =traits[[k]])
+> 
+> ## play with using different traits. can use more than one at a time. collapses identical sequnces together unless they differ by a trait value, then they will  will be kept separate.
+> ## numerical fields will be added together if their sequences are to be collapsed. 
+> 
+> # Build maxmimum parsimony trees for first two clones using 
+> # phangorn package in R
+> #trees <- getTrees(my.clones)
+> trees <- getTrees(my.clones, build = "igphyml", exec="/usr/local/share/igphyml/src/igphyml", nproc=1)
+Error in file(con, "r") : cannot open the connection
+Calls: getTrees
+In addition: Warning messages:
+1: In buildIgphyml(data, igphyml = exec, temp_path = file.path(dir,  :
+  Dowser igphyml doesn't mask split codons!
+2: In buildIgphyml(data, igphyml = exec, temp_path = file.path(dir,  :
+  Omega parameter incompatible with partition, setting to e
+3: In file(con, "r") :
+  cannot open file '/hpcdata/scratch/23810525.5.all.q/RtmpUjQRIx/sample-temp-7a1f46a959ff/sample/sample_lineages_sample_pars_hlp_asr.fasta': No such file or directory
+Execution halted
+**** Job starts ****
+Tue Dec 19 22:06:27 EST 2023
+**** LOCUS info ****
+User: spanglerab
+Job id: 23824507
+Job name: dowser
+Hostname: ai-hpcn049.cm.cluster
+/hpcdata/vrc_vip/Abby/Experiment_316
+To run IMMCANTATION Singularity container executables use, for example: singularity exec $IMMCAN_SING ls /usr/local/bin; singularity exec $IMMCAN_SING /usr/local/bin/fastq2fasta.py. Read more here: https://immcantation.readthedocs.io/en/latest/docker/intro.html.
+WARNING: While bind mounting '/hpcdata:/hpcdata': destination is already in the mount point list
+WARNING: While bind mounting '/sysapps:/sysapps': destination is already in the mount point list
+
+R version 4.2.2 (2022-10-31) -- "Innocent and Trusting"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-redhat-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> # module load immcantation/4.4.0
+> # singularity shell $IMMCAN_SING
+> # R
+> 
+> # Load required packages
+> library(alakazam)
+Loading required package: ggplot2
+As of v1.0.0 the AIRR Rearrangement schema is now the default file format.
+A description of the standard is available at https://docs.airr-community.org.
+The legacy Change-O format is supported through arguments to each function
+that allow the input column names to be explicitly defined.
+> library(dowser)
+If you are using dowser in published research please cite Hoehn K, Pybus O, Kleinstein S (2022). Phylogenetic analysis of migration, differentiation, and class switching in B cells. PLoS Computational Biology. https://doi.org/10.1371/journal.pcbi.1009885.
+
+Attaching package: ‘dowser’
+
+The following object is masked from ‘package:alakazam’:
+
+    ExampleDbChangeo
+
+> library(dplyr)
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+> library(ggtree)
+ggtree v3.6.2 For help: https://yulab-smu.top/treedata-book/
+
+If you use the ggtree package suite in published research, please cite
+the appropriate paper(s):
+
+Guangchuang Yu, David Smith, Huachen Zhu, Yi Guan, Tommy Tsan-Yuk Lam.
+ggtree: an R package for visualization and annotation of phylogenetic
+trees with their covariates and other associated data. Methods in
+Ecology and Evolution. 2017, 8(1):28-36. doi:10.1111/2041-210X.12628
+
+S Xu, Z Dai, P Guo, X Fu, S Liu, L Zhou, W Tang, T Feng, M Chen, L
+Zhan, T Wu, E Hu, Y Jiang, X Bo, G Yu. ggtreeExtra: Compact
+visualization of richly annotated phylogenetic data. Molecular Biology
+and Evolution. 2021, 38(9):4039-4042. doi: 10.1093/molbev/msab166
+
+Shuangbin Xu, Lin Li, Xiao Luo, Meijun Chen, Wenli Tang, Li Zhan, Zehan
+Dai, Tommy T. Lam, Yi Guan, Guangchuang Yu. Ggtree: A serialized data
+object for visualization of a phylogenetic tree and annotation data.
+iMeta 2022, 4(1):e56. doi:10.1002/imt2.56
+> library(readr)
+> 
+> # load example AIRR tsv data
+> my.data <- readRDS(file = here::here("analysis","data_objects","10_dowser","seurat_germline.rds"))
+> my.data <- my.data@meta.data
+> 
+> #"B007" "B014" "B028" "B090" "B000" "B180" "A000" "A028" "A007"
+> my.data <- my.data %>% mutate(Timepoint.num = case_when(Timepoint == "A000" ~ 1,
++                                                         Timepoint == "A007" ~ 2,
++                                                         Timepoint == "A028" ~ 3,
++                                                         Timepoint == "B000" ~ 4,
++                                                         Timepoint == "B007" ~ 5,
++                                                         Timepoint == "B014" ~ 6,
++                                                         Timepoint == "B028" ~ 7,
++                                                         Timepoint == "B090" ~ 8,
++                                                         Timepoint == "B180" ~ 9))
+> 
+> 
+> ######
+> # B180 <- my.data %>% filter(Timepoint == "B180")
+> # B180 <- unique(B180$clone_subject_id)
+> 
+> B180 <- read.csv(file = here::here("analysis","data_objects","10_dowser","clones.for.dowser.csv"))
+> 
+> ## subset data to only include these clones
+> # my.data <- my.data %>% filter(clone_subject_id %in% B180)
+> 
+> my.data <- my.data %>% filter(clone_subject_id %in% B180$clone_id)
+> 
+> ######
+> 
+> x <- as.data.frame(table(my.data$clone_subject_id))
+> x <- x[order(x$Freq),]
+> 
+> # x.clones <- x %>% filter(Freq > 50) %>% select(Var1)
+> x.clones <- x %>% select(Var1)
+> 
+> # subset data for this example
+> #ExampleAirr = ExampleAirr[ExampleAirr$clone_id %in% c("3170", "3184"),]
+> my.data <- my.data[my.data$clone_subject_id %in% x.clones$Var1,]
+> #my.data <- my.data %>% filter(clone_subject_id %in% x.clones)
+> 
+> ##resolve light chains. do this before running CreateGermlines. 
+> # test.data <- read_tsv(file = "./analysis/VDJ_run1_by_subject/M313_heavy_light_clone-pass_germ-pass.tsv")
+> # test.data <- resolveLightChains(test.data)
+> 
+> # Process example data into proper format, store isotype (optional)
+> t1 = c("Timepoint.num")
+> t2 = c("Cluster.res0.4")
+> t3 = c("c_call") 
+> t4 = c("Timepoint.num","Cluster.res0.4")
+> t5 = c("Timepoint.num",'c_call')
+> t6 = c("Timepoint")
+> traits <- list(t1,t2,t3,t4,t5,t6)
+> names <- c("Time","Cluster","c_call","Time_Cluster","Time_ccall","Time_char")
+> k <- as.numeric(Sys.getenv("SGE_TASK_ID"))
+> 
+> my.clones = formatClones(my.data, clone = "clone_subject_id",traits =traits[[k]])
+> 
+> ## play with using different traits. can use more than one at a time. collapses identical sequnces together unless they differ by a trait value, then they will  will be kept separate.
+> ## numerical fields will be added together if their sequences are to be collapsed. 
+> 
+> # Build maxmimum parsimony trees for first two clones using 
+> # phangorn package in R
+> #trees <- getTrees(my.clones)
+> trees <- getTrees(my.clones, build = "igphyml", exec="/usr/local/share/igphyml/src/igphyml", nproc=1)
+Error in file(con, "r") : cannot open the connection
+Calls: getTrees
+In addition: Warning messages:
+1: In buildIgphyml(data, igphyml = exec, temp_path = file.path(dir,  :
+  Dowser igphyml doesn't mask split codons!
+2: In buildIgphyml(data, igphyml = exec, temp_path = file.path(dir,  :
+  Omega parameter incompatible with partition, setting to e
+3: In file(con, "r") :
+  cannot open file '/hpcdata/scratch/23824507.5.all.q/RtmphJIJSf/sample-temp-587f9499df6/sample/sample_lineages_sample_pars_hlp_asr.fasta': No such file or directory
+Execution halted

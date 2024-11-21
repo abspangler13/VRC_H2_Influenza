@@ -1,0 +1,1644 @@
+**** Job starts ****
+Tue May 16 13:25:37 EDT 2023
+**** LOCUS info ****
+User: spanglerab
+Job id: 21696933
+Job name: vdj1
+Hostname: ai-hpcn046.cm.cluster
+/hpcdata/vrc_vip/Abby/Experiment_316_2
+── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
+✔ ggplot2 3.4.0      ✔ purrr   0.3.4 
+✔ tibble  3.1.8      ✔ dplyr   1.0.10
+✔ tidyr   1.2.1      ✔ stringr 1.4.1 
+✔ readr   2.1.2      ✔ forcats 0.5.2 
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+Attaching SeuratObject
+Attaching sp
+Warning message:
+In fun(libname, pkgname) :
+  rgeos: versions of GEOS runtime 3.9.1-CAPI-1.14.2
+and GEOS at installation 3.9.1dev-CAPI-1.14.1differ
+------------------------------------------------------------------------------
+You have loaded plyr after dplyr - this is likely to cause problems.
+If you need functions from both plyr and dplyr, please load plyr first, then dplyr:
+library(plyr); library(dplyr)
+------------------------------------------------------------------------------
+
+Attaching package: ‘plyr’
+
+The following objects are masked from ‘package:dplyr’:
+
+    arrange, count, desc, failwith, id, mutate, rename, summarise,
+    summarize
+
+The following object is masked from ‘package:purrr’:
+
+    compact
+
+As of v1.0.0 the AIRR Rearrangement schema is now the default file format.
+A description of the standard is available at https://docs.airr-community.org.
+The legacy Change-O format is supported through arguments to each function
+that allow the input column names to be explicitly defined.
+As of v1.0.0 the AIRR Rearrangement schema is now the default file format.
+A description of the standard is available at https://docs.airr-community.org.
+The legacy Change-O format is supported through arguments to each function
+that allow the input column names to be explicitly defined.
+Loading required package: usethis
+New names:
+• `` -> `...1`
+Rows: 144753 Columns: 32
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (23): barcode, contig_id, chain, v_gene, d_gene, j_gene, c_gene, fwr1, f...
+dbl  (5): ...1, length, reads, umis, exact_subclonotype_id
+lgl  (4): is_cell, high_confidence, full_length, productive
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+New names:
+• `` -> `...1`
+Rows: 53059 Columns: 32
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (23): barcode, contig_id, chain, v_gene, d_gene, j_gene, c_gene, fwr1, f...
+dbl  (5): ...1, length, reads, umis, exact_subclonotype_id
+lgl  (4): is_cell, high_confidence, full_length, productive
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 3402 Columns: 31
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (23): barcode, contig_id, chain, v_gene, d_gene, j_gene, c_gene, fwr1, f...
+dbl  (4): length, reads, umis, exact_subclonotype_id
+lgl  (4): is_cell, high_confidence, full_length, productive
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 58915 Columns: 37
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr (16): sequence_id, sequence, v_call, d_call, j_call, sequence_alignment,...
+dbl (17): junction_length, np1_length, np2_length, v_sequence_start, v_seque...
+lgl  (4): rev_comp, productive, stop_codon, vj_in_frame
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 20276 Columns: 37
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr (16): sequence_id, sequence, v_call, d_call, j_call, sequence_alignment,...
+dbl (17): junction_length, np1_length, np2_length, v_sequence_start, v_seque...
+lgl  (4): rev_comp, productive, stop_codon, vj_in_frame
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 1097 Columns: 37
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr (16): sequence_id, sequence, v_call, d_call, j_call, sequence_alignment,...
+dbl (17): junction_length, np1_length, np2_length, v_sequence_start, v_seque...
+lgl  (4): rev_comp, productive, stop_codon, vj_in_frame
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 74968 Columns: 36
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr (13): sequence_id, sequence, v_call, j_call, sequence_alignment, germlin...
+dbl (12): junction_length, np1_length, v_sequence_start, v_sequence_end, v_g...
+lgl (11): rev_comp, productive, d_call, d_cigar, stop_codon, vj_in_frame, np...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 27201 Columns: 36
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr (13): sequence_id, sequence, v_call, j_call, sequence_alignment, germlin...
+dbl (12): junction_length, np1_length, v_sequence_start, v_sequence_end, v_g...
+lgl (11): rev_comp, productive, d_call, d_cigar, stop_codon, vj_in_frame, np...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 1478 Columns: 36
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr (13): sequence_id, sequence, v_call, j_call, sequence_alignment, germlin...
+dbl (12): junction_length, np1_length, v_sequence_start, v_sequence_end, v_g...
+lgl (11): rev_comp, productive, d_call, d_cigar, stop_codon, vj_in_frame, np...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+            sequence_id                sequence                rev_comp 
+                      0                       0                       0 
+             productive                  v_call                  d_call 
+                      0                       0                    1204 
+                 j_call      sequence_alignment      germline_alignment 
+                      0                       0                      17 
+               junction             junction_aa                 v_cigar 
+                      0                       0                       0 
+                d_cigar                 j_cigar              stop_codon 
+                   1204                       0                       0 
+            vj_in_frame                   locus         junction_length 
+                      0                       0                       0 
+             np1_length              np2_length        v_sequence_start 
+                      0                    1204                       0 
+         v_sequence_end        v_germline_start          v_germline_end 
+                      0                       0                       0 
+       d_sequence_start          d_sequence_end        d_germline_start 
+                   1204                    1204                    1204 
+         d_germline_end        j_sequence_start          j_sequence_end 
+                   1204                       0                       0 
+       j_germline_start          j_germline_end                    CELL 
+                      0                       0                       0 
+                 c_call         consensus_count                clone_id 
+                   1874                       0                       0 
+              umi_count                 barcode                  length 
+                      0                       0                       0 
+                  chain                  v_gene                  d_gene 
+                      0                       0                   64893 
+                 j_gene                  c_gene                    fwr1 
+                      0                    1874                       8 
+                fwr1_nt                    cdr1                 cdr1_nt 
+                      8                       8                       8 
+                   fwr2                 fwr2_nt                    cdr2 
+                      8                       8                       8 
+                cdr2_nt                    fwr3                 fwr3_nt 
+                      8                       8                       8 
+                   cdr3                 cdr3_nt                    fwr4 
+                      0                       0                       8 
+                fwr4_nt                   reads                    umis 
+                      8                       0                       0 
+  exact_subclonotype_id                length.l                 chain.l 
+                      8                       0                       0 
+               v_gene.l                d_gene.l                j_gene.l 
+                      0                   80288                       0 
+               c_gene.l                  fwr1.l               fwr1_nt.l 
+                    520                      38                      38 
+                 cdr1.l               cdr1_nt.l                  fwr2.l 
+                     38                      38                      38 
+              fwr2_nt.l                  cdr2.l               cdr2_nt.l 
+                     38                      38                      38 
+                 fwr3.l               fwr3_nt.l                  cdr3.l 
+                     38                      38                       0 
+              cdr3_nt.l                  fwr4.l               fwr4_nt.l 
+                      0                      38                      38 
+                reads.l                  umis.l exact_subclonotype_id.l 
+                      0                       0                      38 
+                   orig          LC_sequence_id             LC_sequence 
+                      0                       0                       0 
+            LC_rev_comp           LC_productive               LC_v_call 
+                      0                       0                       0 
+              LC_j_call   LC_sequence_alignment   LC_germline_alignment 
+                      0                       0                       0 
+            LC_junction          LC_junction_aa              LC_v_cigar 
+                      0                       0                       0 
+             LC_j_cigar           LC_stop_codon          LC_vj_in_frame 
+                      0                       0                       0 
+               LC_locus      LC_junction_length           LC_np1_length 
+                      0                       0                       0 
+          LC_np2_length     LC_v_sequence_start       LC_v_sequence_end 
+                  80288                       0                       0 
+    LC_v_germline_start       LC_v_germline_end     LC_j_sequence_start 
+                      0                       0                       0 
+      LC_j_sequence_end     LC_j_germline_start       LC_j_germline_end 
+                      0                       0                       0 
+              LC_c_call      LC_consensus_count            LC_umi_count 
+                    520                       0                       0 
+                mu_freq 
+                      0 
+[1] "Reproducibility information:"
+[1] "2023-05-16 13:33:27 EDT"
+   user  system elapsed 
+335.713  12.732 469.834 
+─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
+ setting  value
+ version  R version 4.2.1 (2022-06-23)
+ os       Red Hat Enterprise Linux Server 7.9 (Maipo)
+ system   x86_64, linux-gnu
+ ui       X11
+ language (EN)
+ collate  en_US.UTF-8
+ ctype    en_US.UTF-8
+ tz       America/Detroit
+ date     2023-05-16
+ pandoc   NA
+
+─ Packages ───────────────────────────────────────────────────────────────────────────────────────────────────────────
+ package              * version  date (UTC) lib source
+ abind                  1.4-5    2016-07-21 [1] CRAN (R 4.2.1)
+ ade4                   1.7-19   2022-04-19 [1] CRAN (R 4.2.1)
+ airr                   1.4.1    2022-08-28 [2] CRAN (R 4.2.1)
+ alakazam             * 1.2.1    2022-09-20 [2] CRAN (R 4.2.1)
+ ape                    5.6-2    2022-03-02 [1] CRAN (R 4.2.1)
+ assertthat             0.2.1    2019-03-21 [1] CRAN (R 4.2.1)
+ backports              1.4.1    2021-12-13 [1] CRAN (R 4.2.1)
+ Biobase                2.57.1   2022-05-19 [1] Bioconductor
+ BiocGenerics           0.43.4   2022-09-11 [1] Bioconductor
+ BiocParallel           1.31.12  2022-08-02 [1] Bioconductor
+ Biostrings             2.65.6   2022-09-09 [1] Bioconductor
+ bit                    4.0.4    2020-08-04 [1] CRAN (R 4.2.1)
+ bit64                  4.0.5    2020-08-30 [1] CRAN (R 4.2.1)
+ bitops                 1.0-7    2021-04-24 [1] CRAN (R 4.2.1)
+ broom                  1.0.1    2022-08-29 [1] CRAN (R 4.2.1)
+ cachem                 1.0.6    2021-08-19 [1] CRAN (R 4.2.1)
+ callr                  3.7.2    2022-08-22 [1] CRAN (R 4.2.1)
+ cellranger             1.1.0    2016-07-27 [1] CRAN (R 4.2.1)
+ cli                    3.4.1    2022-09-23 [1] CRAN (R 4.2.1)
+ cluster                2.1.4    2022-08-22 [1] CRAN (R 4.2.1)
+ codetools              0.2-18   2020-11-04 [1] CRAN (R 4.2.1)
+ colorspace             2.0-3    2022-02-21 [1] CRAN (R 4.2.1)
+ cowplot                1.1.1    2020-12-30 [1] CRAN (R 4.2.1)
+ crayon                 1.5.1    2022-03-26 [1] CRAN (R 4.2.1)
+ data.table             1.14.2   2021-09-27 [1] CRAN (R 4.2.1)
+ DBI                    1.1.3    2022-06-18 [1] CRAN (R 4.2.1)
+ dbplyr                 2.2.1    2022-06-27 [1] CRAN (R 4.2.1)
+ DelayedArray           0.23.2   2022-09-14 [1] Bioconductor
+ deldir                 1.0-6    2021-10-23 [1] CRAN (R 4.2.1)
+ devtools             * 2.4.5    2022-10-11 [1] CRAN (R 4.2.1)
+ digest                 0.6.29   2021-12-01 [1] CRAN (R 4.2.1)
+ diptest                0.76-0   2021-05-04 [1] CRAN (R 4.2.1)
+ doParallel             1.0.17   2022-02-07 [1] CRAN (R 4.2.1)
+ dplyr                * 1.0.10   2022-09-01 [1] CRAN (R 4.2.1)
+ ellipsis               0.3.2    2021-04-29 [1] CRAN (R 4.2.1)
+ fansi                  1.0.3    2022-03-24 [1] CRAN (R 4.2.1)
+ fastmap                1.1.0    2021-01-25 [1] CRAN (R 4.2.1)
+ fitdistrplus           1.1-8    2022-03-10 [1] CRAN (R 4.2.1)
+ forcats              * 0.5.2    2022-08-19 [1] CRAN (R 4.2.1)
+ foreach                1.5.2    2022-02-02 [1] CRAN (R 4.2.1)
+ fs                     1.5.2    2021-12-08 [1] CRAN (R 4.2.1)
+ future                 1.28.0   2022-09-02 [1] CRAN (R 4.2.1)
+ future.apply           1.9.1    2022-09-07 [1] CRAN (R 4.2.1)
+ gargle                 1.2.1    2022-09-08 [1] CRAN (R 4.2.1)
+ generics               0.1.3    2022-07-05 [1] CRAN (R 4.2.1)
+ GenomeInfoDb           1.34.9   2023-02-02 [1] Bioconductor
+ GenomeInfoDbData       1.2.8    2022-09-23 [1] Bioconductor
+ GenomicAlignments      1.33.1   2022-07-22 [1] Bioconductor
+ GenomicRanges          1.49.1   2022-08-18 [1] Bioconductor
+ ggplot2              * 3.4.0    2022-11-04 [1] CRAN (R 4.2.1)
+ ggrepel                0.9.1    2021-01-15 [1] CRAN (R 4.2.1)
+ ggridges               0.5.3    2021-01-08 [1] CRAN (R 4.2.1)
+ globals                0.16.1   2022-08-28 [1] CRAN (R 4.2.1)
+ glue                   1.6.2    2022-02-24 [1] CRAN (R 4.2.1)
+ goftest                1.2-3    2021-10-07 [1] CRAN (R 4.2.1)
+ googledrive            2.0.0    2021-07-08 [1] CRAN (R 4.2.1)
+ googlesheets4          1.0.1    2022-08-13 [1] CRAN (R 4.2.1)
+ gridExtra              2.3      2017-09-09 [1] CRAN (R 4.2.1)
+ gtable                 0.3.1    2022-09-01 [1] CRAN (R 4.2.1)
+ haven                  2.5.1    2022-08-22 [1] CRAN (R 4.2.1)
+ here                   1.0.1    2020-12-13 [1] CRAN (R 4.2.1)
+ hms                    1.1.2    2022-08-19 [1] CRAN (R 4.2.1)
+ htmltools              0.5.3    2022-07-18 [1] CRAN (R 4.2.1)
+ htmlwidgets            1.5.4    2021-09-08 [1] CRAN (R 4.2.1)
+ httpuv                 1.6.6    2022-09-08 [1] CRAN (R 4.2.1)
+ httr                   1.4.4    2022-08-17 [1] CRAN (R 4.2.1)
+ ica                    1.0-3    2022-07-08 [1] CRAN (R 4.2.1)
+ igraph                 1.3.5    2022-09-22 [1] CRAN (R 4.2.1)
+ IRanges                2.31.2   2022-08-18 [1] Bioconductor
+ irlba                  2.3.5    2021-12-06 [1] CRAN (R 4.2.1)
+ iterators              1.0.14   2022-02-05 [1] CRAN (R 4.2.1)
+ jsonlite               1.8.0    2022-02-22 [1] CRAN (R 4.2.1)
+ KernSmooth             2.23-20  2021-05-03 [1] CRAN (R 4.2.1)
+ later                  1.3.0    2021-08-18 [1] CRAN (R 4.2.1)
+ lattice                0.20-45  2021-09-22 [1] CRAN (R 4.2.1)
+ lazyeval               0.2.2    2019-03-15 [1] CRAN (R 4.2.1)
+ leiden                 0.4.3    2022-09-10 [1] CRAN (R 4.2.1)
+ lifecycle              1.0.3    2022-10-07 [1] CRAN (R 4.2.1)
+ listenv                0.8.0    2019-12-05 [1] CRAN (R 4.2.1)
+ lmtest                 0.9-40   2022-03-21 [1] CRAN (R 4.2.1)
+ lubridate              1.8.0    2021-10-07 [1] CRAN (R 4.2.1)
+ magrittr               2.0.3    2022-03-30 [1] CRAN (R 4.2.1)
+ MASS                   7.3-58.1 2022-08-03 [1] CRAN (R 4.2.1)
+ Matrix                 1.5-1    2022-09-13 [1] CRAN (R 4.2.1)
+ MatrixGenerics         1.9.1    2022-06-24 [1] Bioconductor
+ matrixStats            0.62.0   2022-04-19 [1] CRAN (R 4.2.1)
+ memoise                2.0.1    2021-11-26 [1] CRAN (R 4.2.1)
+ mgcv                   1.8-40   2022-03-29 [1] CRAN (R 4.2.1)
+ mime                   0.12     2021-09-28 [1] CRAN (R 4.2.1)
+ miniUI                 0.1.1.1  2018-05-18 [1] CRAN (R 4.2.1)
+ modelr                 0.1.9    2022-08-19 [1] CRAN (R 4.2.1)
+ munsell                0.5.0    2018-06-12 [1] CRAN (R 4.2.1)
+ nlme                   3.1-159  2022-08-09 [1] CRAN (R 4.2.1)
+ parallelly             1.32.1   2022-07-21 [1] CRAN (R 4.2.1)
+ patchwork              1.1.2    2022-08-19 [1] CRAN (R 4.2.1)
+ pbapply                1.5-0    2021-09-16 [1] CRAN (R 4.2.1)
+ pillar                 1.8.1    2022-08-19 [1] CRAN (R 4.2.1)
+ pkgbuild               1.3.1    2021-12-20 [1] CRAN (R 4.2.1)
+ pkgconfig              2.0.3    2019-09-22 [1] CRAN (R 4.2.1)
+ pkgload                1.3.0    2022-06-27 [1] CRAN (R 4.2.1)
+ plotly                 4.10.0   2021-10-09 [1] CRAN (R 4.2.1)
+ plyr                 * 1.8.7    2022-03-24 [1] CRAN (R 4.2.1)
+ png                    0.1-7    2013-12-03 [1] CRAN (R 4.2.1)
+ polyclip               1.10-0   2019-03-14 [3] CRAN (R 4.2.0)
+ prettyunits            1.1.1    2020-01-24 [1] CRAN (R 4.2.1)
+ processx               3.7.0    2022-07-07 [1] CRAN (R 4.2.1)
+ profvis                0.3.7    2020-11-02 [1] CRAN (R 4.2.1)
+ progress               1.2.2    2019-05-16 [1] CRAN (R 4.2.1)
+ progressr              0.11.0   2022-09-02 [1] CRAN (R 4.2.1)
+ promises               1.2.0.1  2021-02-11 [1] CRAN (R 4.2.1)
+ ps                     1.7.1    2022-06-18 [1] CRAN (R 4.2.1)
+ purrr                * 0.3.4    2020-04-17 [1] CRAN (R 4.2.1)
+ R6                     2.5.1    2021-08-19 [1] CRAN (R 4.2.1)
+ RANN                   2.6.1    2019-01-08 [1] CRAN (R 4.2.1)
+ RColorBrewer           1.1-3    2022-04-03 [1] CRAN (R 4.2.1)
+ Rcpp                   1.0.9    2022-07-08 [1] CRAN (R 4.2.1)
+ RcppAnnoy              0.0.19   2021-07-30 [1] CRAN (R 4.2.1)
+ RCurl                  1.98-1.8 2022-07-30 [1] CRAN (R 4.2.1)
+ readr                * 2.1.2    2022-01-30 [1] CRAN (R 4.2.1)
+ readxl                 1.4.1    2022-08-17 [1] CRAN (R 4.2.1)
+ remotes                2.4.2    2021-11-30 [1] CRAN (R 4.2.1)
+ reprex                 2.0.2    2022-08-17 [1] CRAN (R 4.2.1)
+ reshape2               1.4.4    2020-04-09 [3] CRAN (R 4.2.0)
+ reticulate             1.26     2022-08-31 [1] CRAN (R 4.2.1)
+ rgeos                  0.5-9    2021-12-15 [3] CRAN (R 4.2.0)
+ rlang                  1.0.6    2022-09-24 [1] CRAN (R 4.2.1)
+ ROCR                   1.0-11   2020-05-02 [1] CRAN (R 4.2.1)
+ rpart                  4.1.16   2022-01-24 [1] CRAN (R 4.2.1)
+ rprojroot              2.0.3    2022-04-02 [1] CRAN (R 4.2.1)
+ Rsamtools              2.13.4   2022-08-22 [1] Bioconductor
+ Rtsne                  0.16     2022-04-17 [1] CRAN (R 4.2.1)
+ rvest                  1.0.3    2022-08-19 [1] CRAN (R 4.2.1)
+ S4Vectors              0.35.4   2022-09-18 [1] Bioconductor
+ scales                 1.2.1    2022-08-20 [1] CRAN (R 4.2.1)
+ scattermore            0.8      2022-02-14 [1] CRAN (R 4.2.1)
+ sctransform            0.3.5    2022-09-21 [1] CRAN (R 4.2.1)
+ seqinr                 4.2-16   2022-05-19 [1] CRAN (R 4.2.1)
+ sessioninfo          * 1.2.2    2021-12-06 [1] CRAN (R 4.2.1)
+ Seurat               * 4.2.0    2022-09-21 [1] CRAN (R 4.2.1)
+ SeuratObject         * 4.1.2    2022-09-20 [1] CRAN (R 4.2.1)
+ shazam               * 1.1.2    2022-10-01 [2] CRAN (R 4.2.1)
+ shiny                  1.7.2    2022-07-19 [1] CRAN (R 4.2.1)
+ sp                   * 1.5-0    2022-06-05 [1] CRAN (R 4.2.1)
+ spatstat.core          2.4-4    2022-05-18 [1] CRAN (R 4.2.1)
+ spatstat.data          3.0-0    2022-10-21 [1] CRAN (R 4.2.1)
+ spatstat.geom          3.0-6    2023-01-30 [1] CRAN (R 4.2.1)
+ spatstat.random        3.1-3    2023-01-25 [1] CRAN (R 4.2.1)
+ spatstat.sparse        3.0-0    2022-10-21 [1] CRAN (R 4.2.1)
+ spatstat.utils         3.0-1    2022-10-19 [1] CRAN (R 4.2.1)
+ stringi                1.7.6    2021-11-29 [3] CRAN (R 4.2.0)
+ stringr              * 1.4.1    2022-08-20 [3] CRAN (R 4.2.1)
+ SummarizedExperiment   1.27.3   2022-09-13 [1] Bioconductor
+ survival               3.4-0    2022-08-09 [1] CRAN (R 4.2.1)
+ tensor                 1.5      2012-05-05 [1] CRAN (R 4.2.1)
+ tibble               * 3.1.8    2022-07-22 [1] CRAN (R 4.2.1)
+ tidyr                * 1.2.1    2022-09-08 [1] CRAN (R 4.2.1)
+ tidyselect             1.1.2    2022-02-21 [1] CRAN (R 4.2.1)
+ tidyverse            * 1.3.2    2022-07-18 [1] CRAN (R 4.2.1)
+ tzdb                   0.3.0    2022-03-28 [1] CRAN (R 4.2.1)
+ urlchecker             1.0.1    2021-11-30 [1] CRAN (R 4.2.1)
+ usethis              * 2.1.6    2022-05-25 [1] CRAN (R 4.2.1)
+ utf8                   1.2.2    2021-07-24 [1] CRAN (R 4.2.1)
+ uwot                   0.1.14   2022-08-22 [1] CRAN (R 4.2.1)
+ vctrs                  0.5.2    2023-01-23 [1] CRAN (R 4.2.1)
+ viridisLite            0.4.1    2022-08-22 [1] CRAN (R 4.2.1)
+ vroom                * 1.5.7    2021-11-30 [1] CRAN (R 4.2.1)
+ withr                  2.5.0    2022-03-03 [1] CRAN (R 4.2.1)
+ xml2                   1.3.3    2021-11-30 [1] CRAN (R 4.2.1)
+ xtable                 1.8-4    2019-04-21 [1] CRAN (R 4.2.1)
+ XVector                0.37.1   2022-08-25 [1] Bioconductor
+ yaml                   2.3.5    2022-02-21 [1] CRAN (R 4.2.1)
+ zlibbioc               1.43.0   2022-04-26 [1] Bioconductor
+ zoo                    1.8-11   2022-09-17 [1] CRAN (R 4.2.1)
+
+ [1] /sysapps/cluster/software/Anaconda3/2022.05/envs/R-4.2.1/lib64/R/site-library
+ [2] /nethome/spanglerab/R/x86_64-conda-linux-gnu-library/4.2
+ [3] /sysapps/cluster/software/Anaconda3/2022.05/envs/R-4.2.1/lib/R/library
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+**** Job ends ****
+Tue May 16 13:33:28 EDT 2023
+**** Job starts ****
+Tue May 16 19:23:57 EDT 2023
+**** LOCUS info ****
+User: spanglerab
+Job id: 21698435
+Job name: vdj1
+Hostname: ai-hpcn105.cm.cluster
+/hpcdata/vrc_vip/Abby/Experiment_316_2
+── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
+✔ ggplot2 3.4.0      ✔ purrr   0.3.4 
+✔ tibble  3.1.8      ✔ dplyr   1.0.10
+✔ tidyr   1.2.1      ✔ stringr 1.4.1 
+✔ readr   2.1.2      ✔ forcats 0.5.2 
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+Attaching SeuratObject
+Attaching sp
+Warning message:
+In fun(libname, pkgname) :
+  rgeos: versions of GEOS runtime 3.9.1-CAPI-1.14.2
+and GEOS at installation 3.9.1dev-CAPI-1.14.1differ
+------------------------------------------------------------------------------
+You have loaded plyr after dplyr - this is likely to cause problems.
+If you need functions from both plyr and dplyr, please load plyr first, then dplyr:
+library(plyr); library(dplyr)
+------------------------------------------------------------------------------
+
+Attaching package: ‘plyr’
+
+The following objects are masked from ‘package:dplyr’:
+
+    arrange, count, desc, failwith, id, mutate, rename, summarise,
+    summarize
+
+The following object is masked from ‘package:purrr’:
+
+    compact
+
+As of v1.0.0 the AIRR Rearrangement schema is now the default file format.
+A description of the standard is available at https://docs.airr-community.org.
+The legacy Change-O format is supported through arguments to each function
+that allow the input column names to be explicitly defined.
+As of v1.0.0 the AIRR Rearrangement schema is now the default file format.
+A description of the standard is available at https://docs.airr-community.org.
+The legacy Change-O format is supported through arguments to each function
+that allow the input column names to be explicitly defined.
+Loading required package: usethis
+New names:
+• `` -> `...1`
+Rows: 144753 Columns: 32
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (23): barcode, contig_id, chain, v_gene, d_gene, j_gene, c_gene, fwr1, f...
+dbl  (5): ...1, length, reads, umis, exact_subclonotype_id
+lgl  (4): is_cell, high_confidence, full_length, productive
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+New names:
+• `` -> `...1`
+Rows: 53059 Columns: 32
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (23): barcode, contig_id, chain, v_gene, d_gene, j_gene, c_gene, fwr1, f...
+dbl  (5): ...1, length, reads, umis, exact_subclonotype_id
+lgl  (4): is_cell, high_confidence, full_length, productive
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 3402 Columns: 31
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (23): barcode, contig_id, chain, v_gene, d_gene, j_gene, c_gene, fwr1, f...
+dbl  (4): length, reads, umis, exact_subclonotype_id
+lgl  (4): is_cell, high_confidence, full_length, productive
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 58915 Columns: 37
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr (16): sequence_id, sequence, v_call, d_call, j_call, sequence_alignment,...
+dbl (17): junction_length, np1_length, np2_length, v_sequence_start, v_seque...
+lgl  (4): rev_comp, productive, stop_codon, vj_in_frame
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 20276 Columns: 37
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr (16): sequence_id, sequence, v_call, d_call, j_call, sequence_alignment,...
+dbl (17): junction_length, np1_length, np2_length, v_sequence_start, v_seque...
+lgl  (4): rev_comp, productive, stop_codon, vj_in_frame
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 1097 Columns: 37
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr (16): sequence_id, sequence, v_call, d_call, j_call, sequence_alignment,...
+dbl (17): junction_length, np1_length, np2_length, v_sequence_start, v_seque...
+lgl  (4): rev_comp, productive, stop_codon, vj_in_frame
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 74968 Columns: 36
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr (13): sequence_id, sequence, v_call, j_call, sequence_alignment, germlin...
+dbl (12): junction_length, np1_length, v_sequence_start, v_sequence_end, v_g...
+lgl (11): rev_comp, productive, d_call, d_cigar, stop_codon, vj_in_frame, np...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 27201 Columns: 36
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr (13): sequence_id, sequence, v_call, j_call, sequence_alignment, germlin...
+dbl (12): junction_length, np1_length, v_sequence_start, v_sequence_end, v_g...
+lgl (11): rev_comp, productive, d_call, d_cigar, stop_codon, vj_in_frame, np...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 1478 Columns: 36
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr (13): sequence_id, sequence, v_call, j_call, sequence_alignment, germlin...
+dbl (12): junction_length, np1_length, v_sequence_start, v_sequence_end, v_g...
+lgl (11): rev_comp, productive, d_call, d_cigar, stop_codon, vj_in_frame, np...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+            sequence_id                sequence                rev_comp 
+                      0                       0                       0 
+             productive                  v_call                  d_call 
+                      0                       0                    1204 
+                 j_call      sequence_alignment      germline_alignment 
+                      0                       0                      17 
+               junction             junction_aa                 v_cigar 
+                      0                       0                       0 
+                d_cigar                 j_cigar              stop_codon 
+                   1204                       0                       0 
+            vj_in_frame                   locus         junction_length 
+                      0                       0                       0 
+             np1_length              np2_length        v_sequence_start 
+                      0                    1204                       0 
+         v_sequence_end        v_germline_start          v_germline_end 
+                      0                       0                       0 
+       d_sequence_start          d_sequence_end        d_germline_start 
+                   1204                    1204                    1204 
+         d_germline_end        j_sequence_start          j_sequence_end 
+                   1204                       0                       0 
+       j_germline_start          j_germline_end                    CELL 
+                      0                       0                       0 
+                 c_call         consensus_count                clone_id 
+                   1874                       0                       0 
+              umi_count                 barcode                  length 
+                      0                       0                       0 
+                  chain                  v_gene                  d_gene 
+                      0                       0                   64893 
+                 j_gene                  c_gene                    fwr1 
+                      0                    1874                       8 
+                fwr1_nt                    cdr1                 cdr1_nt 
+                      8                       8                       8 
+                   fwr2                 fwr2_nt                    cdr2 
+                      8                       8                       8 
+                cdr2_nt                    fwr3                 fwr3_nt 
+                      8                       8                       8 
+                   cdr3                 cdr3_nt                    fwr4 
+                      0                       0                       8 
+                fwr4_nt                   reads                    umis 
+                      8                       0                       0 
+  exact_subclonotype_id                length.l                 chain.l 
+                      8                       0                       0 
+               v_gene.l                d_gene.l                j_gene.l 
+                      0                   80288                       0 
+               c_gene.l                  fwr1.l               fwr1_nt.l 
+                    520                      38                      38 
+                 cdr1.l               cdr1_nt.l                  fwr2.l 
+                     38                      38                      38 
+              fwr2_nt.l                  cdr2.l               cdr2_nt.l 
+                     38                      38                      38 
+                 fwr3.l               fwr3_nt.l                  cdr3.l 
+                     38                      38                       0 
+              cdr3_nt.l                  fwr4.l               fwr4_nt.l 
+                      0                      38                      38 
+                reads.l                  umis.l exact_subclonotype_id.l 
+                      0                       0                      38 
+                   orig          LC_sequence_id             LC_sequence 
+                      0                       0                       0 
+            LC_rev_comp           LC_productive               LC_v_call 
+                      0                       0                       0 
+              LC_j_call   LC_sequence_alignment   LC_germline_alignment 
+                      0                       0                       0 
+            LC_junction          LC_junction_aa              LC_v_cigar 
+                      0                       0                       0 
+             LC_j_cigar           LC_stop_codon          LC_vj_in_frame 
+                      0                       0                       0 
+               LC_locus      LC_junction_length           LC_np1_length 
+                      0                       0                       0 
+          LC_np2_length     LC_v_sequence_start       LC_v_sequence_end 
+                  80288                       0                       0 
+    LC_v_germline_start       LC_v_germline_end     LC_j_sequence_start 
+                      0                       0                       0 
+      LC_j_sequence_end     LC_j_germline_start       LC_j_germline_end 
+                      0                       0                       0 
+              LC_c_call      LC_consensus_count            LC_umi_count 
+                    520                       0                       0 
+                mu_freq 
+                      0 
+[1] "Reproducibility information:"
+[1] "2023-05-16 19:30:25 EDT"
+   user  system elapsed 
+362.454  15.304 388.406 
+─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
+ setting  value
+ version  R version 4.2.1 (2022-06-23)
+ os       Red Hat Enterprise Linux Server 7.9 (Maipo)
+ system   x86_64, linux-gnu
+ ui       X11
+ language (EN)
+ collate  en_US.UTF-8
+ ctype    en_US.UTF-8
+ tz       America/Detroit
+ date     2023-05-16
+ pandoc   NA
+
+─ Packages ───────────────────────────────────────────────────────────────────────────────────────────────────────────
+ package              * version  date (UTC) lib source
+ abind                  1.4-5    2016-07-21 [1] CRAN (R 4.2.1)
+ ade4                   1.7-19   2022-04-19 [1] CRAN (R 4.2.1)
+ airr                   1.4.1    2022-08-28 [2] CRAN (R 4.2.1)
+ alakazam             * 1.2.1    2022-09-20 [2] CRAN (R 4.2.1)
+ ape                    5.6-2    2022-03-02 [1] CRAN (R 4.2.1)
+ assertthat             0.2.1    2019-03-21 [1] CRAN (R 4.2.1)
+ backports              1.4.1    2021-12-13 [1] CRAN (R 4.2.1)
+ Biobase                2.57.1   2022-05-19 [1] Bioconductor
+ BiocGenerics           0.43.4   2022-09-11 [1] Bioconductor
+ BiocParallel           1.31.12  2022-08-02 [1] Bioconductor
+ Biostrings             2.65.6   2022-09-09 [1] Bioconductor
+ bit                    4.0.4    2020-08-04 [1] CRAN (R 4.2.1)
+ bit64                  4.0.5    2020-08-30 [1] CRAN (R 4.2.1)
+ bitops                 1.0-7    2021-04-24 [1] CRAN (R 4.2.1)
+ broom                  1.0.1    2022-08-29 [1] CRAN (R 4.2.1)
+ cachem                 1.0.6    2021-08-19 [1] CRAN (R 4.2.1)
+ callr                  3.7.2    2022-08-22 [1] CRAN (R 4.2.1)
+ cellranger             1.1.0    2016-07-27 [1] CRAN (R 4.2.1)
+ cli                    3.4.1    2022-09-23 [1] CRAN (R 4.2.1)
+ cluster                2.1.4    2022-08-22 [1] CRAN (R 4.2.1)
+ codetools              0.2-18   2020-11-04 [1] CRAN (R 4.2.1)
+ colorspace             2.0-3    2022-02-21 [1] CRAN (R 4.2.1)
+ cowplot                1.1.1    2020-12-30 [1] CRAN (R 4.2.1)
+ crayon                 1.5.1    2022-03-26 [1] CRAN (R 4.2.1)
+ data.table             1.14.2   2021-09-27 [1] CRAN (R 4.2.1)
+ DBI                    1.1.3    2022-06-18 [1] CRAN (R 4.2.1)
+ dbplyr                 2.2.1    2022-06-27 [1] CRAN (R 4.2.1)
+ DelayedArray           0.23.2   2022-09-14 [1] Bioconductor
+ deldir                 1.0-6    2021-10-23 [1] CRAN (R 4.2.1)
+ devtools             * 2.4.5    2022-10-11 [1] CRAN (R 4.2.1)
+ digest                 0.6.29   2021-12-01 [1] CRAN (R 4.2.1)
+ diptest                0.76-0   2021-05-04 [1] CRAN (R 4.2.1)
+ doParallel             1.0.17   2022-02-07 [1] CRAN (R 4.2.1)
+ dplyr                * 1.0.10   2022-09-01 [1] CRAN (R 4.2.1)
+ ellipsis               0.3.2    2021-04-29 [1] CRAN (R 4.2.1)
+ fansi                  1.0.3    2022-03-24 [1] CRAN (R 4.2.1)
+ fastmap                1.1.0    2021-01-25 [1] CRAN (R 4.2.1)
+ fitdistrplus           1.1-8    2022-03-10 [1] CRAN (R 4.2.1)
+ forcats              * 0.5.2    2022-08-19 [1] CRAN (R 4.2.1)
+ foreach                1.5.2    2022-02-02 [1] CRAN (R 4.2.1)
+ fs                     1.5.2    2021-12-08 [1] CRAN (R 4.2.1)
+ future                 1.28.0   2022-09-02 [1] CRAN (R 4.2.1)
+ future.apply           1.9.1    2022-09-07 [1] CRAN (R 4.2.1)
+ gargle                 1.2.1    2022-09-08 [1] CRAN (R 4.2.1)
+ generics               0.1.3    2022-07-05 [1] CRAN (R 4.2.1)
+ GenomeInfoDb           1.34.9   2023-02-02 [1] Bioconductor
+ GenomeInfoDbData       1.2.8    2022-09-23 [1] Bioconductor
+ GenomicAlignments      1.33.1   2022-07-22 [1] Bioconductor
+ GenomicRanges          1.49.1   2022-08-18 [1] Bioconductor
+ ggplot2              * 3.4.0    2022-11-04 [1] CRAN (R 4.2.1)
+ ggrepel                0.9.1    2021-01-15 [1] CRAN (R 4.2.1)
+ ggridges               0.5.3    2021-01-08 [1] CRAN (R 4.2.1)
+ globals                0.16.1   2022-08-28 [1] CRAN (R 4.2.1)
+ glue                   1.6.2    2022-02-24 [1] CRAN (R 4.2.1)
+ goftest                1.2-3    2021-10-07 [1] CRAN (R 4.2.1)
+ googledrive            2.0.0    2021-07-08 [1] CRAN (R 4.2.1)
+ googlesheets4          1.0.1    2022-08-13 [1] CRAN (R 4.2.1)
+ gridExtra              2.3      2017-09-09 [1] CRAN (R 4.2.1)
+ gtable                 0.3.1    2022-09-01 [1] CRAN (R 4.2.1)
+ haven                  2.5.1    2022-08-22 [1] CRAN (R 4.2.1)
+ here                   1.0.1    2020-12-13 [1] CRAN (R 4.2.1)
+ hms                    1.1.2    2022-08-19 [1] CRAN (R 4.2.1)
+ htmltools              0.5.3    2022-07-18 [1] CRAN (R 4.2.1)
+ htmlwidgets            1.5.4    2021-09-08 [1] CRAN (R 4.2.1)
+ httpuv                 1.6.6    2022-09-08 [1] CRAN (R 4.2.1)
+ httr                   1.4.4    2022-08-17 [1] CRAN (R 4.2.1)
+ ica                    1.0-3    2022-07-08 [1] CRAN (R 4.2.1)
+ igraph                 1.3.5    2022-09-22 [1] CRAN (R 4.2.1)
+ IRanges                2.31.2   2022-08-18 [1] Bioconductor
+ irlba                  2.3.5    2021-12-06 [1] CRAN (R 4.2.1)
+ iterators              1.0.14   2022-02-05 [1] CRAN (R 4.2.1)
+ jsonlite               1.8.0    2022-02-22 [1] CRAN (R 4.2.1)
+ KernSmooth             2.23-20  2021-05-03 [1] CRAN (R 4.2.1)
+ later                  1.3.0    2021-08-18 [1] CRAN (R 4.2.1)
+ lattice                0.20-45  2021-09-22 [1] CRAN (R 4.2.1)
+ lazyeval               0.2.2    2019-03-15 [1] CRAN (R 4.2.1)
+ leiden                 0.4.3    2022-09-10 [1] CRAN (R 4.2.1)
+ lifecycle              1.0.3    2022-10-07 [1] CRAN (R 4.2.1)
+ listenv                0.8.0    2019-12-05 [1] CRAN (R 4.2.1)
+ lmtest                 0.9-40   2022-03-21 [1] CRAN (R 4.2.1)
+ lubridate              1.8.0    2021-10-07 [1] CRAN (R 4.2.1)
+ magrittr               2.0.3    2022-03-30 [1] CRAN (R 4.2.1)
+ MASS                   7.3-58.1 2022-08-03 [1] CRAN (R 4.2.1)
+ Matrix                 1.5-1    2022-09-13 [1] CRAN (R 4.2.1)
+ MatrixGenerics         1.9.1    2022-06-24 [1] Bioconductor
+ matrixStats            0.62.0   2022-04-19 [1] CRAN (R 4.2.1)
+ memoise                2.0.1    2021-11-26 [1] CRAN (R 4.2.1)
+ mgcv                   1.8-40   2022-03-29 [1] CRAN (R 4.2.1)
+ mime                   0.12     2021-09-28 [1] CRAN (R 4.2.1)
+ miniUI                 0.1.1.1  2018-05-18 [1] CRAN (R 4.2.1)
+ modelr                 0.1.9    2022-08-19 [1] CRAN (R 4.2.1)
+ munsell                0.5.0    2018-06-12 [1] CRAN (R 4.2.1)
+ nlme                   3.1-159  2022-08-09 [1] CRAN (R 4.2.1)
+ parallelly             1.32.1   2022-07-21 [1] CRAN (R 4.2.1)
+ patchwork              1.1.2    2022-08-19 [1] CRAN (R 4.2.1)
+ pbapply                1.5-0    2021-09-16 [1] CRAN (R 4.2.1)
+ pillar                 1.8.1    2022-08-19 [1] CRAN (R 4.2.1)
+ pkgbuild               1.3.1    2021-12-20 [1] CRAN (R 4.2.1)
+ pkgconfig              2.0.3    2019-09-22 [1] CRAN (R 4.2.1)
+ pkgload                1.3.0    2022-06-27 [1] CRAN (R 4.2.1)
+ plotly                 4.10.0   2021-10-09 [1] CRAN (R 4.2.1)
+ plyr                 * 1.8.7    2022-03-24 [1] CRAN (R 4.2.1)
+ png                    0.1-7    2013-12-03 [1] CRAN (R 4.2.1)
+ polyclip               1.10-0   2019-03-14 [3] CRAN (R 4.2.0)
+ prettyunits            1.1.1    2020-01-24 [1] CRAN (R 4.2.1)
+ processx               3.7.0    2022-07-07 [1] CRAN (R 4.2.1)
+ profvis                0.3.7    2020-11-02 [1] CRAN (R 4.2.1)
+ progress               1.2.2    2019-05-16 [1] CRAN (R 4.2.1)
+ progressr              0.11.0   2022-09-02 [1] CRAN (R 4.2.1)
+ promises               1.2.0.1  2021-02-11 [1] CRAN (R 4.2.1)
+ ps                     1.7.1    2022-06-18 [1] CRAN (R 4.2.1)
+ purrr                * 0.3.4    2020-04-17 [1] CRAN (R 4.2.1)
+ R6                     2.5.1    2021-08-19 [1] CRAN (R 4.2.1)
+ RANN                   2.6.1    2019-01-08 [1] CRAN (R 4.2.1)
+ RColorBrewer           1.1-3    2022-04-03 [1] CRAN (R 4.2.1)
+ Rcpp                   1.0.9    2022-07-08 [1] CRAN (R 4.2.1)
+ RcppAnnoy              0.0.19   2021-07-30 [1] CRAN (R 4.2.1)
+ RCurl                  1.98-1.8 2022-07-30 [1] CRAN (R 4.2.1)
+ readr                * 2.1.2    2022-01-30 [1] CRAN (R 4.2.1)
+ readxl                 1.4.1    2022-08-17 [1] CRAN (R 4.2.1)
+ remotes                2.4.2    2021-11-30 [1] CRAN (R 4.2.1)
+ reprex                 2.0.2    2022-08-17 [1] CRAN (R 4.2.1)
+ reshape2               1.4.4    2020-04-09 [3] CRAN (R 4.2.0)
+ reticulate             1.26     2022-08-31 [1] CRAN (R 4.2.1)
+ rgeos                  0.5-9    2021-12-15 [3] CRAN (R 4.2.0)
+ rlang                  1.0.6    2022-09-24 [1] CRAN (R 4.2.1)
+ ROCR                   1.0-11   2020-05-02 [1] CRAN (R 4.2.1)
+ rpart                  4.1.16   2022-01-24 [1] CRAN (R 4.2.1)
+ rprojroot              2.0.3    2022-04-02 [1] CRAN (R 4.2.1)
+ Rsamtools              2.13.4   2022-08-22 [1] Bioconductor
+ Rtsne                  0.16     2022-04-17 [1] CRAN (R 4.2.1)
+ rvest                  1.0.3    2022-08-19 [1] CRAN (R 4.2.1)
+ S4Vectors              0.35.4   2022-09-18 [1] Bioconductor
+ scales                 1.2.1    2022-08-20 [1] CRAN (R 4.2.1)
+ scattermore            0.8      2022-02-14 [1] CRAN (R 4.2.1)
+ sctransform            0.3.5    2022-09-21 [1] CRAN (R 4.2.1)
+ seqinr                 4.2-16   2022-05-19 [1] CRAN (R 4.2.1)
+ sessioninfo          * 1.2.2    2021-12-06 [1] CRAN (R 4.2.1)
+ Seurat               * 4.2.0    2022-09-21 [1] CRAN (R 4.2.1)
+ SeuratObject         * 4.1.2    2022-09-20 [1] CRAN (R 4.2.1)
+ shazam               * 1.1.2    2022-10-01 [2] CRAN (R 4.2.1)
+ shiny                  1.7.2    2022-07-19 [1] CRAN (R 4.2.1)
+ sp                   * 1.5-0    2022-06-05 [1] CRAN (R 4.2.1)
+ spatstat.core          2.4-4    2022-05-18 [1] CRAN (R 4.2.1)
+ spatstat.data          3.0-0    2022-10-21 [1] CRAN (R 4.2.1)
+ spatstat.geom          3.0-6    2023-01-30 [1] CRAN (R 4.2.1)
+ spatstat.random        3.1-3    2023-01-25 [1] CRAN (R 4.2.1)
+ spatstat.sparse        3.0-0    2022-10-21 [1] CRAN (R 4.2.1)
+ spatstat.utils         3.0-1    2022-10-19 [1] CRAN (R 4.2.1)
+ stringi                1.7.6    2021-11-29 [3] CRAN (R 4.2.0)
+ stringr              * 1.4.1    2022-08-20 [3] CRAN (R 4.2.1)
+ SummarizedExperiment   1.27.3   2022-09-13 [1] Bioconductor
+ survival               3.4-0    2022-08-09 [1] CRAN (R 4.2.1)
+ tensor                 1.5      2012-05-05 [1] CRAN (R 4.2.1)
+ tibble               * 3.1.8    2022-07-22 [1] CRAN (R 4.2.1)
+ tidyr                * 1.2.1    2022-09-08 [1] CRAN (R 4.2.1)
+ tidyselect             1.1.2    2022-02-21 [1] CRAN (R 4.2.1)
+ tidyverse            * 1.3.2    2022-07-18 [1] CRAN (R 4.2.1)
+ tzdb                   0.3.0    2022-03-28 [1] CRAN (R 4.2.1)
+ urlchecker             1.0.1    2021-11-30 [1] CRAN (R 4.2.1)
+ usethis              * 2.1.6    2022-05-25 [1] CRAN (R 4.2.1)
+ utf8                   1.2.2    2021-07-24 [1] CRAN (R 4.2.1)
+ uwot                   0.1.14   2022-08-22 [1] CRAN (R 4.2.1)
+ vctrs                  0.5.2    2023-01-23 [1] CRAN (R 4.2.1)
+ viridisLite            0.4.1    2022-08-22 [1] CRAN (R 4.2.1)
+ vroom                * 1.5.7    2021-11-30 [1] CRAN (R 4.2.1)
+ withr                  2.5.0    2022-03-03 [1] CRAN (R 4.2.1)
+ xml2                   1.3.3    2021-11-30 [1] CRAN (R 4.2.1)
+ xtable                 1.8-4    2019-04-21 [1] CRAN (R 4.2.1)
+ XVector                0.37.1   2022-08-25 [1] Bioconductor
+ yaml                   2.3.5    2022-02-21 [1] CRAN (R 4.2.1)
+ zlibbioc               1.43.0   2022-04-26 [1] Bioconductor
+ zoo                    1.8-11   2022-09-17 [1] CRAN (R 4.2.1)
+
+ [1] /sysapps/cluster/software/Anaconda3/2022.05/envs/R-4.2.1/lib64/R/site-library
+ [2] /nethome/spanglerab/R/x86_64-conda-linux-gnu-library/4.2
+ [3] /sysapps/cluster/software/Anaconda3/2022.05/envs/R-4.2.1/lib/R/library
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+**** Job ends ****
+Tue May 16 19:30:27 EDT 2023
+**** Job starts ****
+Thu Aug 17 10:32:57 EDT 2023
+**** LOCUS info ****
+User: spanglerab
+Job id: 22313768
+Job name: vdj1
+Hostname: ai-hpcn018.cm.cluster
+/hpcdata/vrc_vip/Abby/Experiment_316
+── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
+✔ ggplot2 3.4.0      ✔ purrr   0.3.4 
+✔ tibble  3.1.8      ✔ dplyr   1.0.10
+✔ tidyr   1.2.1      ✔ stringr 1.5.0 
+✔ readr   2.1.2      ✔ forcats 0.5.2 
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+Attaching SeuratObject
+Attaching sp
+Warning message:
+In fun(libname, pkgname) :
+  rgeos: versions of GEOS runtime 3.9.1-CAPI-1.14.2
+and GEOS at installation 3.9.1dev-CAPI-1.14.1differ
+------------------------------------------------------------------------------
+You have loaded plyr after dplyr - this is likely to cause problems.
+If you need functions from both plyr and dplyr, please load plyr first, then dplyr:
+library(plyr); library(dplyr)
+------------------------------------------------------------------------------
+
+Attaching package: ‘plyr’
+
+The following objects are masked from ‘package:dplyr’:
+
+    arrange, count, desc, failwith, id, mutate, rename, summarise,
+    summarize
+
+The following object is masked from ‘package:purrr’:
+
+    compact
+
+As of v1.0.0 the AIRR Rearrangement schema is now the default file format.
+A description of the standard is available at https://docs.airr-community.org.
+The legacy Change-O format is supported through arguments to each function
+that allow the input column names to be explicitly defined.
+As of v1.0.0 the AIRR Rearrangement schema is now the default file format.
+A description of the standard is available at https://docs.airr-community.org.
+The legacy Change-O format is supported through arguments to each function
+that allow the input column names to be explicitly defined.
+Loading required package: usethis
+New names:
+• `` -> `...1`
+Rows: 150621 Columns: 32
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (23): barcode, contig_id, chain, v_gene, d_gene, j_gene, c_gene, fwr1, f...
+dbl  (5): ...1, length, reads, umis, exact_subclonotype_id
+lgl  (4): is_cell, high_confidence, full_length, productive
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+New names:
+• `` -> `...1`
+Rows: 48648 Columns: 32
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (23): barcode, contig_id, chain, v_gene, d_gene, j_gene, c_gene, fwr1, f...
+dbl  (5): ...1, length, reads, umis, exact_subclonotype_id
+lgl  (4): is_cell, high_confidence, full_length, productive
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 8777 Columns: 31
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (23): barcode, contig_id, chain, v_gene, d_gene, j_gene, c_gene, fwr1, f...
+dbl  (4): length, reads, umis, exact_subclonotype_id
+lgl  (4): is_cell, high_confidence, full_length, productive
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 61496 Columns: 37
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr (16): sequence_id, sequence, v_call, d_call, j_call, sequence_alignment,...
+dbl (17): junction_length, np1_length, np2_length, v_sequence_start, v_seque...
+lgl  (4): rev_comp, productive, stop_codon, vj_in_frame
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 21626 Columns: 37
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr (16): sequence_id, sequence, v_call, d_call, j_call, sequence_alignment,...
+dbl (17): junction_length, np1_length, np2_length, v_sequence_start, v_seque...
+lgl  (4): rev_comp, productive, stop_codon, vj_in_frame
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 3293 Columns: 37
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr (16): sequence_id, sequence, v_call, d_call, j_call, sequence_alignment,...
+dbl (17): junction_length, np1_length, np2_length, v_sequence_start, v_seque...
+lgl  (4): rev_comp, productive, stop_codon, vj_in_frame
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 78150 Columns: 36
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr (13): sequence_id, sequence, v_call, j_call, sequence_alignment, germlin...
+dbl (12): junction_length, np1_length, v_sequence_start, v_sequence_end, v_g...
+lgl (11): rev_comp, productive, d_call, d_cigar, stop_codon, vj_in_frame, np...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 26075 Columns: 36
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr (13): sequence_id, sequence, v_call, j_call, sequence_alignment, germlin...
+dbl (12): junction_length, np1_length, v_sequence_start, v_sequence_end, v_g...
+lgl (11): rev_comp, productive, d_call, d_cigar, stop_codon, vj_in_frame, np...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 4518 Columns: 36
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr (13): sequence_id, sequence, v_call, j_call, sequence_alignment, germlin...
+dbl (12): junction_length, np1_length, v_sequence_start, v_sequence_end, v_g...
+lgl (11): rev_comp, productive, d_call, d_cigar, stop_codon, vj_in_frame, np...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+            sequence_id                sequence                rev_comp 
+                      0                       0                       0 
+             productive                  v_call                  d_call 
+                      0                       0                    1319 
+                 j_call      sequence_alignment      germline_alignment 
+                      0                       0                       6 
+               junction             junction_aa                 v_cigar 
+                      0                       0                       0 
+                d_cigar                 j_cigar              stop_codon 
+                   1319                       0                       0 
+            vj_in_frame                   locus                  c_call 
+                      0                       0                    1622 
+        junction_length              np1_length              np2_length 
+                      0                       0                    1319 
+       v_sequence_start          v_sequence_end        v_germline_start 
+                      0                       0                       0 
+         v_germline_end        d_sequence_start          d_sequence_end 
+                      0                    1319                    1319 
+       d_germline_start          d_germline_end        j_sequence_start 
+                   1319                    1319                       0 
+         j_sequence_end        j_germline_start          j_germline_end 
+                      0                       0                       0 
+                   CELL         consensus_count               umi_count 
+                      0                       0                       0 
+               clone_id                 barcode                  length 
+                      0                       0                       0 
+                  chain                  v_gene                  d_gene 
+                      0                       0                   70084 
+                 j_gene                  c_gene                    fwr1 
+                      0                    1623                       9 
+                fwr1_nt                    cdr1                 cdr1_nt 
+                      9                       9                       9 
+                   fwr2                 fwr2_nt                    cdr2 
+                      9                       9                       9 
+                cdr2_nt                    fwr3                 fwr3_nt 
+                      9                       9                       9 
+                   cdr3                 cdr3_nt                    fwr4 
+                      0                       0                       9 
+                fwr4_nt                   reads                    umis 
+                      9                       0                       0 
+  exact_subclonotype_id                length.l                 chain.l 
+                      9                       0                       0 
+               v_gene.l                d_gene.l                j_gene.l 
+                      0                   86415                       0 
+               c_gene.l                  fwr1.l               fwr1_nt.l 
+                    331                       3                       3 
+                 cdr1.l               cdr1_nt.l                  fwr2.l 
+                      3                       3                       3 
+              fwr2_nt.l                  cdr2.l               cdr2_nt.l 
+                      3                       3                       3 
+                 fwr3.l               fwr3_nt.l                  cdr3.l 
+                      3                       3                       0 
+              cdr3_nt.l                  fwr4.l               fwr4_nt.l 
+                      0                       3                       3 
+                reads.l                  umis.l exact_subclonotype_id.l 
+                      0                       0                       3 
+                   orig          LC_sequence_id             LC_sequence 
+                      0                       0                       0 
+            LC_rev_comp           LC_productive               LC_v_call 
+                      0                       0                       0 
+              LC_j_call   LC_sequence_alignment   LC_germline_alignment 
+                      0                       0                       0 
+            LC_junction          LC_junction_aa              LC_v_cigar 
+                      0                       0                       0 
+             LC_j_cigar           LC_stop_codon          LC_vj_in_frame 
+                      0                       0                       0 
+               LC_locus               LC_c_call      LC_junction_length 
+                      0                     331                       0 
+          LC_np1_length           LC_np2_length     LC_v_sequence_start 
+                      0                   86415                       0 
+      LC_v_sequence_end     LC_v_germline_start       LC_v_germline_end 
+                      0                       0                       0 
+    LC_j_sequence_start       LC_j_sequence_end     LC_j_germline_start 
+                      0                       0                       0 
+      LC_j_germline_end      LC_consensus_count            LC_umi_count 
+                      0                       0                       0 
+                mu_freq 
+                      0 
+[1] "Reproducibility information:"
+[1] "2023-08-17 10:40:04 EDT"
+   user  system elapsed 
+399.476  21.325 426.809 
+─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
+ setting  value
+ version  R version 4.2.1 (2022-06-23)
+ os       Red Hat Enterprise Linux Server 7.9 (Maipo)
+ system   x86_64, linux-gnu
+ ui       X11
+ language (EN)
+ collate  en_US.UTF-8
+ ctype    en_US.UTF-8
+ tz       America/Detroit
+ date     2023-08-17
+ pandoc   NA
+
+─ Packages ───────────────────────────────────────────────────────────────────────────────────────────────────────────
+ package              * version  date (UTC) lib source
+ abind                  1.4-5    2016-07-21 [1] CRAN (R 4.2.1)
+ ade4                   1.7-19   2022-04-19 [1] CRAN (R 4.2.1)
+ airr                   1.4.1    2022-08-28 [2] CRAN (R 4.2.1)
+ alakazam             * 1.2.1    2022-09-20 [2] CRAN (R 4.2.1)
+ ape                    5.6-2    2022-03-02 [1] CRAN (R 4.2.1)
+ assertthat             0.2.1    2019-03-21 [1] CRAN (R 4.2.1)
+ backports              1.4.1    2021-12-13 [1] CRAN (R 4.2.1)
+ Biobase                2.57.1   2022-05-19 [1] Bioconductor
+ BiocGenerics           0.43.4   2022-09-11 [1] Bioconductor
+ BiocParallel           1.31.12  2022-08-02 [1] Bioconductor
+ Biostrings             2.65.6   2022-09-09 [1] Bioconductor
+ bit                    4.0.4    2020-08-04 [1] CRAN (R 4.2.1)
+ bit64                  4.0.5    2020-08-30 [1] CRAN (R 4.2.1)
+ bitops                 1.0-7    2021-04-24 [1] CRAN (R 4.2.1)
+ broom                  1.0.1    2022-08-29 [1] CRAN (R 4.2.1)
+ cachem                 1.0.6    2021-08-19 [1] CRAN (R 4.2.1)
+ callr                  3.7.2    2022-08-22 [1] CRAN (R 4.2.1)
+ cellranger             1.1.0    2016-07-27 [1] CRAN (R 4.2.1)
+ cli                    3.4.1    2022-09-23 [1] CRAN (R 4.2.1)
+ cluster                2.1.4    2022-08-22 [1] CRAN (R 4.2.1)
+ codetools              0.2-18   2020-11-04 [1] CRAN (R 4.2.1)
+ colorspace             2.0-3    2022-02-21 [1] CRAN (R 4.2.1)
+ cowplot                1.1.1    2020-12-30 [1] CRAN (R 4.2.1)
+ crayon                 1.5.1    2022-03-26 [1] CRAN (R 4.2.1)
+ data.table             1.14.2   2021-09-27 [1] CRAN (R 4.2.1)
+ DBI                    1.1.3    2022-06-18 [1] CRAN (R 4.2.1)
+ dbplyr                 2.2.1    2022-06-27 [1] CRAN (R 4.2.1)
+ DelayedArray           0.23.2   2022-09-14 [1] Bioconductor
+ deldir                 1.0-6    2021-10-23 [1] CRAN (R 4.2.1)
+ devtools             * 2.4.5    2022-10-11 [1] CRAN (R 4.2.1)
+ digest                 0.6.29   2021-12-01 [1] CRAN (R 4.2.1)
+ diptest                0.76-0   2021-05-04 [1] CRAN (R 4.2.1)
+ doParallel             1.0.17   2022-02-07 [1] CRAN (R 4.2.1)
+ dplyr                * 1.0.10   2022-09-01 [1] CRAN (R 4.2.1)
+ ellipsis               0.3.2    2021-04-29 [1] CRAN (R 4.2.1)
+ fansi                  1.0.3    2022-03-24 [1] CRAN (R 4.2.1)
+ fastmap                1.1.0    2021-01-25 [1] CRAN (R 4.2.1)
+ fitdistrplus           1.1-8    2022-03-10 [1] CRAN (R 4.2.1)
+ forcats              * 0.5.2    2022-08-19 [1] CRAN (R 4.2.1)
+ foreach                1.5.2    2022-02-02 [1] CRAN (R 4.2.1)
+ fs                     1.5.2    2021-12-08 [1] CRAN (R 4.2.1)
+ future                 1.28.0   2022-09-02 [1] CRAN (R 4.2.1)
+ future.apply           1.9.1    2022-09-07 [1] CRAN (R 4.2.1)
+ gargle                 1.2.1    2022-09-08 [1] CRAN (R 4.2.1)
+ generics               0.1.3    2022-07-05 [1] CRAN (R 4.2.1)
+ GenomeInfoDb           1.34.9   2023-02-02 [1] Bioconductor
+ GenomeInfoDbData       1.2.8    2022-09-23 [1] Bioconductor
+ GenomicAlignments      1.33.1   2022-07-22 [1] Bioconductor
+ GenomicRanges          1.49.1   2022-08-18 [1] Bioconductor
+ ggplot2              * 3.4.0    2022-11-04 [1] CRAN (R 4.2.1)
+ ggrepel                0.9.1    2021-01-15 [1] CRAN (R 4.2.1)
+ ggridges               0.5.3    2021-01-08 [1] CRAN (R 4.2.1)
+ globals                0.16.1   2022-08-28 [1] CRAN (R 4.2.1)
+ glue                   1.6.2    2022-02-24 [1] CRAN (R 4.2.1)
+ goftest                1.2-3    2021-10-07 [1] CRAN (R 4.2.1)
+ googledrive            2.0.0    2021-07-08 [1] CRAN (R 4.2.1)
+ googlesheets4          1.0.1    2022-08-13 [1] CRAN (R 4.2.1)
+ gridExtra              2.3      2017-09-09 [1] CRAN (R 4.2.1)
+ gtable                 0.3.1    2022-09-01 [1] CRAN (R 4.2.1)
+ haven                  2.5.1    2022-08-22 [1] CRAN (R 4.2.1)
+ here                   1.0.1    2020-12-13 [1] CRAN (R 4.2.1)
+ hms                    1.1.2    2022-08-19 [1] CRAN (R 4.2.1)
+ htmltools              0.5.3    2022-07-18 [1] CRAN (R 4.2.1)
+ htmlwidgets            1.5.4    2021-09-08 [1] CRAN (R 4.2.1)
+ httpuv                 1.6.6    2022-09-08 [1] CRAN (R 4.2.1)
+ httr                   1.4.4    2022-08-17 [1] CRAN (R 4.2.1)
+ ica                    1.0-3    2022-07-08 [1] CRAN (R 4.2.1)
+ igraph                 1.3.5    2022-09-22 [1] CRAN (R 4.2.1)
+ IRanges                2.31.2   2022-08-18 [1] Bioconductor
+ irlba                  2.3.5    2021-12-06 [1] CRAN (R 4.2.1)
+ iterators              1.0.14   2022-02-05 [1] CRAN (R 4.2.1)
+ jsonlite               1.8.0    2022-02-22 [1] CRAN (R 4.2.1)
+ KernSmooth             2.23-20  2021-05-03 [1] CRAN (R 4.2.1)
+ later                  1.3.0    2021-08-18 [1] CRAN (R 4.2.1)
+ lattice                0.20-45  2021-09-22 [1] CRAN (R 4.2.1)
+ lazyeval               0.2.2    2019-03-15 [1] CRAN (R 4.2.1)
+ leiden                 0.4.3    2022-09-10 [1] CRAN (R 4.2.1)
+ lifecycle              1.0.3    2022-10-07 [1] CRAN (R 4.2.1)
+ listenv                0.8.0    2019-12-05 [1] CRAN (R 4.2.1)
+ lmtest                 0.9-40   2022-03-21 [1] CRAN (R 4.2.1)
+ lubridate              1.8.0    2021-10-07 [1] CRAN (R 4.2.1)
+ magrittr               2.0.3    2022-03-30 [1] CRAN (R 4.2.1)
+ MASS                   7.3-58.1 2022-08-03 [1] CRAN (R 4.2.1)
+ Matrix                 1.5-1    2022-09-13 [1] CRAN (R 4.2.1)
+ MatrixGenerics         1.9.1    2022-06-24 [1] Bioconductor
+ matrixStats            0.62.0   2022-04-19 [1] CRAN (R 4.2.1)
+ memoise                2.0.1    2021-11-26 [1] CRAN (R 4.2.1)
+ mgcv                   1.8-40   2022-03-29 [1] CRAN (R 4.2.1)
+ mime                   0.12     2021-09-28 [1] CRAN (R 4.2.1)
+ miniUI                 0.1.1.1  2018-05-18 [1] CRAN (R 4.2.1)
+ modelr                 0.1.9    2022-08-19 [1] CRAN (R 4.2.1)
+ munsell                0.5.0    2018-06-12 [1] CRAN (R 4.2.1)
+ nlme                   3.1-159  2022-08-09 [1] CRAN (R 4.2.1)
+ parallelly             1.32.1   2022-07-21 [1] CRAN (R 4.2.1)
+ patchwork              1.1.2    2022-08-19 [1] CRAN (R 4.2.1)
+ pbapply                1.5-0    2021-09-16 [1] CRAN (R 4.2.1)
+ pillar                 1.8.1    2022-08-19 [1] CRAN (R 4.2.1)
+ pkgbuild               1.3.1    2021-12-20 [1] CRAN (R 4.2.1)
+ pkgconfig              2.0.3    2019-09-22 [1] CRAN (R 4.2.1)
+ pkgload                1.3.0    2022-06-27 [1] CRAN (R 4.2.1)
+ plotly                 4.10.0   2021-10-09 [1] CRAN (R 4.2.1)
+ plyr                 * 1.8.7    2022-03-24 [1] CRAN (R 4.2.1)
+ png                    0.1-7    2013-12-03 [1] CRAN (R 4.2.1)
+ polyclip               1.10-0   2019-03-14 [3] CRAN (R 4.2.0)
+ prettyunits            1.1.1    2020-01-24 [1] CRAN (R 4.2.1)
+ processx               3.7.0    2022-07-07 [1] CRAN (R 4.2.1)
+ profvis                0.3.7    2020-11-02 [1] CRAN (R 4.2.1)
+ progress               1.2.2    2019-05-16 [1] CRAN (R 4.2.1)
+ progressr              0.11.0   2022-09-02 [1] CRAN (R 4.2.1)
+ promises               1.2.0.1  2021-02-11 [1] CRAN (R 4.2.1)
+ ps                     1.7.1    2022-06-18 [1] CRAN (R 4.2.1)
+ purrr                * 0.3.4    2020-04-17 [1] CRAN (R 4.2.1)
+ R6                     2.5.1    2021-08-19 [1] CRAN (R 4.2.1)
+ RANN                   2.6.1    2019-01-08 [1] CRAN (R 4.2.1)
+ RColorBrewer           1.1-3    2022-04-03 [1] CRAN (R 4.2.1)
+ Rcpp                   1.0.9    2022-07-08 [1] CRAN (R 4.2.1)
+ RcppAnnoy              0.0.19   2021-07-30 [1] CRAN (R 4.2.1)
+ RCurl                  1.98-1.8 2022-07-30 [1] CRAN (R 4.2.1)
+ readr                * 2.1.2    2022-01-30 [1] CRAN (R 4.2.1)
+ readxl                 1.4.1    2022-08-17 [1] CRAN (R 4.2.1)
+ remotes                2.4.2    2021-11-30 [1] CRAN (R 4.2.1)
+ reprex                 2.0.2    2022-08-17 [1] CRAN (R 4.2.1)
+ reshape2               1.4.4    2020-04-09 [3] CRAN (R 4.2.0)
+ reticulate             1.26     2022-08-31 [1] CRAN (R 4.2.1)
+ rgeos                  0.5-9    2021-12-15 [3] CRAN (R 4.2.0)
+ rlang                  1.0.6    2022-09-24 [1] CRAN (R 4.2.1)
+ ROCR                   1.0-11   2020-05-02 [1] CRAN (R 4.2.1)
+ rpart                  4.1.16   2022-01-24 [1] CRAN (R 4.2.1)
+ rprojroot              2.0.3    2022-04-02 [1] CRAN (R 4.2.1)
+ Rsamtools              2.13.4   2022-08-22 [1] Bioconductor
+ Rtsne                  0.16     2022-04-17 [1] CRAN (R 4.2.1)
+ rvest                  1.0.3    2022-08-19 [1] CRAN (R 4.2.1)
+ S4Vectors              0.35.4   2022-09-18 [1] Bioconductor
+ scales                 1.2.1    2022-08-20 [1] CRAN (R 4.2.1)
+ scattermore            0.8      2022-02-14 [1] CRAN (R 4.2.1)
+ sctransform            0.3.5    2022-09-21 [1] CRAN (R 4.2.1)
+ seqinr                 4.2-16   2022-05-19 [1] CRAN (R 4.2.1)
+ sessioninfo          * 1.2.2    2021-12-06 [1] CRAN (R 4.2.1)
+ Seurat               * 4.2.0    2022-09-21 [1] CRAN (R 4.2.1)
+ SeuratObject         * 4.1.2    2022-09-20 [1] CRAN (R 4.2.1)
+ shazam               * 1.1.2    2022-10-01 [2] CRAN (R 4.2.1)
+ shiny                  1.7.2    2022-07-19 [1] CRAN (R 4.2.1)
+ sp                   * 1.5-0    2022-06-05 [1] CRAN (R 4.2.1)
+ spatstat.core          2.4-4    2022-05-18 [1] CRAN (R 4.2.1)
+ spatstat.data          3.0-0    2022-10-21 [1] CRAN (R 4.2.1)
+ spatstat.geom          3.0-6    2023-01-30 [1] CRAN (R 4.2.1)
+ spatstat.random        3.1-3    2023-01-25 [1] CRAN (R 4.2.1)
+ spatstat.sparse        3.0-0    2022-10-21 [1] CRAN (R 4.2.1)
+ spatstat.utils         3.0-1    2022-10-19 [1] CRAN (R 4.2.1)
+ stringi                1.7.6    2021-11-29 [3] CRAN (R 4.2.0)
+ stringr              * 1.5.0    2022-12-02 [2] CRAN (R 4.2.1)
+ SummarizedExperiment   1.27.3   2022-09-13 [1] Bioconductor
+ survival               3.4-0    2022-08-09 [1] CRAN (R 4.2.1)
+ tensor                 1.5      2012-05-05 [1] CRAN (R 4.2.1)
+ tibble               * 3.1.8    2022-07-22 [1] CRAN (R 4.2.1)
+ tidyr                * 1.2.1    2022-09-08 [1] CRAN (R 4.2.1)
+ tidyselect             1.1.2    2022-02-21 [1] CRAN (R 4.2.1)
+ tidyverse            * 1.3.2    2022-07-18 [1] CRAN (R 4.2.1)
+ tzdb                   0.3.0    2022-03-28 [1] CRAN (R 4.2.1)
+ urlchecker             1.0.1    2021-11-30 [1] CRAN (R 4.2.1)
+ usethis              * 2.1.6    2022-05-25 [1] CRAN (R 4.2.1)
+ utf8                   1.2.2    2021-07-24 [1] CRAN (R 4.2.1)
+ uwot                   0.1.14   2022-08-22 [1] CRAN (R 4.2.1)
+ vctrs                  0.5.2    2023-01-23 [1] CRAN (R 4.2.1)
+ viridisLite            0.4.1    2022-08-22 [1] CRAN (R 4.2.1)
+ vroom                * 1.5.7    2021-11-30 [1] CRAN (R 4.2.1)
+ withr                  2.5.0    2022-03-03 [1] CRAN (R 4.2.1)
+ xml2                   1.3.3    2021-11-30 [1] CRAN (R 4.2.1)
+ xtable                 1.8-4    2019-04-21 [1] CRAN (R 4.2.1)
+ XVector                0.37.1   2022-08-25 [1] Bioconductor
+ yaml                   2.3.5    2022-02-21 [1] CRAN (R 4.2.1)
+ zlibbioc               1.43.0   2022-04-26 [1] Bioconductor
+ zoo                    1.8-12   2023-04-13 [1] CRAN (R 4.2.1)
+
+ [1] /sysapps/cluster/software/Anaconda3/2022.05/envs/R-4.2.1/lib64/R/site-library
+ [2] /nethome/spanglerab/R/x86_64-conda-linux-gnu-library/4.2
+ [3] /sysapps/cluster/software/Anaconda3/2022.05/envs/R-4.2.1/lib/R/library
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+**** Job ends ****
+Thu Aug 17 10:40:05 EDT 2023
+**** Job starts ****
+Fri Aug 18 13:31:43 EDT 2023
+**** LOCUS info ****
+User: spanglerab
+Job id: 22316635
+Job name: vdj1
+Hostname: ai-hpcn027.cm.cluster
+/hpcdata/vrc_vip/Abby/Experiment_316
+── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
+✔ ggplot2 3.4.0      ✔ purrr   0.3.4 
+✔ tibble  3.1.8      ✔ dplyr   1.0.10
+✔ tidyr   1.2.1      ✔ stringr 1.5.0 
+✔ readr   2.1.2      ✔ forcats 0.5.2 
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+Attaching SeuratObject
+Attaching sp
+Warning message:
+In fun(libname, pkgname) :
+  rgeos: versions of GEOS runtime 3.9.1-CAPI-1.14.2
+and GEOS at installation 3.9.1dev-CAPI-1.14.1differ
+------------------------------------------------------------------------------
+You have loaded plyr after dplyr - this is likely to cause problems.
+If you need functions from both plyr and dplyr, please load plyr first, then dplyr:
+library(plyr); library(dplyr)
+------------------------------------------------------------------------------
+
+Attaching package: ‘plyr’
+
+The following objects are masked from ‘package:dplyr’:
+
+    arrange, count, desc, failwith, id, mutate, rename, summarise,
+    summarize
+
+The following object is masked from ‘package:purrr’:
+
+    compact
+
+As of v1.0.0 the AIRR Rearrangement schema is now the default file format.
+A description of the standard is available at https://docs.airr-community.org.
+The legacy Change-O format is supported through arguments to each function
+that allow the input column names to be explicitly defined.
+As of v1.0.0 the AIRR Rearrangement schema is now the default file format.
+A description of the standard is available at https://docs.airr-community.org.
+The legacy Change-O format is supported through arguments to each function
+that allow the input column names to be explicitly defined.
+Loading required package: usethis
+New names:
+• `` -> `...1`
+Rows: 150621 Columns: 32
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (23): barcode, contig_id, chain, v_gene, d_gene, j_gene, c_gene, fwr1, f...
+dbl  (5): ...1, length, reads, umis, exact_subclonotype_id
+lgl  (4): is_cell, high_confidence, full_length, productive
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+New names:
+• `` -> `...1`
+Rows: 48648 Columns: 32
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (23): barcode, contig_id, chain, v_gene, d_gene, j_gene, c_gene, fwr1, f...
+dbl  (5): ...1, length, reads, umis, exact_subclonotype_id
+lgl  (4): is_cell, high_confidence, full_length, productive
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 8777 Columns: 31
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (23): barcode, contig_id, chain, v_gene, d_gene, j_gene, c_gene, fwr1, f...
+dbl  (4): length, reads, umis, exact_subclonotype_id
+lgl  (4): is_cell, high_confidence, full_length, productive
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 61496 Columns: 37
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr (16): sequence_id, sequence, v_call, d_call, j_call, sequence_alignment,...
+dbl (17): junction_length, np1_length, np2_length, v_sequence_start, v_seque...
+lgl  (4): rev_comp, productive, stop_codon, vj_in_frame
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 21626 Columns: 37
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr (16): sequence_id, sequence, v_call, d_call, j_call, sequence_alignment,...
+dbl (17): junction_length, np1_length, np2_length, v_sequence_start, v_seque...
+lgl  (4): rev_comp, productive, stop_codon, vj_in_frame
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 3293 Columns: 37
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr (16): sequence_id, sequence, v_call, d_call, j_call, sequence_alignment,...
+dbl (17): junction_length, np1_length, np2_length, v_sequence_start, v_seque...
+lgl  (4): rev_comp, productive, stop_codon, vj_in_frame
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 78150 Columns: 36
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr (13): sequence_id, sequence, v_call, j_call, sequence_alignment, germlin...
+dbl (12): junction_length, np1_length, v_sequence_start, v_sequence_end, v_g...
+lgl (11): rev_comp, productive, d_call, d_cigar, stop_codon, vj_in_frame, np...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 26075 Columns: 36
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr (13): sequence_id, sequence, v_call, j_call, sequence_alignment, germlin...
+dbl (12): junction_length, np1_length, v_sequence_start, v_sequence_end, v_g...
+lgl (11): rev_comp, productive, d_call, d_cigar, stop_codon, vj_in_frame, np...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 4518 Columns: 36
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr (13): sequence_id, sequence, v_call, j_call, sequence_alignment, germlin...
+dbl (12): junction_length, np1_length, v_sequence_start, v_sequence_end, v_g...
+lgl (11): rev_comp, productive, d_call, d_cigar, stop_codon, vj_in_frame, np...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+            sequence_id                sequence                rev_comp 
+                      0                       0                       0 
+             productive                  v_call                  d_call 
+                      0                       0                    1319 
+                 j_call      sequence_alignment      germline_alignment 
+                      0                       0                       6 
+               junction             junction_aa                 v_cigar 
+                      0                       0                       0 
+                d_cigar                 j_cigar              stop_codon 
+                   1319                       0                       0 
+            vj_in_frame                   locus                  c_call 
+                      0                       0                    1622 
+        junction_length              np1_length              np2_length 
+                      0                       0                    1319 
+       v_sequence_start          v_sequence_end        v_germline_start 
+                      0                       0                       0 
+         v_germline_end        d_sequence_start          d_sequence_end 
+                      0                    1319                    1319 
+       d_germline_start          d_germline_end        j_sequence_start 
+                   1319                    1319                       0 
+         j_sequence_end        j_germline_start          j_germline_end 
+                      0                       0                       0 
+                   CELL         consensus_count               umi_count 
+                      0                       0                       0 
+               clone_id                 barcode                  length 
+                      0                       0                       0 
+                  chain                  v_gene                  d_gene 
+                      0                       0                   70084 
+                 j_gene                  c_gene                    fwr1 
+                      0                    1623                       9 
+                fwr1_nt                    cdr1                 cdr1_nt 
+                      9                       9                       9 
+                   fwr2                 fwr2_nt                    cdr2 
+                      9                       9                       9 
+                cdr2_nt                    fwr3                 fwr3_nt 
+                      9                       9                       9 
+                   cdr3                 cdr3_nt                    fwr4 
+                      0                       0                       9 
+                fwr4_nt                   reads                    umis 
+                      9                       0                       0 
+  exact_subclonotype_id                length.l                 chain.l 
+                      9                       0                       0 
+               v_gene.l                d_gene.l                j_gene.l 
+                      0                   86415                       0 
+               c_gene.l                  fwr1.l               fwr1_nt.l 
+                    331                       3                       3 
+                 cdr1.l               cdr1_nt.l                  fwr2.l 
+                      3                       3                       3 
+              fwr2_nt.l                  cdr2.l               cdr2_nt.l 
+                      3                       3                       3 
+                 fwr3.l               fwr3_nt.l                  cdr3.l 
+                      3                       3                       0 
+              cdr3_nt.l                  fwr4.l               fwr4_nt.l 
+                      0                       3                       3 
+                reads.l                  umis.l exact_subclonotype_id.l 
+                      0                       0                       3 
+                   orig          LC_sequence_id             LC_sequence 
+                      0                       0                       0 
+            LC_rev_comp           LC_productive               LC_v_call 
+                      0                       0                       0 
+              LC_j_call   LC_sequence_alignment   LC_germline_alignment 
+                      0                       0                       0 
+            LC_junction          LC_junction_aa              LC_v_cigar 
+                      0                       0                       0 
+             LC_j_cigar           LC_stop_codon          LC_vj_in_frame 
+                      0                       0                       0 
+               LC_locus               LC_c_call      LC_junction_length 
+                      0                     331                       0 
+          LC_np1_length           LC_np2_length     LC_v_sequence_start 
+                      0                   86415                       0 
+      LC_v_sequence_end     LC_v_germline_start       LC_v_germline_end 
+                      0                       0                       0 
+    LC_j_sequence_start       LC_j_sequence_end     LC_j_germline_start 
+                      0                       0                       0 
+      LC_j_germline_end      LC_consensus_count            LC_umi_count 
+                      0                       0                       0 
+                mu_freq 
+                      0 
+[1] "Reproducibility information:"
+[1] "2023-08-18 13:38:36 EDT"
+   user  system elapsed 
+389.402  10.432 412.463 
+─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
+ setting  value
+ version  R version 4.2.1 (2022-06-23)
+ os       Red Hat Enterprise Linux Server 7.9 (Maipo)
+ system   x86_64, linux-gnu
+ ui       X11
+ language (EN)
+ collate  en_US.UTF-8
+ ctype    en_US.UTF-8
+ tz       America/Detroit
+ date     2023-08-18
+ pandoc   NA
+
+─ Packages ───────────────────────────────────────────────────────────────────────────────────────────────────────────
+ package              * version  date (UTC) lib source
+ abind                  1.4-5    2016-07-21 [1] CRAN (R 4.2.1)
+ ade4                   1.7-19   2022-04-19 [1] CRAN (R 4.2.1)
+ airr                   1.4.1    2022-08-28 [2] CRAN (R 4.2.1)
+ alakazam             * 1.2.1    2022-09-20 [2] CRAN (R 4.2.1)
+ ape                    5.6-2    2022-03-02 [1] CRAN (R 4.2.1)
+ assertthat             0.2.1    2019-03-21 [1] CRAN (R 4.2.1)
+ backports              1.4.1    2021-12-13 [1] CRAN (R 4.2.1)
+ Biobase                2.57.1   2022-05-19 [1] Bioconductor
+ BiocGenerics           0.43.4   2022-09-11 [1] Bioconductor
+ BiocParallel           1.31.12  2022-08-02 [1] Bioconductor
+ Biostrings             2.65.6   2022-09-09 [1] Bioconductor
+ bit                    4.0.4    2020-08-04 [1] CRAN (R 4.2.1)
+ bit64                  4.0.5    2020-08-30 [1] CRAN (R 4.2.1)
+ bitops                 1.0-7    2021-04-24 [1] CRAN (R 4.2.1)
+ broom                  1.0.1    2022-08-29 [1] CRAN (R 4.2.1)
+ cachem                 1.0.6    2021-08-19 [1] CRAN (R 4.2.1)
+ callr                  3.7.2    2022-08-22 [1] CRAN (R 4.2.1)
+ cellranger             1.1.0    2016-07-27 [1] CRAN (R 4.2.1)
+ cli                    3.4.1    2022-09-23 [1] CRAN (R 4.2.1)
+ cluster                2.1.4    2022-08-22 [1] CRAN (R 4.2.1)
+ codetools              0.2-18   2020-11-04 [1] CRAN (R 4.2.1)
+ colorspace             2.0-3    2022-02-21 [1] CRAN (R 4.2.1)
+ cowplot                1.1.1    2020-12-30 [1] CRAN (R 4.2.1)
+ crayon                 1.5.1    2022-03-26 [1] CRAN (R 4.2.1)
+ data.table             1.14.2   2021-09-27 [1] CRAN (R 4.2.1)
+ DBI                    1.1.3    2022-06-18 [1] CRAN (R 4.2.1)
+ dbplyr                 2.2.1    2022-06-27 [1] CRAN (R 4.2.1)
+ DelayedArray           0.23.2   2022-09-14 [1] Bioconductor
+ deldir                 1.0-6    2021-10-23 [1] CRAN (R 4.2.1)
+ devtools             * 2.4.5    2022-10-11 [1] CRAN (R 4.2.1)
+ digest                 0.6.29   2021-12-01 [1] CRAN (R 4.2.1)
+ diptest                0.76-0   2021-05-04 [1] CRAN (R 4.2.1)
+ doParallel             1.0.17   2022-02-07 [1] CRAN (R 4.2.1)
+ dplyr                * 1.0.10   2022-09-01 [1] CRAN (R 4.2.1)
+ ellipsis               0.3.2    2021-04-29 [1] CRAN (R 4.2.1)
+ fansi                  1.0.3    2022-03-24 [1] CRAN (R 4.2.1)
+ fastmap                1.1.0    2021-01-25 [1] CRAN (R 4.2.1)
+ fitdistrplus           1.1-8    2022-03-10 [1] CRAN (R 4.2.1)
+ forcats              * 0.5.2    2022-08-19 [1] CRAN (R 4.2.1)
+ foreach                1.5.2    2022-02-02 [1] CRAN (R 4.2.1)
+ fs                     1.5.2    2021-12-08 [1] CRAN (R 4.2.1)
+ future                 1.28.0   2022-09-02 [1] CRAN (R 4.2.1)
+ future.apply           1.9.1    2022-09-07 [1] CRAN (R 4.2.1)
+ gargle                 1.2.1    2022-09-08 [1] CRAN (R 4.2.1)
+ generics               0.1.3    2022-07-05 [1] CRAN (R 4.2.1)
+ GenomeInfoDb           1.34.9   2023-02-02 [1] Bioconductor
+ GenomeInfoDbData       1.2.8    2022-09-23 [1] Bioconductor
+ GenomicAlignments      1.33.1   2022-07-22 [1] Bioconductor
+ GenomicRanges          1.49.1   2022-08-18 [1] Bioconductor
+ ggplot2              * 3.4.0    2022-11-04 [1] CRAN (R 4.2.1)
+ ggrepel                0.9.1    2021-01-15 [1] CRAN (R 4.2.1)
+ ggridges               0.5.3    2021-01-08 [1] CRAN (R 4.2.1)
+ globals                0.16.1   2022-08-28 [1] CRAN (R 4.2.1)
+ glue                   1.6.2    2022-02-24 [1] CRAN (R 4.2.1)
+ goftest                1.2-3    2021-10-07 [1] CRAN (R 4.2.1)
+ googledrive            2.0.0    2021-07-08 [1] CRAN (R 4.2.1)
+ googlesheets4          1.0.1    2022-08-13 [1] CRAN (R 4.2.1)
+ gridExtra              2.3      2017-09-09 [1] CRAN (R 4.2.1)
+ gtable                 0.3.1    2022-09-01 [1] CRAN (R 4.2.1)
+ haven                  2.5.1    2022-08-22 [1] CRAN (R 4.2.1)
+ here                   1.0.1    2020-12-13 [1] CRAN (R 4.2.1)
+ hms                    1.1.2    2022-08-19 [1] CRAN (R 4.2.1)
+ htmltools              0.5.3    2022-07-18 [1] CRAN (R 4.2.1)
+ htmlwidgets            1.5.4    2021-09-08 [1] CRAN (R 4.2.1)
+ httpuv                 1.6.6    2022-09-08 [1] CRAN (R 4.2.1)
+ httr                   1.4.4    2022-08-17 [1] CRAN (R 4.2.1)
+ ica                    1.0-3    2022-07-08 [1] CRAN (R 4.2.1)
+ igraph                 1.3.5    2022-09-22 [1] CRAN (R 4.2.1)
+ IRanges                2.31.2   2022-08-18 [1] Bioconductor
+ irlba                  2.3.5    2021-12-06 [1] CRAN (R 4.2.1)
+ iterators              1.0.14   2022-02-05 [1] CRAN (R 4.2.1)
+ jsonlite               1.8.0    2022-02-22 [1] CRAN (R 4.2.1)
+ KernSmooth             2.23-20  2021-05-03 [1] CRAN (R 4.2.1)
+ later                  1.3.0    2021-08-18 [1] CRAN (R 4.2.1)
+ lattice                0.20-45  2021-09-22 [1] CRAN (R 4.2.1)
+ lazyeval               0.2.2    2019-03-15 [1] CRAN (R 4.2.1)
+ leiden                 0.4.3    2022-09-10 [1] CRAN (R 4.2.1)
+ lifecycle              1.0.3    2022-10-07 [1] CRAN (R 4.2.1)
+ listenv                0.8.0    2019-12-05 [1] CRAN (R 4.2.1)
+ lmtest                 0.9-40   2022-03-21 [1] CRAN (R 4.2.1)
+ lubridate              1.8.0    2021-10-07 [1] CRAN (R 4.2.1)
+ magrittr               2.0.3    2022-03-30 [1] CRAN (R 4.2.1)
+ MASS                   7.3-58.1 2022-08-03 [1] CRAN (R 4.2.1)
+ Matrix                 1.5-1    2022-09-13 [1] CRAN (R 4.2.1)
+ MatrixGenerics         1.9.1    2022-06-24 [1] Bioconductor
+ matrixStats            0.62.0   2022-04-19 [1] CRAN (R 4.2.1)
+ memoise                2.0.1    2021-11-26 [1] CRAN (R 4.2.1)
+ mgcv                   1.8-40   2022-03-29 [1] CRAN (R 4.2.1)
+ mime                   0.12     2021-09-28 [1] CRAN (R 4.2.1)
+ miniUI                 0.1.1.1  2018-05-18 [1] CRAN (R 4.2.1)
+ modelr                 0.1.9    2022-08-19 [1] CRAN (R 4.2.1)
+ munsell                0.5.0    2018-06-12 [1] CRAN (R 4.2.1)
+ nlme                   3.1-159  2022-08-09 [1] CRAN (R 4.2.1)
+ parallelly             1.32.1   2022-07-21 [1] CRAN (R 4.2.1)
+ patchwork              1.1.2    2022-08-19 [1] CRAN (R 4.2.1)
+ pbapply                1.5-0    2021-09-16 [1] CRAN (R 4.2.1)
+ pillar                 1.8.1    2022-08-19 [1] CRAN (R 4.2.1)
+ pkgbuild               1.3.1    2021-12-20 [1] CRAN (R 4.2.1)
+ pkgconfig              2.0.3    2019-09-22 [1] CRAN (R 4.2.1)
+ pkgload                1.3.0    2022-06-27 [1] CRAN (R 4.2.1)
+ plotly                 4.10.0   2021-10-09 [1] CRAN (R 4.2.1)
+ plyr                 * 1.8.7    2022-03-24 [1] CRAN (R 4.2.1)
+ png                    0.1-7    2013-12-03 [1] CRAN (R 4.2.1)
+ polyclip               1.10-0   2019-03-14 [3] CRAN (R 4.2.0)
+ prettyunits            1.1.1    2020-01-24 [1] CRAN (R 4.2.1)
+ processx               3.7.0    2022-07-07 [1] CRAN (R 4.2.1)
+ profvis                0.3.7    2020-11-02 [1] CRAN (R 4.2.1)
+ progress               1.2.2    2019-05-16 [1] CRAN (R 4.2.1)
+ progressr              0.11.0   2022-09-02 [1] CRAN (R 4.2.1)
+ promises               1.2.0.1  2021-02-11 [1] CRAN (R 4.2.1)
+ ps                     1.7.1    2022-06-18 [1] CRAN (R 4.2.1)
+ purrr                * 0.3.4    2020-04-17 [1] CRAN (R 4.2.1)
+ R6                     2.5.1    2021-08-19 [1] CRAN (R 4.2.1)
+ RANN                   2.6.1    2019-01-08 [1] CRAN (R 4.2.1)
+ RColorBrewer           1.1-3    2022-04-03 [1] CRAN (R 4.2.1)
+ Rcpp                   1.0.9    2022-07-08 [1] CRAN (R 4.2.1)
+ RcppAnnoy              0.0.19   2021-07-30 [1] CRAN (R 4.2.1)
+ RCurl                  1.98-1.8 2022-07-30 [1] CRAN (R 4.2.1)
+ readr                * 2.1.2    2022-01-30 [1] CRAN (R 4.2.1)
+ readxl                 1.4.1    2022-08-17 [1] CRAN (R 4.2.1)
+ remotes                2.4.2    2021-11-30 [1] CRAN (R 4.2.1)
+ reprex                 2.0.2    2022-08-17 [1] CRAN (R 4.2.1)
+ reshape2               1.4.4    2020-04-09 [3] CRAN (R 4.2.0)
+ reticulate             1.26     2022-08-31 [1] CRAN (R 4.2.1)
+ rgeos                  0.5-9    2021-12-15 [3] CRAN (R 4.2.0)
+ rlang                  1.0.6    2022-09-24 [1] CRAN (R 4.2.1)
+ ROCR                   1.0-11   2020-05-02 [1] CRAN (R 4.2.1)
+ rpart                  4.1.16   2022-01-24 [1] CRAN (R 4.2.1)
+ rprojroot              2.0.3    2022-04-02 [1] CRAN (R 4.2.1)
+ Rsamtools              2.13.4   2022-08-22 [1] Bioconductor
+ Rtsne                  0.16     2022-04-17 [1] CRAN (R 4.2.1)
+ rvest                  1.0.3    2022-08-19 [1] CRAN (R 4.2.1)
+ S4Vectors              0.35.4   2022-09-18 [1] Bioconductor
+ scales                 1.2.1    2022-08-20 [1] CRAN (R 4.2.1)
+ scattermore            0.8      2022-02-14 [1] CRAN (R 4.2.1)
+ sctransform            0.3.5    2022-09-21 [1] CRAN (R 4.2.1)
+ seqinr                 4.2-16   2022-05-19 [1] CRAN (R 4.2.1)
+ sessioninfo          * 1.2.2    2021-12-06 [1] CRAN (R 4.2.1)
+ Seurat               * 4.2.0    2022-09-21 [1] CRAN (R 4.2.1)
+ SeuratObject         * 4.1.2    2022-09-20 [1] CRAN (R 4.2.1)
+ shazam               * 1.1.2    2022-10-01 [2] CRAN (R 4.2.1)
+ shiny                  1.7.2    2022-07-19 [1] CRAN (R 4.2.1)
+ sp                   * 1.5-0    2022-06-05 [1] CRAN (R 4.2.1)
+ spatstat.core          2.4-4    2022-05-18 [1] CRAN (R 4.2.1)
+ spatstat.data          3.0-0    2022-10-21 [1] CRAN (R 4.2.1)
+ spatstat.geom          3.0-6    2023-01-30 [1] CRAN (R 4.2.1)
+ spatstat.random        3.1-3    2023-01-25 [1] CRAN (R 4.2.1)
+ spatstat.sparse        3.0-0    2022-10-21 [1] CRAN (R 4.2.1)
+ spatstat.utils         3.0-1    2022-10-19 [1] CRAN (R 4.2.1)
+ stringi                1.7.6    2021-11-29 [3] CRAN (R 4.2.0)
+ stringr              * 1.5.0    2022-12-02 [2] CRAN (R 4.2.1)
+ SummarizedExperiment   1.27.3   2022-09-13 [1] Bioconductor
+ survival               3.4-0    2022-08-09 [1] CRAN (R 4.2.1)
+ tensor                 1.5      2012-05-05 [1] CRAN (R 4.2.1)
+ tibble               * 3.1.8    2022-07-22 [1] CRAN (R 4.2.1)
+ tidyr                * 1.2.1    2022-09-08 [1] CRAN (R 4.2.1)
+ tidyselect             1.1.2    2022-02-21 [1] CRAN (R 4.2.1)
+ tidyverse            * 1.3.2    2022-07-18 [1] CRAN (R 4.2.1)
+ tzdb                   0.3.0    2022-03-28 [1] CRAN (R 4.2.1)
+ urlchecker             1.0.1    2021-11-30 [1] CRAN (R 4.2.1)
+ usethis              * 2.1.6    2022-05-25 [1] CRAN (R 4.2.1)
+ utf8                   1.2.2    2021-07-24 [1] CRAN (R 4.2.1)
+ uwot                   0.1.14   2022-08-22 [1] CRAN (R 4.2.1)
+ vctrs                  0.5.2    2023-01-23 [1] CRAN (R 4.2.1)
+ viridisLite            0.4.1    2022-08-22 [1] CRAN (R 4.2.1)
+ vroom                * 1.5.7    2021-11-30 [1] CRAN (R 4.2.1)
+ withr                  2.5.0    2022-03-03 [1] CRAN (R 4.2.1)
+ xml2                   1.3.3    2021-11-30 [1] CRAN (R 4.2.1)
+ xtable                 1.8-4    2019-04-21 [1] CRAN (R 4.2.1)
+ XVector                0.37.1   2022-08-25 [1] Bioconductor
+ yaml                   2.3.5    2022-02-21 [1] CRAN (R 4.2.1)
+ zlibbioc               1.43.0   2022-04-26 [1] Bioconductor
+ zoo                    1.8-12   2023-04-13 [1] CRAN (R 4.2.1)
+
+ [1] /sysapps/cluster/software/Anaconda3/2022.05/envs/R-4.2.1/lib64/R/site-library
+ [2] /nethome/spanglerab/R/x86_64-conda-linux-gnu-library/4.2
+ [3] /sysapps/cluster/software/Anaconda3/2022.05/envs/R-4.2.1/lib/R/library
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+**** Job ends ****
+Fri Aug 18 13:38:37 EDT 2023

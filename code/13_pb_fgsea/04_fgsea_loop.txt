@@ -1,0 +1,802 @@
+**** Job starts ****
+Tue Apr 30 10:37:30 EDT 2024
+**** LOCUS info ****
+User: spanglerab
+Job id: 24959756
+Job name: fgsea
+Hostname: ai-hpcn157.cm.cluster
+/hpcdata/vrc_vip/Abby/Experiment_316
+── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
+✔ ggplot2 3.4.0      ✔ purrr   1.0.1 
+✔ tibble  3.1.8      ✔ dplyr   1.0.10
+✔ tidyr   1.2.1      ✔ stringr 1.5.0 
+✔ readr   2.1.2      ✔ forcats 0.5.1 
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::between()   masks data.table::between()
+✖ dplyr::filter()    masks stats::filter()
+✖ dplyr::first()     masks data.table::first()
+✖ dplyr::lag()       masks stats::lag()
+✖ dplyr::last()      masks data.table::last()
+✖ purrr::transpose() masks data.table::transpose()
+Loading required package: ttservice
+
+Attaching package: ‘ttservice’
+
+The following objects are masked from ‘package:dplyr’:
+
+    bind_cols, bind_rows
+
+Loading required package: SeuratObject
+Loading required package: sp
+========================================
+tidyseurat version 0.5.3
+If you use TIDYSEURAT in published research, please cite:
+
+Mangiola et al. Interfacing Seurat with the R tidy universe. Bioinformatics 2021.
+
+This message can be suppressed by:
+  suppressPackageStartupMessages(library(tidyseurat))
+  
+To restore the Seurat default display use options("restore_Seurat_show" = TRUE) 
+========================================
+
+
+Attaching package: ‘tidyseurat’
+
+The following objects are masked from ‘package:ttservice’:
+
+    bind_cols, bind_rows
+
+The following objects are masked from ‘package:dplyr’:
+
+    add_count, bind_cols, bind_rows, count
+
+The following object is masked from ‘package:stats’:
+
+    filter
+
+[1] "running cluster PB_2"
+[1] "running cluster PB_2 and gene set c2.cp.reactome.v2023.2.Hs.symbols.gmt"
+[1] "Wohoo! .gmt conversion successfull!:)"
+                                                                                                                     pathway
+1: REACTOME_RESPIRATORY_ELECTRON_TRANSPORT_ATP_SYNTHESIS_BY_CHEMIOSMOTIC_COUPLING_AND_HEAT_PRODUCTION_BY_UNCOUPLING_PROTEINS
+2:                                                                                                    REACTOME_HIV_INFECTION
+3:                                                                                 REACTOME_HOST_INTERACTIONS_OF_HIV_FACTORS
+4:                                                     REACTOME_THE_CITRIC_ACID_TCA_CYCLE_AND_RESPIRATORY_ELECTRON_TRANSPORT
+5:                                                                                                      REACTOME_TRANSLATION
+6:                                                                                        REACTOME_MITOCHONDRIAL_TRANSLATION
+           pval         padj  log2err        ES      NES size
+1: 9.209717e-19 6.934917e-16 1.114664 0.6271375 2.655375  115
+2: 8.445622e-18 3.179777e-15 1.086441 0.5671302 2.517030  167
+3: 1.610821e-17 3.499495e-15 1.076868 0.6521352 2.687118   95
+4: 2.179061e-17 3.499495e-15 1.076868 0.5843741 2.548322  144
+5: 2.323702e-17 3.499495e-15 1.076868 0.5071609 2.343483  249
+6: 1.018396e-15 1.278087e-13 1.017545 0.6390644 2.611769   90
+                                      leadingEdge
+1:    COX8A,NDUFC1,ATP5MC3,CYCS,NDUFA6,NDUFB3,...
+2:          SEM1,PSMA7,PSMB3,POLR2F,XRCC6,RAN,...
+3:           SEM1,PSMA7,PSMB3,RAN,PSMA5,PSME2,...
+4:      LDHA,COX8A,NDUFC1,ATP5MC3,CYCS,NDUFA6,...
+5:  MRPL51,RPL26L1,SEC61G,MRPL13,MRPL3,MRPL11,...
+6: MRPL51,MRPL13,MRPL3,MRPL11,MRPS16,AURKAIP1,...
+[1] "significant up regulated pathways 215"
+[1] "significant down regulated pathways 29"
+[1] "running cluster PB_2 and gene set c5.go.bp.v2023.2.Hs.symbols.gmt"
+[1] "Wohoo! .gmt conversion successfull!:)"
+                                               pathway         pval
+1:                      GOBP_OXIDATIVE_PHOSPHORYLATION 3.120227e-18
+2:               GOBP_REGULATION_OF_CELL_CYCLE_PROCESS 4.911175e-18
+3: GOBP_GENERATION_OF_PRECURSOR_METABOLITES_AND_ENERGY 1.718896e-16
+4:                             GOBP_MITOTIC_CELL_CYCLE 2.312901e-16
+5:           GOBP_RIBONUCLEOPROTEIN_COMPLEX_BIOGENESIS 2.178253e-16
+6:                       GOBP_REGULATION_OF_CELL_CYCLE 1.002686e-15
+           padj  log2err         ES       NES size
+1: 6.639909e-15 1.105337  0.6329528  2.674563  113
+2: 6.639909e-15 1.095929 -0.4066530 -2.415368  328
+3: 1.250817e-13 1.047626  0.4992038  2.310811  254
+4: 1.250817e-13 1.037696 -0.3507955 -2.145338  440
+5: 1.250817e-13 1.047626  0.4521803  2.153479  370
+6: 4.518770e-13 1.017545 -0.3396592 -2.091732  471
+                                 leadingEdge
+1: CCNB1,COX8A,STOML2,NDUFC1,CYCS,NDUFA6,...
+2:   NUSAP1,UBE2C,CDK1,RRM2,PKMYT1,FBXO5,...
+3:    LDHA,PGAM1,PKM,CCNB1,COX8A,PRELID1,...
+4:    NUSAP1,UBE2C,PCNA,CDK1,RRM2,PKMYT1,...
+5:  SNRPF,EBNA1BP2,LSM4,RPL26L1,RAN,NHP2,...
+6:   NUSAP1,UBE2C,CDK1,RRM2,PKMYT1,FBXO5,...
+[1] "significant up regulated pathways 129"
+[1] "significant down regulated pathways 131"
+[1] "running cluster PB_2 and gene set c5.go.cc.v2023.2.Hs.symbols.gmt"
+[1] "Wohoo! .gmt conversion successfull!:)"
+                                             pathway         pval         padj
+1:                     GOCC_ORGANELLE_INNER_MEMBRANE 1.272806e-35 5.307602e-33
+2:     GOCC_MITOCHONDRIAL_PROTEIN_CONTAINING_COMPLEX 3.877953e-34 8.085531e-32
+3:                       GOCC_MITOCHONDRIAL_ENVELOPE 1.108656e-29 1.541032e-27
+4: GOCC_INNER_MITOCHONDRIAL_MEMBRANE_PROTEIN_COMPLEX 1.301190e-21 1.356490e-19
+5:                         GOCC_MITOCHONDRIAL_MATRIX 2.976696e-20 2.482564e-18
+6:                     GOCC_MEMBRANE_PROTEIN_COMPLEX 8.669562e-15 6.025345e-13
+     log2err        ES      NES size
+1: 1.5498781 0.5665217 2.690444  353
+2: 1.5161076 0.6152165 2.841413  247
+3: 1.4172759 0.4983416 2.410502  481
+4: 1.2039752 0.6462820 2.771351  126
+5: 1.1601796 0.4970283 2.343057  318
+6: 0.9865463 0.4207347 2.026102  443
+                                      leadingEdge
+1:    MRPL51,COX8A,STOML2,NDUFC1,ATP5MC3,CYCS,...
+2:  MRPL51,COX8A,NDUFC1,ATP5MC3,MRPL13,NDUFA6,...
+3: MRPL51,COX8A,PRELID1,STOML2,NDUFC1,ATP5MC3,...
+4:  COX8A,NDUFC1,ATP5MC3,NDUFA6,NDUFB3,TIMM10,...
+5:       PRDX3,NUDT1,DTYMK,BOLA3,MRPL51,CCNB1,...
+6:     HMGB1,COX8A,NDUFC1,ATP5MC3,CALM3,ANXA2,...
+[1] "significant up regulated pathways 82"
+[1] "significant down regulated pathways 26"
+[1] "running cluster PB_2 and gene set c5.go.mf.v2023.2.Hs.symbols.gmt"
+[1] "Wohoo! .gmt conversion successfull!:)"
+                                                                pathway
+1: GOMF_OXIDOREDUCTION_DRIVEN_ACTIVE_TRANSMEMBRANE_TRANSPORTER_ACTIVITY
+2:                                      GOMF_ELECTRON_TRANSFER_ACTIVITY
+3:                              GOMF_STRUCTURAL_CONSTITUENT_OF_RIBOSOME
+4:               GOMF_PRIMARY_ACTIVE_TRANSMEMBRANE_TRANSPORTER_ACTIVITY
+5:                                         GOMF_OXIDOREDUCTASE_ACTIVITY
+6:                          GOMF_NAD_P_H_DEHYDROGENASE_QUINONE_ACTIVITY
+           pval         padj   log2err        ES      NES size
+1: 4.829804e-14 2.385923e-11 0.9653278 0.6979179 2.641108   57
+2: 7.120750e-13 1.758825e-10 0.9214260 0.6287063 2.533048   82
+3: 8.684976e-12 1.430126e-09 0.8753251 0.5182915 2.266164  147
+4: 2.807321e-10 3.467041e-08 0.8140358 0.5901693 2.373433   81
+5: 8.049751e-10 7.953154e-08 0.8012156 0.4195432 1.958124  280
+6: 2.288994e-09 1.790329e-07 0.7749390 0.6871110 2.425841   40
+                                     leadingEdge
+1:  COX8A,NDUFC1,NDUFA6,NDUFB3,NDUFB6,NDUFS5,...
+2:     COX8A,NDUFC1,PHGDH,CYCS,NDUFA6,NDUFB3,...
+3: MRPL51,RPL26L1,MRPL13,MRPL3,MRPL11,RPS27L,...
+4:  COX8A,NDUFC1,NDUFA6,NDUFB3,NDUFB6,NDUFS5,...
+5:        PRDX3,LDHA,COX8A,NDUFC1,MDH1,PHGDH,...
+6: NDUFC1,NDUFA6,NDUFB3,NDUFB6,NDUFS5,NDUFA2,...
+[1] "significant up regulated pathways 49"
+[1] "significant down regulated pathways 31"
+[1] "running cluster PB_2 and gene set c7.immunesigdb.v2023.2.Hs.symbols.gmt"
+[1] "Wohoo! .gmt conversion successfull!:)"
+                                                  pathway         pval
+1: GSE40274_CTRL_VS_EOS_TRANSDUCED_ACTIVATED_CD4_TCELL_UP 2.131004e-18
+2:                          GSE45837_WT_VS_GFI1_KO_PDC_DN 1.761216e-17
+3:     GSE29617_CTRL_VS_DAY3_TIV_FLU_VACCINE_PBMC_2008_DN 4.078707e-16
+4:        GSE15750_DAY6_VS_DAY10_TRAF6KO_EFF_CD8_TCELL_UP 2.911606e-15
+5:    GSE21670_UNTREATED_VS_TGFB_IL6_TREATED_CD4_TCELL_UP 6.659252e-15
+6:                          GSE7852_LN_VS_THYMUS_TCONV_DN 3.128957e-14
+           padj   log2err         ES       NES size
+1: 1.036307e-14 1.1053366 -0.6703796 -3.251617   83
+2: 4.282398e-14 1.0768682  0.5772470  2.538018  154
+3: 6.611584e-13 1.0376962  0.5877673  2.523734  127
+4: 3.539785e-12 1.0073180 -0.5357838 -2.810012  129
+5: 6.476789e-12 0.9969862 -0.5952379 -2.945297   92
+6: 2.536020e-11 0.9653278 -0.5561982 -2.828731  107
+                                   leadingEdge
+1:       CDK1,TOP2A,CDCA8,ANLN,CLSPN,NDC80,...
+2: HMGN2,NUDT1,SNRPF,EBNA1BP2,POLR2F,XRCC6,...
+3:       PSMA7,PSMB3,MRPL51,CCT5,MDH1,CFL1,...
+4:         UBE2C,PCNA,CDK1,TOP2A,RRM2,ANLN,...
+5:      NUSAP1,ANLN,ATAD2,NCAPG,UHRF1,MXD3,...
+6:      NUSAP1,UBE2C,PCNA,CDK1,TOP2A,UHRF1,...
+[1] "significant up regulated pathways 621"
+[1] "significant down regulated pathways 501"
+[1] "running cluster PB_2 and gene set c7.vax.v2023.2.Hs.symbols.gmt"
+[1] "Wohoo! .gmt conversion successfull!:)"
+                                                                                   pathway
+1:                         THAKAR_PBMC_INACTIVATED_INFLUENZA_AGE_21_30YO_RESPONDERS_7DY_UP
+2: HARALAMBIEVA_PBMC_FLUARIX_AGE_50_74YO_CORR_WITH_28D_MEM_B_CELL_RESPONSE_AT_3DY_NEGATIVE
+3:                                         NAKAYA_PBMC_FLUARIX_FLUVIRIN_AGE_18_50YO_3DY_UP
+4:                        THAKAR_PBMC_INACTIVATED_INFLUENZA_AGE_21_30YO_RESPONDERS_28DY_DN
+5:        HOWARD_NK_CELL_INACT_MONOV_INFLUENZA_A_INDONESIA_05_2005_H5N1_AGE_18_49YO_3DY_UP
+6:                         THAKAR_PBMC_INACTIVATED_INFLUENZA_AGE_21_30YO_RESPONDERS_7DY_DN
+           pval         padj   log2err         ES       NES size
+1: 2.502392e-22 3.928755e-20 1.2210538  0.4727057  2.270536  425
+2: 2.166727e-18 1.700880e-16 1.1053366  0.4760065  2.253493  339
+3: 7.656058e-18 4.006670e-16 1.0864405  0.4684636  2.220438  345
+4: 1.057320e-16 4.149981e-15 1.0574636 -0.3882632 -2.316904  339
+5: 4.795165e-14 1.505682e-12 0.9653278 -0.6750119 -3.088847   62
+6: 1.602026e-13 4.191968e-12 0.9436322 -0.4053019 -2.319108  238
+                                     leadingEdge
+1:            LSM3,LSM5,RPA3,NUDT1,SEM1,PPIH,...
+2:          PHF19,LSM5,SEM1,LSM4,DTYMK,BOLA3,...
+3:    CORO1A,MRPL51,SLIRP,CCT5,PSMB2,TXNDC17,...
+4:    ANKRD36B,GNG7,RNASET2,ORC6,SNX29,SPSB3,...
+5:       NUSAP1,UBE2C,CDK1,TOP2A,RRM2,PKMYT1,...
+6: ANKRD36B,RNASET2,ORC6,SPSB3,ANKRD36,DUSP1,...
+[1] "significant up regulated pathways 16"
+[1] "significant down regulated pathways 22"
+[1] "running cluster PB_2 and gene set h.all.v2023.2.Hs.symbols.gmt"
+[1] "Wohoo! .gmt conversion successfull!:)"
+                              pathway         pval         padj   log2err
+1:            HALLMARK_MYC_TARGETS_V1 4.507392e-27 1.983253e-25 1.3499257
+2: HALLMARK_OXIDATIVE_PHOSPHORYLATION 1.501775e-24 3.303904e-23 1.2871037
+3:          HALLMARK_MTORC1_SIGNALING 1.385987e-10 2.032780e-09 0.8266573
+4:           HALLMARK_MITOTIC_SPINDLE 1.091984e-09 1.201182e-08 0.7881868
+5:            HALLMARK_G2M_CHECKPOINT 8.176314e-07 7.195156e-06 0.6594444
+6:              HALLMARK_ADIPOGENESIS 3.992956e-06 2.928168e-05 0.6105269
+           ES       NES size                                leadingEdge
+1:  0.6275430  2.805669  178 CDC20,HNRNPA2B1,PRDX3,LDHA,PSMA7,PSMB3,...
+2:  0.6124754  2.729603  173 PRDX3,LDHA,POLR2F,COX8A,NDUFC1,ATP5MC3,...
+3:  0.5160097  2.232863  135      LDHA,CORO1A,PHGDH,ALDOA,TPI1,ENO1,...
+4: -0.5132572 -2.539095   92     NUSAP1,CDK1,TOP2A,FBXO5,ANLN,NDC80,...
+5: -0.3949008 -2.079893  132    NUSAP1,UBE2C,CDK1,TOP2A,FBXO5,NDC80,...
+6:  0.4666151  1.962389  109     PRDX3,COX8A,ALDOA,SDHB,SOD1,TALDO1,...
+[1] "significant up regulated pathways 11"
+[1] "significant down regulated pathways 7"
+[1] "running cluster PB_0"
+[1] "running cluster PB_0 and gene set c2.cp.reactome.v2023.2.Hs.symbols.gmt"
+[1] "Wohoo! .gmt conversion successfull!:)"
+                                   pathway         pval         padj  log2err
+1:             REACTOME_CELL_CYCLE_MITOTIC 1.000000e-50 1.006000e-47       NA
+2:         REACTOME_CELL_CYCLE_CHECKPOINTS 6.344323e-34 3.191195e-31 1.516108
+3:                        REACTOME_M_PHASE 3.315570e-33 1.111821e-30 1.495479
+4: REACTOME_MITOTIC_METAPHASE_AND_ANAPHASE 5.793737e-27 1.457125e-24 1.349926
+5: REACTOME_SCAVENGING_OF_HEME_FROM_PLASMA 3.689972e-23 7.424224e-21 1.246233
+6:           REACTOME_MITOTIC_PROMETAPHASE 1.808801e-22 3.032757e-20 1.229504
+           ES       NES size
+1: -0.7457113 -1.885521  461
+2: -0.7547665 -1.886898  248
+3: -0.7169139 -1.802189  327
+4: -0.7358122 -1.834798  221
+5:  0.9472233  3.561190   29
+6: -0.7393767 -1.835868  186
+                                                  leadingEdge
+1:                       TUBA1B,TUBB,TYMS,UBE2C,PCNA,RRM2,...
+2:                      UBE2C,MCM7,CLSPN,CENPU,MCM4,CDC20,...
+3:                    TUBA1B,TUBB,UBE2C,CENPU,CDC20,CENPF,...
+4:                   TUBA1B,UBE2C,CENPU,CDC20,CENPF,ZWINT,...
+5: IGKV1D-12,IGKV1-12,IGKV1-16,IGHV3-23,IGKV1D-16,IGLV3-1,...
+6:                    TUBA1B,TUBB,CENPU,CDC20,CENPF,ZWINT,...
+[1] "significant up regulated pathways 36"
+[1] "significant down regulated pathways 299"
+[1] "running cluster PB_0 and gene set c5.go.bp.v2023.2.Hs.symbols.gmt"
+[1] "Wohoo! .gmt conversion successfull!:)"
+                               pathway         pval         padj  log2err
+1:        GOBP_CHROMOSOME_ORGANIZATION 1.000000e-50 3.761000e-47       NA
+2:                  GOBP_CELL_DIVISION 1.227463e-41 2.308244e-38 1.678178
+3:         GOBP_CHROMOSOME_SEGREGATION 7.246413e-40 9.084586e-37 1.647040
+4:              GOBP_ORGANELLE_FISSION 1.310798e-33 1.232478e-30 1.509263
+5: GOBP_NUCLEAR_CHROMOSOME_SEGREGATION 9.115371e-31 6.856582e-28 1.439026
+6:    GOBP_CELL_CYCLE_PHASE_TRANSITION 1.793709e-30 1.124357e-27 1.431812
+           ES       NES size                              leadingEdge
+1: -0.7174221 -1.815631  493   HMGB2,UBE2C,PCNA,MCM7,TOP2A,NUSAP1,...
+2: -0.6994757 -1.768667  465 TUBA1B,TUBB,STMN1,UBE2C,TOP2A,NUSAP1,...
+3: -0.7329235 -1.844535  349  TUBB,MKI67,UBE2C,TOP2A,CENPU,NUSAP1,...
+4: -0.7124844 -1.792640  344  MKI67,UBE2C,TOP2A,NUSAP1,ASPM,CDC20,...
+5: -0.7348935 -1.838319  257  UBE2C,TOP2A,NUSAP1,ASPM,CDC20,CENPF,...
+6: -0.6690043 -1.689485  428   UBE2C,RRM2,CLSPN,CDC20,CENPF,ZWINT,...
+[1] "significant up regulated pathways NA"
+[1] "significant down regulated pathways 349"
+Error in if (sum(GSEAres[, padj < 0.05 & ES > 0]) > 0) { : 
+  missing value where TRUE/FALSE needed
+In addition: Warning message:
+In fgseaMultilevel(...) :
+  For some pathways, in reality P-values are less than 1e-50. You can set the `eps` argument to zero for better estimation.
+Execution halted
+**** Job starts ****
+Tue Apr 30 19:16:47 EDT 2024
+**** LOCUS info ****
+User: spanglerab
+Job id: 24965265
+Job name: fgsea
+Hostname: ai-hpcn101.cm.cluster
+/hpcdata/vrc_vip/Abby/Experiment_316
+── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
+✔ ggplot2 3.4.0      ✔ purrr   1.0.1 
+✔ tibble  3.1.8      ✔ dplyr   1.0.10
+✔ tidyr   1.2.1      ✔ stringr 1.5.0 
+✔ readr   2.1.2      ✔ forcats 0.5.1 
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::between()   masks data.table::between()
+✖ dplyr::filter()    masks stats::filter()
+✖ dplyr::first()     masks data.table::first()
+✖ dplyr::lag()       masks stats::lag()
+✖ dplyr::last()      masks data.table::last()
+✖ purrr::transpose() masks data.table::transpose()
+Loading required package: ttservice
+
+Attaching package: ‘ttservice’
+
+The following objects are masked from ‘package:dplyr’:
+
+    bind_cols, bind_rows
+
+Loading required package: SeuratObject
+Loading required package: sp
+========================================
+tidyseurat version 0.5.3
+If you use TIDYSEURAT in published research, please cite:
+
+Mangiola et al. Interfacing Seurat with the R tidy universe. Bioinformatics 2021.
+
+This message can be suppressed by:
+  suppressPackageStartupMessages(library(tidyseurat))
+  
+To restore the Seurat default display use options("restore_Seurat_show" = TRUE) 
+========================================
+
+
+Attaching package: ‘tidyseurat’
+
+The following objects are masked from ‘package:ttservice’:
+
+    bind_cols, bind_rows
+
+The following objects are masked from ‘package:dplyr’:
+
+    add_count, bind_cols, bind_rows, count
+
+The following object is masked from ‘package:stats’:
+
+    filter
+
+[1] "running cluster PB_1"
+[1] "running cluster PB_1 and gene set c2.cp.reactome.v2023.2.Hs.symbols.gmt"
+[1] "Wohoo! .gmt conversion successfull!:)"
+                                            pathway         pval         padj
+1:                      REACTOME_CELL_CYCLE_MITOTIC 1.000000e-50 9.590000e-48
+2:                                 REACTOME_M_PHASE 1.848532e-38 8.863711e-36
+3:                  REACTOME_CELL_CYCLE_CHECKPOINTS 2.882309e-36 9.213781e-34
+4:                    REACTOME_MITOTIC_PROMETAPHASE 1.440816e-29 3.454355e-27
+5:          REACTOME_MITOTIC_METAPHASE_AND_ANAPHASE 1.031889e-27 1.979164e-25
+6: REACTOME_RESOLUTION_OF_SISTER_CHROMATID_COHESION 4.175487e-24 6.673820e-22
+    log2err        ES      NES size                              leadingEdge
+1:       NA 0.7603644 2.043207  448    UBE2C,RRM2,TUBB,TUBA1B,PCNA,TOP2A,...
+2: 1.615302 0.7281199 1.944545  318   UBE2C,TUBB,TUBA1B,CDK1,NCAPG,CENPU,...
+3: 1.569792 0.7610943 2.020998  243   UBE2C,CLSPN,MCM7,CDK1,PKMYT1,CENPU,...
+4: 1.409951 0.7712884 2.032917  181  TUBB,TUBA1B,CDK1,NCAPG,CENPU,TUBB4B,...
+5: 1.365180 0.7377692 1.953117  214 UBE2C,TUBA1B,CDK1,CENPU,TUBB4B,CDCA8,...
+6: 1.270913 0.8043301 2.086850  111 TUBA1B,CDK1,CENPU,TUBB4B,CDCA8,AURKB,...
+[1] "significant up regulated pathways 270"
+[1] "significant down regulated pathways 31"
+[1] "running cluster PB_1 and gene set c5.go.bp.v2023.2.Hs.symbols.gmt"
+[1] "Wohoo! .gmt conversion successfull!:)"
+                            pathway         pval         padj  log2err
+1:     GOBP_CHROMOSOME_ORGANIZATION 1.000000e-50 3.552000e-47       NA
+2:      GOBP_CHROMOSOME_SEGREGATION 3.526226e-48 6.262578e-45 1.808827
+3:               GOBP_CELL_DIVISION 5.926465e-44 7.016935e-41 1.726831
+4:           GOBP_ORGANELLE_FISSION 2.011323e-37 1.786055e-34 1.589456
+5: GOBP_CELL_CYCLE_PHASE_TRANSITION 4.127814e-34 2.932399e-31 1.516108
+6:    GOBP_MITOTIC_NUCLEAR_DIVISION 1.774490e-33 1.050498e-30 1.502387
+          ES      NES size                              leadingEdge
+1: 0.7315279 1.967577  473   HMGB2,UBE2C,PCNA,TOP2A,NUSAP1,MCM7,...
+2: 0.7523780 2.010945  331   UBE2C,MKI67,TUBB,TOP2A,NUSAP1,ASPM,...
+3: 0.7033787 1.889840  443  UBE2C,TUBB,TUBA1B,TOP2A,NUSAP1,ASPM,...
+4: 0.7271661 1.942462  322   UBE2C,MKI67,TOP2A,NUSAP1,ASPM,CDK1,...
+5: 0.6781746 1.819577  408   UBE2C,RRM2,CLSPN,CDK1,PKMYT1,CCNA2,...
+6: 0.7676321 2.031434  211 UBE2C,MKI67,NUSAP1,CDK1,NCAPG,PKMYT1,...
+[1] "significant up regulated pathways 356"
+[1] "significant down regulated pathways NA"
+Error in if (sum(GSEAres[, padj < 0.05 & ES < 0]) > 0) { : 
+  missing value where TRUE/FALSE needed
+In addition: Warning message:
+In fgseaMultilevel(...) :
+  For some pathways, in reality P-values are less than 1e-50. You can set the `eps` argument to zero for better estimation.
+Execution halted
+**** Job starts ****
+Tue Apr 30 20:21:13 EDT 2024
+**** LOCUS info ****
+User: spanglerab
+Job id: 24965297
+Job name: fgsea
+Hostname: ai-hpcn095.cm.cluster
+/hpcdata/vrc_vip/Abby/Experiment_316
+── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
+✔ ggplot2 3.4.0      ✔ purrr   1.0.1 
+✔ tibble  3.1.8      ✔ dplyr   1.0.10
+✔ tidyr   1.2.1      ✔ stringr 1.5.0 
+✔ readr   2.1.2      ✔ forcats 0.5.1 
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::between()   masks data.table::between()
+✖ dplyr::filter()    masks stats::filter()
+✖ dplyr::first()     masks data.table::first()
+✖ dplyr::lag()       masks stats::lag()
+✖ dplyr::last()      masks data.table::last()
+✖ purrr::transpose() masks data.table::transpose()
+Loading required package: ttservice
+
+Attaching package: ‘ttservice’
+
+The following objects are masked from ‘package:dplyr’:
+
+    bind_cols, bind_rows
+
+Loading required package: SeuratObject
+Loading required package: sp
+========================================
+tidyseurat version 0.5.3
+If you use TIDYSEURAT in published research, please cite:
+
+Mangiola et al. Interfacing Seurat with the R tidy universe. Bioinformatics 2021.
+
+This message can be suppressed by:
+  suppressPackageStartupMessages(library(tidyseurat))
+  
+To restore the Seurat default display use options("restore_Seurat_show" = TRUE) 
+========================================
+
+
+Attaching package: ‘tidyseurat’
+
+The following objects are masked from ‘package:ttservice’:
+
+    bind_cols, bind_rows
+
+The following objects are masked from ‘package:dplyr’:
+
+    add_count, bind_cols, bind_rows, count
+
+The following object is masked from ‘package:stats’:
+
+    filter
+
+[1] "running cluster PB_0"
+[1] "running cluster PB_0 and gene set c2.cp.reactome.v2023.2.Hs.symbols.gmt"
+[1] "Wohoo! .gmt conversion successfull!:)"
+                                   pathway         pval         padj  log2err
+1:             REACTOME_CELL_CYCLE_MITOTIC 1.000000e-50 1.006000e-47       NA
+2:         REACTOME_CELL_CYCLE_CHECKPOINTS 6.344323e-34 3.191195e-31 1.516108
+3:                        REACTOME_M_PHASE 3.315570e-33 1.111821e-30 1.495479
+4: REACTOME_MITOTIC_METAPHASE_AND_ANAPHASE 5.793737e-27 1.457125e-24 1.349926
+5: REACTOME_SCAVENGING_OF_HEME_FROM_PLASMA 3.689972e-23 7.424224e-21 1.246233
+6:           REACTOME_MITOTIC_PROMETAPHASE 1.808801e-22 3.032757e-20 1.229504
+           ES       NES size
+1: -0.7457113 -1.885521  461
+2: -0.7547665 -1.886898  248
+3: -0.7169139 -1.802189  327
+4: -0.7358122 -1.834798  221
+5:  0.9472233  3.561190   29
+6: -0.7393767 -1.835868  186
+                                                  leadingEdge
+1:                       TUBA1B,TUBB,TYMS,UBE2C,PCNA,RRM2,...
+2:                      UBE2C,MCM7,CLSPN,CENPU,MCM4,CDC20,...
+3:                    TUBA1B,TUBB,UBE2C,CENPU,CDC20,CENPF,...
+4:                   TUBA1B,UBE2C,CENPU,CDC20,CENPF,ZWINT,...
+5: IGKV1D-12,IGKV1-12,IGKV1-16,IGHV3-23,IGKV1D-16,IGLV3-1,...
+6:                    TUBA1B,TUBB,CENPU,CDC20,CENPF,ZWINT,...
+[1] "significant up regulated pathways 36"
+[1] "significant down regulated pathways 299"
+[1] "running cluster PB_0 and gene set c5.go.cc.v2023.2.Hs.symbols.gmt"
+[1] "Wohoo! .gmt conversion successfull!:)"
+                              pathway         pval         padj  log2err
+1:            GOCC_CHROMOSOMAL_REGION 1.744991e-35 9.004153e-33 1.549878
+2:        GOCC_IMMUNOGLOBULIN_COMPLEX 2.269826e-32 5.856151e-30 1.481568
+3:          GOCC_CONDENSED_CHROMOSOME 1.956594e-29 3.365341e-27 1.409951
+4: GOCC_CHROMOSOME_CENTROMERIC_REGION 7.487778e-24 9.659234e-22 1.262740
+5:            GOCC_NUCLEAR_CHROMOSOME 1.521955e-20 1.570657e-18 1.169070
+6:                       GOCC_SPINDLE 1.314387e-19 1.130372e-17 1.142191
+           ES       NES size
+1: -0.7221244 -1.815744  332
+2:  0.8806784  3.861190   65
+3: -0.7445821 -1.858460  232
+4: -0.7270612 -1.811253  214
+5: -0.7264927 -1.802991  184
+6: -0.6409239 -1.612889  347
+                                                  leadingEdge
+1:                       PCNA,MCM7,TOP2A,CENPU,MCM4,CDC20,...
+2: IGHV3-73,IGKV1D-12,IGKV1-12,IGHV3-43,IGKV1-16,IGHV4-61,...
+3:                    HMGB2,MKI67,TOP2A,CENPU,CDC20,CENPF,...
+4:                    TOP2A,CENPU,CDC20,CENPF,ZWINT,CENPW,...
+5:                       PCNA,MCM7,TOP2A,MCM4,BIRC5,NCAPG,...
+6:                      TUBB,NUSAP1,ASPM,CDC20,CENPF,CDK1,...
+[1] "significant up regulated pathways 9"
+[1] "significant down regulated pathways 109"
+[1] "running cluster PB_0 and gene set c5.go.mf.v2023.2.Hs.symbols.gmt"
+[1] "Wohoo! .gmt conversion successfull!:)"
+                                 pathway         pval         padj   log2err
+1:                  GOMF_ANTIGEN_BINDING 1.119789e-17 8.174460e-15 1.0864405
+2:           GOMF_ATP_DEPENDENT_ACTIVITY 6.976344e-15 2.546366e-12 0.9969862
+3:                GOMF_CHROMATIN_BINDING 3.020275e-13 7.349335e-11 0.9325952
+4:          GOMF_ATP_HYDROLYSIS_ACTIVITY 2.600808e-12 4.746474e-10 0.8986712
+5: GOMF_CATALYTIC_ACTIVITY_ACTING_ON_DNA 3.255897e-12 4.753609e-10 0.8986712
+6:      GOMF_SINGLE_STRANDED_DNA_BINDING 6.874918e-11 8.364484e-09 0.8390889
+           ES       NES size
+1:  0.6671056  3.034962   82
+2: -0.6002651 -1.514354  398
+3: -0.5894682 -1.487047  397
+4: -0.6113566 -1.533928  295
+5: -0.6452416 -1.605708  204
+6: -0.7050188 -1.721598  108
+                                                  leadingEdge
+1: IGHV3-73,IGKV1D-12,IGHV3-43,IGKV1-16,IGHV4-61,IGHV3-23,...
+2:                        MCM7,TOP2A,MCM4,ATAD2,MCM2,MCM3,...
+3:                       PCNA,TOP2A,CENPF,CDK1,CDT1,ATAD2,...
+4:                        MCM7,MCM4,ATAD2,MCM2,MCM3,KIFC1,...
+5:                         PCNA,MCM7,TOP2A,MCM4,MCM2,MCM3,...
+6:                         HMGB2,MCM7,MCM4,MCM2,MCM3,MCM5,...
+[1] "significant up regulated pathways NA"
+[1] "significant down regulated pathways 51"
+Error in if (sum(GSEAres[, padj < 0.05 & ES > 0]) > 0) { : 
+  missing value where TRUE/FALSE needed
+Execution halted
+**** Job starts ****
+Tue Apr 30 22:24:42 EDT 2024
+**** LOCUS info ****
+User: spanglerab
+Job id: 24966497
+Job name: fgsea
+Hostname: ai-hpcn101.cm.cluster
+/hpcdata/vrc_vip/Abby/Experiment_316
+── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
+✔ ggplot2 3.4.0      ✔ purrr   1.0.1 
+✔ tibble  3.1.8      ✔ dplyr   1.0.10
+✔ tidyr   1.2.1      ✔ stringr 1.5.0 
+✔ readr   2.1.2      ✔ forcats 0.5.1 
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::between()   masks data.table::between()
+✖ dplyr::filter()    masks stats::filter()
+✖ dplyr::first()     masks data.table::first()
+✖ dplyr::lag()       masks stats::lag()
+✖ dplyr::last()      masks data.table::last()
+✖ purrr::transpose() masks data.table::transpose()
+Loading required package: ttservice
+
+Attaching package: ‘ttservice’
+
+The following objects are masked from ‘package:dplyr’:
+
+    bind_cols, bind_rows
+
+Loading required package: SeuratObject
+Loading required package: sp
+========================================
+tidyseurat version 0.5.3
+If you use TIDYSEURAT in published research, please cite:
+
+Mangiola et al. Interfacing Seurat with the R tidy universe. Bioinformatics 2021.
+
+This message can be suppressed by:
+  suppressPackageStartupMessages(library(tidyseurat))
+  
+To restore the Seurat default display use options("restore_Seurat_show" = TRUE) 
+========================================
+
+
+Attaching package: ‘tidyseurat’
+
+The following objects are masked from ‘package:ttservice’:
+
+    bind_cols, bind_rows
+
+The following objects are masked from ‘package:dplyr’:
+
+    add_count, bind_cols, bind_rows, count
+
+The following object is masked from ‘package:stats’:
+
+    filter
+
+[1] "running cluster PB_1"
+[1] "running cluster PB_1 and gene set c2.cp.reactome.v2023.2.Hs.symbols.gmt"
+[1] "Wohoo! .gmt conversion successfull!:)"
+                                            pathway         pval         padj
+1:                      REACTOME_CELL_CYCLE_MITOTIC 1.000000e-50 9.590000e-48
+2:                                 REACTOME_M_PHASE 1.848532e-38 8.863711e-36
+3:                  REACTOME_CELL_CYCLE_CHECKPOINTS 2.882309e-36 9.213781e-34
+4:                    REACTOME_MITOTIC_PROMETAPHASE 1.440816e-29 3.454355e-27
+5:          REACTOME_MITOTIC_METAPHASE_AND_ANAPHASE 1.031889e-27 1.979164e-25
+6: REACTOME_RESOLUTION_OF_SISTER_CHROMATID_COHESION 4.175487e-24 6.673820e-22
+    log2err        ES      NES size                              leadingEdge
+1:       NA 0.7603644 2.043207  448    UBE2C,RRM2,TUBB,TUBA1B,PCNA,TOP2A,...
+2: 1.615302 0.7281199 1.944545  318   UBE2C,TUBB,TUBA1B,CDK1,NCAPG,CENPU,...
+3: 1.569792 0.7610943 2.020998  243   UBE2C,CLSPN,MCM7,CDK1,PKMYT1,CENPU,...
+4: 1.409951 0.7712884 2.032917  181  TUBB,TUBA1B,CDK1,NCAPG,CENPU,TUBB4B,...
+5: 1.365180 0.7377692 1.953117  214 UBE2C,TUBA1B,CDK1,CENPU,TUBB4B,CDCA8,...
+6: 1.270913 0.8043301 2.086850  111 TUBA1B,CDK1,CENPU,TUBB4B,CDCA8,AURKB,...
+[1] "significant up regulated pathways 270"
+[1] "significant down regulated pathways 31"
+[1] "running cluster PB_1 and gene set c5.go.cc.v2023.2.Hs.symbols.gmt"
+[1] "Wohoo! .gmt conversion successfull!:)"
+                                        pathway         pval         padj
+1:                      GOCC_CHROMOSOMAL_REGION 3.412847e-46 1.685946e-43
+2:                    GOCC_CONDENSED_CHROMOSOME 5.237952e-37 1.293774e-34
+3:           GOCC_CHROMOSOME_CENTROMERIC_REGION 3.465632e-34 5.706741e-32
+4:                  GOCC_IMMUNOGLOBULIN_COMPLEX 2.472766e-29 3.053866e-27
+5: GOCC_CONDENSED_CHROMOSOME_CENTROMERIC_REGION 7.142629e-26 7.056918e-24
+6:                                 GOCC_SPINDLE 4.863308e-25 4.004123e-23
+    log2err         ES       NES size
+1: 1.774150  0.7526725  2.011280  325
+2: 1.582928  0.7712962  2.045072  227
+3: 1.522922  0.7696736  2.036558  209
+4: 1.409951 -0.8433316 -3.804633   62
+5: 1.318889  0.7661728  2.012082  159
+6: 1.295123  0.6661775  1.780461  328
+                                                   leadingEdge
+1:                        PCNA,TOP2A,MCM7,CDK1,NCAPG,CENPU,...
+2:                     HMGB2,MKI67,TOP2A,NCAPG,CENPU,HJURP,...
+3:                     TOP2A,NCAPG,CENPU,HJURP,CDCA8,AURKB,...
+4: IGKV1D-12,IGKV1D-17,IGHV3-43,IGHV4-61,IGKV1-16,IGHV3-73,...
+5:                     NCAPG,CENPU,HJURP,AURKB,ZWINT,CDC20,...
+6:                      TUBB,NUSAP1,ASPM,CDK1,TUBB4B,CDCA8,...
+[1] "significant up regulated pathways 107"
+[1] "significant down regulated pathways NA"
+Error in if (sum(GSEAres[, padj < 0.05 & ES < 0]) > 0) { : 
+  missing value where TRUE/FALSE needed
+Execution halted
+**** Job starts ****
+Wed May  1 08:03:42 EDT 2024
+**** LOCUS info ****
+User: spanglerab
+Job id: 24966750
+Job name: fgsea
+Hostname: ai-hpcn062.cm.cluster
+/hpcdata/vrc_vip/Abby/Experiment_316
+── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
+✔ ggplot2 3.4.0      ✔ purrr   1.0.1 
+✔ tibble  3.1.8      ✔ dplyr   1.0.10
+✔ tidyr   1.2.1      ✔ stringr 1.5.0 
+✔ readr   2.1.2      ✔ forcats 0.5.1 
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::between()   masks data.table::between()
+✖ dplyr::filter()    masks stats::filter()
+✖ dplyr::first()     masks data.table::first()
+✖ dplyr::lag()       masks stats::lag()
+✖ dplyr::last()      masks data.table::last()
+✖ purrr::transpose() masks data.table::transpose()
+Loading required package: ttservice
+
+Attaching package: ‘ttservice’
+
+The following objects are masked from ‘package:dplyr’:
+
+    bind_cols, bind_rows
+
+Loading required package: SeuratObject
+Loading required package: sp
+========================================
+tidyseurat version 0.5.3
+If you use TIDYSEURAT in published research, please cite:
+
+Mangiola et al. Interfacing Seurat with the R tidy universe. Bioinformatics 2021.
+
+This message can be suppressed by:
+  suppressPackageStartupMessages(library(tidyseurat))
+  
+To restore the Seurat default display use options("restore_Seurat_show" = TRUE) 
+========================================
+
+
+Attaching package: ‘tidyseurat’
+
+The following objects are masked from ‘package:ttservice’:
+
+    bind_cols, bind_rows
+
+The following objects are masked from ‘package:dplyr’:
+
+    add_count, bind_cols, bind_rows, count
+
+The following object is masked from ‘package:stats’:
+
+    filter
+
+[1] "running cluster PB_3"
+[1] "running cluster PB_3 and gene set c2.cp.reactome.v2023.2.Hs.symbols.gmt"
+[1] "Wohoo! .gmt conversion successfull!:)"
+                                                         pathway         pval
+1:                     REACTOME_CREATION_OF_C4_AND_C2_ACTIVATORS 1.092649e-15
+2:                     REACTOME_INITIAL_TRIGGERING_OF_COMPLEMENT 1.252861e-14
+3:                       REACTOME_SCAVENGING_OF_HEME_FROM_PLASMA 7.605604e-13
+4: REACTOME_BINDING_AND_UPTAKE_OF_LIGANDS_BY_SCAVENGER_RECEPTORS 2.188043e-10
+5:                           REACTOME_NERVOUS_SYSTEM_DEVELOPMENT 2.264424e-10
+6:                    REACTOME_EUKARYOTIC_TRANSLATION_ELONGATION 3.110464e-10
+           padj   log2err         ES       NES size
+1: 1.042387e-12 1.0175448 -0.9532477 -3.413973   20
+2: 5.976148e-12 0.9865463 -0.9320948 -3.428552   23
+3: 2.418582e-10 0.9214260 -0.9146825 -3.364503   23
+4: 4.320521e-08 0.8266573 -0.7994924 -3.069099   33
+5: 4.320521e-08 0.8266573  0.5170152  1.531429  343
+6: 4.535161e-08 0.8140358  0.6537353  1.837067   92
+                                                leadingEdge
+1:      IGKV1-5,IGHG4,IGKV3D-20,IGLV2-11,IGHG1,IGKV1-16,...
+2:      IGKV1-5,IGHG4,IGKV3D-20,IGLV2-11,IGHG1,IGKV1-16,...
+3: IGKV1-5,IGKV3D-20,IGLV2-11,IGKV1-16,IGLV3-1,IGHV4-39,...
+4: IGKV1-5,IGKV3D-20,IGLV2-11,IGKV1-16,IGLV3-1,IGHV4-39,...
+5:                   TUBA1A,ACTB,ARPC1B,ACTG1,PFN1,CD24,...
+6:                    RPS4Y1,RPSA,RPL17,RPL12,RPS6,RPL7,...
+[1] "significant up regulated pathways 167"
+[1] "significant down regulated pathways 24"
+[1] "running cluster PB_3 and gene set c5.go.cc.v2023.2.Hs.symbols.gmt"
+[1] "Wohoo! .gmt conversion successfull!:)"
+                                   pathway         pval         padj   log2err
+1:             GOCC_IMMUNOGLOBULIN_COMPLEX 9.899646e-24 4.840927e-21 1.2627399
+2:                 GOCC_ANCHORING_JUNCTION 1.648934e-14 2.687762e-12 0.9759947
+3:            GOCC_CELL_SUBSTRATE_JUNCTION 1.357331e-14 2.687762e-12 0.9865463
+4:                 GOCC_ACTIN_CYTOSKELETON 5.936401e-14 7.257250e-12 0.9545416
+5: GOCC_IMMUNOGLOBULIN_COMPLEX_CIRCULATING 1.546211e-13 1.512195e-11 0.9436322
+6:       GOCC_MHC_CLASS_II_PROTEIN_COMPLEX 1.195973e-12 9.747179e-11 0.9101197
+           ES       NES size
+1: -0.9115029 -3.512399   38
+2:  0.5270233  1.569423  432
+3:  0.5759254  1.694009  265
+4:  0.5794890  1.700635  246
+5: -0.9902927 -2.912897   10
+6:  0.9601589  2.208893   15
+                                               leadingEdge
+1:    IGHV2-26,IGKV3D-15,IGKV1-5,IGHG4,IGKV3D-20,IGHG3,...
+2:              ARHGAP17,ARHGAP24,ACTB,ARPC1B,CNN2,ZYX,...
+3:                 ARHGAP24,ACTB,ARPC1B,CNN2,ZYX,ACTG1,...
+4:                   CAPG,MTSS1,COTL1,ACTB,ARPC1B,CNN2,...
+5:              IGHG4,IGHG3,IGHG1,IGKV3-20,IGHG2,IGHA1,...
+6: HLA-DMB,HLA-DRA,HLA-DPB1,HLA-DRB5,HLA-DQB1,HLA-DQA1,...
+[1] "significant up regulated pathways 141"
+[1] "significant down regulated pathways 8"
+[1] "running cluster PB_3 and gene set c5.go.mf.v2023.2.Hs.symbols.gmt"
+[1] "Wohoo! .gmt conversion successfull!:)"
+                               pathway         pval         padj   log2err
+1:                  GOMF_ACTIN_BINDING 7.733455e-19 5.266483e-16 1.1239150
+2:         GOMF_ACTIN_FILAMENT_BINDING 1.627857e-12 5.542853e-10 0.9101197
+3:        GOMF_PEPTIDE_ANTIGEN_BINDING 1.270935e-11 2.885022e-09 0.8753251
+4: GOMF_CELL_ADHESION_MOLECULE_BINDING 5.410752e-11 7.369445e-09 0.8513391
+5:   GOMF_STRUCTURAL_MOLECULE_ACTIVITY 4.777652e-11 7.369445e-09 0.8513391
+6:    GOMF_MHC_PROTEIN_COMPLEX_BINDING 3.053134e-10 3.465307e-08 0.8140358
+          ES      NES size
+1: 0.6371665 1.861525  214
+2: 0.6769685 1.914252  103
+3: 0.8731878 2.184586   26
+4: 0.5449806 1.602508  262
+5: 0.5337704 1.576207  304
+6: 0.8514244 2.140595   27
+                                               leadingEdge
+1:               CAPG,MTSS1,TMSB4X,S100A4,COTL1,ARPC1B,...
+2:                  CAPG,COTL1,ARPC1B,CNN2,BIN1,CORO1A,...
+3: HLA-DMB,HLA-DRA,HLA-DPB1,HLA-DRB5,HLA-DQB1,HLA-DQA1,...
+4:                      CAPG,CNN2,SNX2,PFN1,LCP1,CAPZB,...
+5:              TUBA1A,HLA-DRB1,ACTB,ARPC1B,ACTG1,TUBB,...
+6:    MS4A1,HLA-DMB,HLA-DRA,HLA-DPB1,HLA-DRB5,HLA-DQB1,...
+[1] "significant up regulated pathways 56"
+[1] "significant down regulated pathways 3"
+[1] "running cluster PB_3 and gene set c7.immunesigdb.v2023.2.Hs.symbols.gmt"
+[1] "Wohoo! .gmt conversion successfull!:)"
+                                              pathway         pval         padj
+1:          GSE22886_NAIVE_BCELL_VS_BM_PLASMA_CELL_DN 4.335054e-38 2.112038e-34
+2:             GSE12366_PLASMA_CELL_VS_NAIVE_BCELL_UP 2.040514e-28 4.970691e-25
+3:            GSE12366_PLASMA_CELL_VS_MEMORY_BCELL_UP 1.007216e-25 1.635719e-22
+4: GSE22886_IGG_IGA_MEMORY_BCELL_VS_BM_PLASMA_CELL_DN 4.614201e-25 5.620096e-22
+5:     GSE22886_IGM_MEMORY_BCELL_VS_BM_PLASMA_CELL_DN 1.905377e-24 1.856599e-21
+6:                     GSE10325_CD4_TCELL_VS_BCELL_DN 1.940176e-23 1.575423e-20
+    log2err         ES       NES size
+1: 1.608880 -0.7371688 -3.304754  126
+2: 1.380265 -0.7474121 -3.108303   95
+3: 1.318889 -0.7094823 -2.988395  100
+4: 1.295123 -0.6945782 -2.941589  102
+5: 1.279034 -0.6588803 -2.860376  112
+6: 1.254513  0.7098479  2.048856  156
+                                   leadingEdge
+1:     IGHA1,FNDC3B,MBNL2,PDK1,MZB1,MAN1A1,...
+2:    IGKV3-20,BTG2,HID1,IGF1,GLCCI1,CCPG1,...
+3: IGKV3-20,BTG2,MAN1A1,RAPGEF2,FBH1,CCPG1,...
+4:   IGKV3-20,FNDC3B,MBNL2,PDK1,CHPF,NUCB2,...
+5: IGKV3-20,FNDC3B,SSR4,RAPGEF2,ADA2,RRBP1,...
+6:  MS4A1,BANK1,HLA-DMB,HLA-DRA,LY86,ANXA4,...
+[1] "significant up regulated pathways 1476"
+[1] "significant down regulated pathways 24"
+[1] "running cluster PB_3 and gene set c7.vax.v2023.2.Hs.symbols.gmt"
+[1] "Wohoo! .gmt conversion successfull!:)"
+                                                                                                                                             pathway
+1: TSANG_PBMC_FLUVIRIN_PANDEMRIX_ADULT_CORR_WITH_CELL_FREQ_CD27HI_CD38HI_CD20_NEG_PLASMABLASTS_AND_CD38PLUS_OF_IGD_CD27PLUS_MEM_B_CELLS_7DY_POSITIVE
+2:                                                        NAKAYA_PBMC_FLUARIX_FLUVIRIN_AGE_18_50YO_CORRELATED_WITH_HAI_28DY_RESPONSE_AT_7DY_POSITIVE
+3:                                                                                                      HOEK_PBMC_INACTIVATED_INFLUENZA_ADULT_7DY_UP
+4:                                                                             SOBOLEV_PBMC_PANDEMRIX_AGE_18_64YO_RESPONDERS_VS_NONRESPONDERS_7DY_UP
+5:                                                                          HARALAMBIEVA_PBMC_M_M_R_II_AGE_11_22YO_VACCINATED_VS_UNVACCINATED_7YR_DN
+6:                                                                            FOURATI_BLOOD_TWINRIX_AGE_25_83YO_RESPONDERS_VS_POOR_RESPONDERS_0DY_UP
+           pval         padj   log2err         ES       NES size
+1: 1.599541e-19 3.135100e-17 1.1421912 -0.7788162 -3.004546   59
+2: 2.224097e-17 2.179615e-15 1.0768682 -0.5517675 -2.457219  123
+3: 2.644992e-14 1.728061e-12 0.9759947 -0.8711090 -3.264882   26
+4: 3.665121e-11 1.795909e-09 0.8513391 -0.9309985 -3.162983   16
+5: 6.190568e-11 2.426703e-09 0.8390889  0.5373559  1.581849  274
+6: 2.286131e-09 6.388815e-08 0.7749390  0.5130168  1.517433  326
+                                       leadingEdge
+1:           IGKC,JCHAIN,MAN1A1,XBP1,CD38,ZBP1,...
+2:       IGHG4,IGHG3,IGKC,IGHG1,IGKV3-20,IGHA1,...
+3: IGHV2-26,IGHG4,IGHG3,IGHG1,IGLV3-1,IGHV4-39,...
+4:         IGKC,IGHV1-69,JCHAIN,MZB1,CD38,SDC1,...
+5:     HLA-DMB,LY86,LINC00926,HHEX,CD1C,S100A4,...
+6:        MS4A1,BANK1,AFF3,CD22,LINC00926,SPIB,...
+[1] "significant up regulated pathways 70"
+[1] "significant down regulated pathways NA"
+Error in if (sum(GSEAres[, padj < 0.05 & ES < 0]) > 0) { : 
+  missing value where TRUE/FALSE needed
+Execution halted

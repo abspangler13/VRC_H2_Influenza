@@ -1,0 +1,368 @@
+**** Job starts ****
+Mon Sep 18 15:13:11 EDT 2023
+**** LOCUS info ****
+User: spanglerab
+Job id: 22451757
+Job name: pseudotime4B
+Hostname: ai-hpcn028.cm.cluster
+/hpcdata/vrc_vip/Abby/Experiment_316
+Loading required package: Biobase
+Loading required package: BiocGenerics
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, aperm, append, as.data.frame, basename, cbind,
+    colnames, dirname, do.call, duplicated, eval, evalq, Filter, Find,
+    get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply,
+    match, mget, order, paste, pmax, pmax.int, pmin, pmin.int,
+    Position, rank, rbind, Reduce, rownames, sapply, setdiff, sort,
+    table, tapply, union, unique, unsplit, which.max, which.min
+
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+Loading required package: SingleCellExperiment
+Loading required package: SummarizedExperiment
+Loading required package: MatrixGenerics
+Loading required package: matrixStats
+
+Attaching package: ‘matrixStats’
+
+The following objects are masked from ‘package:Biobase’:
+
+    anyMissing, rowMedians
+
+
+Attaching package: ‘MatrixGenerics’
+
+The following objects are masked from ‘package:matrixStats’:
+
+    colAlls, colAnyNAs, colAnys, colAvgsPerRowSet, colCollapse,
+    colCounts, colCummaxs, colCummins, colCumprods, colCumsums,
+    colDiffs, colIQRDiffs, colIQRs, colLogSumExps, colMadDiffs,
+    colMads, colMaxs, colMeans2, colMedians, colMins, colOrderStats,
+    colProds, colQuantiles, colRanges, colRanks, colSdDiffs, colSds,
+    colSums2, colTabulates, colVarDiffs, colVars, colWeightedMads,
+    colWeightedMeans, colWeightedMedians, colWeightedSds,
+    colWeightedVars, rowAlls, rowAnyNAs, rowAnys, rowAvgsPerColSet,
+    rowCollapse, rowCounts, rowCummaxs, rowCummins, rowCumprods,
+    rowCumsums, rowDiffs, rowIQRDiffs, rowIQRs, rowLogSumExps,
+    rowMadDiffs, rowMads, rowMaxs, rowMeans2, rowMedians, rowMins,
+    rowOrderStats, rowProds, rowQuantiles, rowRanges, rowRanks,
+    rowSdDiffs, rowSds, rowSums2, rowTabulates, rowVarDiffs, rowVars,
+    rowWeightedMads, rowWeightedMeans, rowWeightedMedians,
+    rowWeightedSds, rowWeightedVars
+
+The following object is masked from ‘package:Biobase’:
+
+    rowMedians
+
+Loading required package: GenomicRanges
+Loading required package: stats4
+Loading required package: S4Vectors
+
+Attaching package: ‘S4Vectors’
+
+The following objects are masked from ‘package:base’:
+
+    expand.grid, I, unname
+
+Loading required package: IRanges
+Loading required package: GenomeInfoDb
+
+Attaching package: ‘monocle3’
+
+The following objects are masked from ‘package:Biobase’:
+
+    exprs, fData, fData<-, pData, pData<-
+
+The legacy packages maptools, rgdal, and rgeos, underpinning the sp package,
+which was just loaded, will retire in October 2023.
+Please refer to R-spatial evolution reports for details, especially
+https://r-spatial.org/r/2023/05/15/evolution4.html.
+It may be desirable to make the sf package available;
+package maintainers should consider adding sf to Suggests:.
+The sp package is now running under evolution status 2
+     (status 2 uses the sf package in place of rgdal)
+rgeos version: 0.6-4, (SVN revision 699)
+ GEOS runtime version: 3.12.0-CAPI-1.18.0 
+ Please note that rgeos will be retired during October 2023,
+plan transition to sf or terra functions using GEOS at your earliest convenience.
+See https://r-spatial.org/r/2023/05/15/evolution4.html for details.
+ GEOS using OverlayNG
+ Linking to sp version: 2.0-0 
+ Polygon checking: TRUE 
+
+Attaching SeuratObject
+Attaching sp
+
+Attaching package: ‘Seurat’
+
+The following object is masked from ‘package:SummarizedExperiment’:
+
+    Assays
+
+Warning message:
+In load_stuff() : rgeos: versions of GEOS runtime 3.12.0-CAPI-1.18.0
+and GEOS at installation 3.9.1-CAPI-1.14.2differ
+
+Attaching package: ‘magrittr’
+
+The following object is masked from ‘package:GenomicRanges’:
+
+    subtract
+
+Loading required package: ttservice
+========================================
+tidyseurat version 0.5.9
+If you use TIDYSEURAT in published research, please cite:
+
+Mangiola et al. Interfacing Seurat with the R tidy universe. Bioinformatics 2021.
+
+This message can be suppressed by:
+  suppressPackageStartupMessages(library(tidyseurat))
+  
+To restore the Seurat default display use options("restore_Seurat_show" = TRUE) 
+========================================
+
+
+Attaching package: ‘tidyseurat’
+
+The following objects are masked from ‘package:ttservice’:
+
+    bind_cols, bind_rows
+
+The following object is masked from ‘package:magrittr’:
+
+    extract
+
+The following object is masked from ‘package:IRanges’:
+
+    slice
+
+The following object is masked from ‘package:S4Vectors’:
+
+    rename
+
+The following object is masked from ‘package:matrixStats’:
+
+    count
+
+The following object is masked from ‘package:stats’:
+
+    filter
+
+Warning:
+  saveRDS(cds, ...) does not save annoy or hnsw nearest
+  neighbor indices, which you may need for future analyses.
+  We urge you to use the "save_monocle_objects()" function
+   in order to save all of the information in the cds.
+However, we are running base::saveRDS() as you requested.
+No trajectory to plot. Has learn_graph() been called yet?
+null device 
+          1 
+  |                                                                              |                                                                      |   0%  |                                                                              |======================================================================| 100%
+Warning:
+  saveRDS(cds, ...) does not save annoy or hnsw nearest
+  neighbor indices, which you may need for future analyses.
+  We urge you to use the "save_monocle_objects()" function
+   in order to save all of the information in the cds.
+However, we are running base::saveRDS() as you requested.
+null device 
+          1 
+Cells aren't colored in a way that allows them to be grouped.
+null device 
+          1 
+Cells aren't colored in a way that allows them to be grouped.
+null device 
+          1 
+Cells aren't colored in a way that allows them to be grouped.
+null device 
+          1 
+Cells aren't colored in a way that allows them to be grouped.
+null device 
+          1 
+Warning:
+  saveRDS(cds, ...) does not save annoy or hnsw nearest
+  neighbor indices, which you may need for future analyses.
+  We urge you to use the "save_monocle_objects()" function
+   in order to save all of the information in the cds.
+However, we are running base::saveRDS() as you requested.
+[1] "Reproducibility information:"
+[1] "2023-09-18 15:15:28 EDT"
+   user  system elapsed 
+210.680  60.297 136.628 
+─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
+ setting  value
+ version  R version 4.2.1 (2022-06-23)
+ os       Red Hat Enterprise Linux Server 7.9 (Maipo)
+ system   x86_64, linux-gnu
+ ui       X11
+ language (EN)
+ collate  en_US.UTF-8
+ ctype    en_US.UTF-8
+ tz       America/Detroit
+ date     2023-09-18
+ pandoc   NA
+
+─ Packages ───────────────────────────────────────────────────────────────────────────────────────────────────────────
+ package              * version  date (UTC) lib source
+ abind                  1.4-5    2016-07-21 [1] CRAN (R 4.2.1)
+ assertthat             0.2.1    2019-03-21 [1] CRAN (R 4.2.1)
+ Biobase              * 2.57.1   2022-05-19 [1] Bioconductor
+ BiocGenerics         * 0.44.0   2022-11-01 [1] Bioconductor
+ BiocManager            1.30.18  2022-05-18 [1] CRAN (R 4.2.1)
+ bitops                 1.0-7    2021-04-24 [1] CRAN (R 4.2.1)
+ boot                   1.3-28   2021-05-03 [1] CRAN (R 4.2.1)
+ cli                    3.4.1    2022-09-23 [1] CRAN (R 4.2.1)
+ cluster                2.1.4    2022-08-22 [1] CRAN (R 4.2.1)
+ codetools              0.2-18   2020-11-04 [1] CRAN (R 4.2.1)
+ colorspace             2.0-3    2022-02-21 [1] CRAN (R 4.2.1)
+ cowplot                1.1.1    2020-12-30 [1] CRAN (R 4.2.1)
+ crayon                 1.5.1    2022-03-26 [1] CRAN (R 4.2.1)
+ data.table             1.14.2   2021-09-27 [1] CRAN (R 4.2.1)
+ DBI                    1.1.3    2022-06-18 [1] CRAN (R 4.2.1)
+ DelayedArray           0.24.0   2022-11-01 [1] Bioconductor
+ deldir                 1.0-6    2021-10-23 [1] CRAN (R 4.2.1)
+ digest                 0.6.29   2021-12-01 [1] CRAN (R 4.2.1)
+ dplyr                  1.0.10   2022-09-01 [1] CRAN (R 4.2.1)
+ ellipsis               0.3.2    2021-04-29 [1] CRAN (R 4.2.1)
+ fansi                  1.0.3    2022-03-24 [1] CRAN (R 4.2.1)
+ farver                 2.1.1    2022-07-06 [1] CRAN (R 4.2.1)
+ fastmap                1.1.0    2021-01-25 [1] CRAN (R 4.2.1)
+ fitdistrplus           1.1-8    2022-03-10 [1] CRAN (R 4.2.1)
+ future                 1.28.0   2022-09-02 [1] CRAN (R 4.2.1)
+ future.apply           1.9.1    2022-09-07 [1] CRAN (R 4.2.1)
+ generics               0.1.3    2022-07-05 [1] CRAN (R 4.2.1)
+ GenomeInfoDb         * 1.34.9   2023-02-02 [1] Bioconductor
+ GenomeInfoDbData       1.2.8    2022-09-23 [1] Bioconductor
+ GenomicRanges        * 1.49.1   2022-08-18 [1] Bioconductor
+ ggplot2              * 3.4.0    2022-11-04 [1] CRAN (R 4.2.1)
+ ggrepel                0.9.1    2021-01-15 [1] CRAN (R 4.2.1)
+ ggridges               0.5.3    2021-01-08 [1] CRAN (R 4.2.1)
+ globals                0.16.1   2022-08-28 [1] CRAN (R 4.2.1)
+ glue                   1.6.2    2022-02-24 [1] CRAN (R 4.2.1)
+ goftest                1.2-3    2021-10-07 [1] CRAN (R 4.2.1)
+ gridExtra              2.3      2017-09-09 [1] CRAN (R 4.2.1)
+ gtable                 0.3.1    2022-09-01 [1] CRAN (R 4.2.1)
+ here                   1.0.1    2020-12-13 [1] CRAN (R 4.2.1)
+ htmltools              0.5.3    2022-07-18 [1] CRAN (R 4.2.1)
+ htmlwidgets            1.5.4    2021-09-08 [1] CRAN (R 4.2.1)
+ httpuv                 1.6.6    2022-09-08 [1] CRAN (R 4.2.1)
+ httr                   1.4.4    2022-08-17 [1] CRAN (R 4.2.1)
+ ica                    1.0-3    2022-07-08 [1] CRAN (R 4.2.1)
+ igraph                 1.5.1    2023-08-10 [1] CRAN (R 4.2.1)
+ IRanges              * 2.31.2   2022-08-18 [1] Bioconductor
+ irlba                  2.3.5    2021-12-06 [1] CRAN (R 4.2.1)
+ jsonlite               1.8.0    2022-02-22 [1] CRAN (R 4.2.1)
+ KernSmooth             2.23-20  2021-05-03 [1] CRAN (R 4.2.1)
+ labeling               0.4.2    2020-10-20 [1] CRAN (R 4.2.1)
+ later                  1.3.0    2021-08-18 [1] CRAN (R 4.2.1)
+ lattice                0.20-45  2021-09-22 [1] CRAN (R 4.2.1)
+ lazyeval               0.2.2    2019-03-15 [1] CRAN (R 4.2.1)
+ leiden                 0.4.3    2022-09-10 [1] CRAN (R 4.2.1)
+ lifecycle              1.0.3    2022-10-07 [1] CRAN (R 4.2.1)
+ listenv                0.8.0    2019-12-05 [1] CRAN (R 4.2.1)
+ lme4                   1.1-34   2023-07-04 [1] CRAN (R 4.2.1)
+ lmtest                 0.9-40   2022-03-21 [1] CRAN (R 4.2.1)
+ magrittr             * 2.0.3    2022-03-30 [1] CRAN (R 4.2.1)
+ MASS                   7.3-58.1 2022-08-03 [1] CRAN (R 4.2.1)
+ Matrix                 1.5-1    2022-09-13 [1] CRAN (R 4.2.1)
+ MatrixGenerics       * 1.9.1    2022-06-24 [1] Bioconductor
+ matrixStats          * 0.62.0   2022-04-19 [1] CRAN (R 4.2.1)
+ mgcv                   1.8-40   2022-03-29 [1] CRAN (R 4.2.1)
+ mime                   0.12     2021-09-28 [1] CRAN (R 4.2.1)
+ miniUI                 0.1.1.1  2018-05-18 [1] CRAN (R 4.2.1)
+ minqa                  1.2.4    2014-10-09 [1] CRAN (R 4.2.1)
+ monocle3             * 1.4.1    2023-08-30 [1] Github (cole-trapnell-lab/monocle3@2b139b8)
+ munsell                0.5.0    2018-06-12 [1] CRAN (R 4.2.1)
+ nlme                   3.1-159  2022-08-09 [1] CRAN (R 4.2.1)
+ nloptr                 2.0.3    2022-05-26 [3] CRAN (R 4.2.0)
+ parallelly             1.32.1   2022-07-21 [1] CRAN (R 4.2.1)
+ patchwork            * 1.1.2    2022-08-19 [1] CRAN (R 4.2.1)
+ pbapply                1.5-0    2021-09-16 [1] CRAN (R 4.2.1)
+ pillar                 1.8.1    2022-08-19 [1] CRAN (R 4.2.1)
+ pkgconfig              2.0.3    2019-09-22 [1] CRAN (R 4.2.1)
+ plotly                 4.10.0   2021-10-09 [1] CRAN (R 4.2.1)
+ plyr                   1.8.7    2022-03-24 [1] CRAN (R 4.2.1)
+ png                    0.1-7    2013-12-03 [1] CRAN (R 4.2.1)
+ polyclip               1.10-0   2019-03-14 [3] CRAN (R 4.2.0)
+ progressr              0.11.0   2022-09-02 [1] CRAN (R 4.2.1)
+ promises               1.2.0.1  2021-02-11 [1] CRAN (R 4.2.1)
+ proxy                  0.4-27   2022-06-09 [1] CRAN (R 4.2.1)
+ purrr                  0.3.4    2020-04-17 [1] CRAN (R 4.2.1)
+ R.methodsS3            1.8.2    2022-06-13 [1] CRAN (R 4.2.1)
+ R.oo                   1.25.0   2022-06-12 [1] CRAN (R 4.2.1)
+ R.utils                2.12.0   2022-06-28 [1] CRAN (R 4.2.1)
+ R6                     2.5.1    2021-08-19 [1] CRAN (R 4.2.1)
+ RANN                   2.6.1    2019-01-08 [1] CRAN (R 4.2.1)
+ rappdirs               0.3.3    2021-01-31 [1] CRAN (R 4.2.1)
+ RColorBrewer         * 1.1-3    2022-04-03 [1] CRAN (R 4.2.1)
+ Rcpp                   1.0.11   2023-07-06 [1] CRAN (R 4.2.1)
+ RcppAnnoy              0.0.19   2021-07-30 [1] CRAN (R 4.2.1)
+ RCurl                  1.98-1.8 2022-07-30 [1] CRAN (R 4.2.1)
+ remotes                2.4.2    2021-11-30 [1] CRAN (R 4.2.1)
+ reshape2               1.4.4    2020-04-09 [3] CRAN (R 4.2.0)
+ reticulate             1.26     2022-08-31 [1] CRAN (R 4.2.1)
+ rgeos                  0.6-4    2023-07-18 [1] CRAN (R 4.2.1)
+ rlang                  1.0.6    2022-09-24 [1] CRAN (R 4.2.1)
+ ROCR                   1.0-11   2020-05-02 [1] CRAN (R 4.2.1)
+ rpart                  4.1.16   2022-01-24 [1] CRAN (R 4.2.1)
+ rprojroot              2.0.3    2022-04-02 [1] CRAN (R 4.2.1)
+ rsvd                   1.0.5    2021-04-16 [1] CRAN (R 4.2.1)
+ Rtsne                  0.16     2022-04-17 [1] CRAN (R 4.2.1)
+ S4Vectors            * 0.36.2   2023-02-26 [1] Bioconductor
+ scales                 1.2.1    2022-08-20 [1] CRAN (R 4.2.1)
+ scattermore            0.8      2022-02-14 [1] CRAN (R 4.2.1)
+ sctransform            0.3.5    2022-09-21 [1] CRAN (R 4.2.1)
+ sessioninfo          * 1.2.2    2021-12-06 [1] CRAN (R 4.2.1)
+ Seurat               * 4.2.0    2022-09-21 [1] CRAN (R 4.2.1)
+ SeuratData           * 0.2.2    2023-06-13 [1] Github (satijalab/seurat-data@d6a8ce6)
+ SeuratObject         * 4.1.2    2022-09-20 [1] CRAN (R 4.2.1)
+ SeuratWrappers       * 0.3.1    2023-08-30 [2] Github (satijalab/seurat-wrappers@d28512f)
+ shiny                  1.7.2    2022-07-19 [1] CRAN (R 4.2.1)
+ SingleCellExperiment * 1.20.1   2023-03-17 [1] Bioconductor
+ sp                   * 2.0-0    2023-06-22 [1] CRAN (R 4.2.1)
+ spatstat.core          2.4-4    2022-05-18 [1] CRAN (R 4.2.1)
+ spatstat.data          3.0-0    2022-10-21 [1] CRAN (R 4.2.1)
+ spatstat.geom          3.0-6    2023-01-30 [1] CRAN (R 4.2.1)
+ spatstat.random        3.1-3    2023-01-25 [1] CRAN (R 4.2.1)
+ spatstat.sparse        3.0-0    2022-10-21 [1] CRAN (R 4.2.1)
+ spatstat.utils         3.0-1    2022-10-19 [1] CRAN (R 4.2.1)
+ stringi                1.7.6    2021-11-29 [3] CRAN (R 4.2.0)
+ stringr                1.5.0    2022-12-02 [2] CRAN (R 4.2.1)
+ SummarizedExperiment * 1.28.0   2022-11-01 [1] Bioconductor
+ survival               3.4-0    2022-08-09 [1] CRAN (R 4.2.1)
+ tensor                 1.5      2012-05-05 [1] CRAN (R 4.2.1)
+ tibble                 3.1.8    2022-07-22 [1] CRAN (R 4.2.1)
+ tidyr                  1.2.1    2022-09-08 [1] CRAN (R 4.2.1)
+ tidyselect             1.1.2    2022-02-21 [1] CRAN (R 4.2.1)
+ tidyseurat           * 0.5.9    2023-02-25 [2] CRAN (R 4.2.1)
+ ttservice            * 0.2.2    2022-06-24 [2] CRAN (R 4.2.1)
+ utf8                   1.2.2    2021-07-24 [1] CRAN (R 4.2.1)
+ uwot                   0.1.14   2022-08-22 [1] CRAN (R 4.2.1)
+ vctrs                  0.5.2    2023-01-23 [1] CRAN (R 4.2.1)
+ viridis                0.6.2    2021-10-13 [1] CRAN (R 4.2.1)
+ viridisLite            0.4.1    2022-08-22 [1] CRAN (R 4.2.1)
+ withr                  2.5.0    2022-03-03 [1] CRAN (R 4.2.1)
+ xtable                 1.8-4    2019-04-21 [1] CRAN (R 4.2.1)
+ XVector                0.37.1   2022-08-25 [1] Bioconductor
+ zlibbioc               1.43.0   2022-04-26 [1] Bioconductor
+ zoo                    1.8-12   2023-04-13 [1] CRAN (R 4.2.1)
+
+ [1] /sysapps/cluster/software/Anaconda3/2022.05/envs/R-4.2.1/lib64/R/site-library
+ [2] /nethome/spanglerab/R/x86_64-conda-linux-gnu-library/4.2
+ [3] /sysapps/cluster/software/Anaconda3/2022.05/envs/R-4.2.1/lib/R/library
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+**** Job ends ****
+Mon Sep 18 15:15:29 EDT 2023
